@@ -116,17 +116,26 @@ h2 {
 
     .banner-slideshow {
         width: 95%;
-        height: auto; /* <<< Fix */
+        height: 250px; /* <<< New: smaller height for mobile */
         margin: 20px auto 0;
+        overflow: hidden;
+        position: relative;
     }
 
     .banner-slideshow img {
         width: 100%;
-        height: auto; /* <<< Fix */
-        object-fit: contain; /* <<< Keep contain not cover */
-        position: static; /* <<< Fix positioning */
-        display: block;
+        height: 100%;
+        object-fit: contain;
+        position: absolute; /* <<< Important: keep slideshow stacking */
+        top: 0;
+        left: 0;
+        opacity: 0;
+        transition: opacity 1s ease-in-out;
+    }
+
+    .banner-slideshow img.active {
         opacity: 1;
+        z-index: 1;
     }
 
     main {
@@ -142,6 +151,7 @@ h2 {
         font-size: 14px;
     }
 }
+
 
 table {
     width: 100%;
