@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pekadi.com</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Pekadi PC Build Ideas!</h1>
+        <div class="banner-slideshow">
+            <img src="Image_1.jpeg" alt="Slide 1" class="slide active">
+            <img src="Image_2.jpg" alt="Slide 2" class="slide">
+        </div>
+    </header>
+
+    <main>
+        <section class="build">
+            <h2>$1000 Build:</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Component</th>
+                        <th>Selection</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>CPU</td>
+                        <td>AMD Ryzen 7 5800X</td>
+                    </tr>
+                    <tr>
+                        <td>GPU</td>
+                        <td>NVIDIA GeForce RTX 3070 8GB</td>
+                    </tr>
+                    <tr>
+                        <td>RAM</td>
+                        <td>16GB DDR4 3600MHz</td>
+                    </tr>
+                    <tr>
+                        <td>Storage</td>
+                        <td>Klevv CRAS C910 1TB NVMe SSD</td>
+                    </tr>
+                    <tr>
+                        <td>Motherboard</td>
+                        <td>Gigabyte B550 AORUS ELITE AX V2</td>
+                    </tr>
+                    <tr>
+                        <td>Power Supply</td>
+                        <td>MSI MAG A750GL 750W 80+ Gold</td>
+                    </tr>
+                    <tr>
+                        <td>Case</td>
+                        <td>Thermaltake View 270 Plus TG ARGB ATX</td>
+                    </tr>
+                    <tr>
+                        <td>Cooling</td>
+                        <td>ID-COOLING FX240 INF 58 CFM Liquid CPU Cooler</td>
+                    </tr>
+                    <tr>
+                        <td>OS</td>
+                        <td>Windows 11 Pro</td>
+                    </tr>
+                    <tr>
+                        <td>Case Fan</td>
+                        <td>ID-COOLING AF-ARGB-K 78 CFM 120mm Fans 3-Pack</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025, Pekadi. Powered by Visual Studio</p>
+    </footer>
+
+    <!-- 🔵 Auto slideshow script goes here -->
+    <script>
+        const slides = document.querySelectorAll('.banner-slideshow .slide');
+        let currentSlide = 0;
+
+        function showNextSlide() {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }
+
+        setInterval(showNextSlide, 4000); // 4000ms = 4 seconds
+    </script>
+</body>
+</html>
