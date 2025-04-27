@@ -152,6 +152,59 @@ h2 {
     }
 }
 
+.service-pricing {
+    max-width: 900px; /* 👈 Match your builds width */
+    margin: 30px auto; /* 👈 Center it */
+    padding: 20px;
+    background-color: #1f1f1f;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.service-pricing table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.service-pricing th, .service-pricing td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #333;
+    text-align: left;
+    vertical-align: top;
+}
+
+.service-pricing th {
+    background-color: #2a2a2a;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.service-pricing tr:hover {
+    background-color: #2c2c2c;
+}
+
+.build-process {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #1f1f1f;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.build-process h2 {
+    color: #ffffff;
+    margin-bottom: 15px;
+}
+
+.build-process ol {
+    padding-left: 20px;
+}
+
+.build-process li {
+    margin-bottom: 10px;
+    color: #e0e0e0;
+}
 
 table {
     width: 100%;
