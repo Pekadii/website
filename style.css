@@ -15,6 +15,7 @@ header {
     position: relative;
     width: 90%;
     max-width: 900px;
+    height: 400px; /* 👈 ADD THIS */
     margin: 20px auto 0;
     overflow: hidden;
     border-radius: 10px;
@@ -23,18 +24,38 @@ header {
 
 .banner-slideshow img {
     width: 100%;
-    height: auto;
+    height: 100%; /* 👈 CHANGE from auto to 100% */
+    object-fit: contain;
     position: absolute;
     top: 0;
     left: 0;
     opacity: 0;
     transition: opacity 1s ease-in-out;
-    object-fit: cover;
 }
 
 .banner-slideshow img.active {
     opacity: 1;
     z-index: 1;
+}
+
+.dots {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin: 0 5px;
+    background-color: #555;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.active-dot {
+    background-color: #ffffff; /* Active dot is white */
 }
 
 main {
@@ -44,6 +65,49 @@ main {
 h2 {
     color: #ffffff;
     margin-bottom: 20px;
+}
+
+.builds-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.build {
+    background-color: #1f1f1f;
+    padding: 20px;
+    border-radius: 8px;
+    width: 450px; /* Smaller width so 2 can fit side by side */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.build table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.build th, .build td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #333;
+}
+
+.build th {
+    background-color: #2a2a2a;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.build tr:hover {
+    background-color: #2c2c2c;
+}
+
+@media (max-width: 1000px) {
+    .builds-container {
+        flex-direction: column;
+        align-items: center;
+    }
 }
 
 table {

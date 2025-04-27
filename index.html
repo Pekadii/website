@@ -13,80 +13,91 @@
             <img src="Image_1.jpeg" alt="Slide 1" class="slide active">
             <img src="Image_2.jpg" alt="Slide 2" class="slide">
         </div>
+        <div class="dots">
+            <span class="dot active-dot"></span>
+            <span class="dot"></span>
+        </div>
     </header>
 
     <main>
-        <section class="build">
-            <h2>$1000 Build:</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Component</th>
-                        <th>Selection</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>CPU</td>
-                        <td>AMD Ryzen 7 5800X</td>
-                    </tr>
-                    <tr>
-                        <td>GPU</td>
-                        <td>NVIDIA GeForce RTX 3070 8GB</td>
-                    </tr>
-                    <tr>
-                        <td>RAM</td>
-                        <td>16GB DDR4 3600MHz</td>
-                    </tr>
-                    <tr>
-                        <td>Storage</td>
-                        <td>Klevv CRAS C910 1TB NVMe SSD</td>
-                    </tr>
-                    <tr>
-                        <td>Motherboard</td>
-                        <td>Gigabyte B550 AORUS ELITE AX V2</td>
-                    </tr>
-                    <tr>
-                        <td>Power Supply</td>
-                        <td>MSI MAG A750GL 750W 80+ Gold</td>
-                    </tr>
-                    <tr>
-                        <td>Case</td>
-                        <td>Thermaltake View 270 Plus TG ARGB ATX</td>
-                    </tr>
-                    <tr>
-                        <td>Cooling</td>
-                        <td>ID-COOLING FX240 INF 58 CFM Liquid CPU Cooler</td>
-                    </tr>
-                    <tr>
-                        <td>OS</td>
-                        <td>Windows 11 Pro</td>
-                    </tr>
-                    <tr>
-                        <td>Case Fan</td>
-                        <td>ID-COOLING AF-ARGB-K 78 CFM 120mm Fans 3-Pack</td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
+        <div class="builds-container">
+            <section class="build">
+                <h1>$1000 Build AM4:</h1>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Component</th>
+                            <th>Selection</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- your build #1 -->
+                        <tr><td>CPU</td><td>AMD Ryzen 7 5800X 3.8 GHz</td></tr>
+                        <tr><td>GPU</td><td>NVIDIA GeForce RTX 3070 8GB</td></tr>
+                        <tr><td>RAM</td><td>Corsair Vengeance LPX 16 GB DDR4 3600MHz</td></tr>
+                        <tr><td>Storage</td><td>Klevv CRAS C910 1TB NVMe SSD</td></tr>
+                        <tr><td>Motherboard</td><td>Gigabyte B550 AORUS ELITE AX V2</td></tr>
+                        <tr><td>Power Supply</td><td>MSI MAG A750GL 750W 80+ Gold</td></tr>
+                        <tr><td>Case</td><td>Thermaltake View 270 Plus TG ARGB ATX</td></tr>
+                        <tr><td>Cooling</td><td>ID-COOLING FX240 INF 58 CFM Liquid CPU Cooler</td></tr>
+                        <tr><td>OS</td><td>Windows 11 Pro</td></tr>
+                        <tr><td>Case Fan</td><td>ID-COOLING AF-ARGB-K 78 CFM 120mm Fans 3-Pack</td></tr>
+                        <tr><td>Total Cost:<td>$1049.91: Be aware prices can change!</td></tr>
+                    </tbody>
+                </table>
+                <h1><a href="https://pcpartpicker.com/list/DQfFqH" target="_Blank">View Full Parts List!</a></h1>
+            </section>
+    
+            <section class="build">
+                <h2>$1500 Build AM5:</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Component</th>
+                            <th>Selection</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- your build #2 (example parts, you can change) -->
+                        <tr><td>CPU</td><td>AMD Ryzen 5 7600X 4.7 GHz</td></tr>
+                        <tr><td>GPU</td><td>NVIDIA GeForce RTX 3070 8GB</td></tr>
+                        <tr><td>RAM</td><td>G.Skill Trident Z5 Neo 32GB DDR5 6000MHz</td></tr>
+                        <tr><td>Storage</td><td>Samsung 990 2TB NVMe SSD</td></tr>
+                        <tr><td>Storage</td><td>Klevv CRAS C910 1TB NVMe SSD</td></tr>
+                        <tr><td>Motherboard</td><td>Asus PRIME B650-PLUS WIFI ATX</td></tr>
+                        <tr><td>Power Supply</td><td>MSI MAG A750GL 750W 80+ Gold</td></tr>
+                        <tr><td>Case</td><td>Montech KING 95 PRO ATX Mid Tower Case</td></tr>
+                        <tr><td>Cooling</td><td>Corsair iCUE H100i RGB ELITE</td></tr>
+                        <tr><td>OS</td><td>Windows 11 Pro</td></tr>
+                        <tr><td>Case Fan</td><td> Pre-Installed Fans</td></tr>
+                        <tr><td>Total Cost:<td>$1447.67: Be aware prices can change!</td></tr>
+                    </tbody>
+                </table>
+                <h2><a href="https://pcpartpicker.com/list/qj2bxg" target="_Blank">View Full Parts List!</a></h2>
+            </section>
+        </div>
     </main>
+    
 
     <footer>
         <p>© 2025, Pekadi. Powered by Visual Studio</p>
     </footer>
 
-    <!-- 🔵 Auto slideshow script goes here -->
     <script>
         const slides = document.querySelectorAll('.banner-slideshow .slide');
+        const dots = document.querySelectorAll('.dots .dot');
         let currentSlide = 0;
-
+    
         function showNextSlide() {
             slides[currentSlide].classList.remove('active');
+            dots[currentSlide].classList.remove('active-dot');
             currentSlide = (currentSlide + 1) % slides.length;
             slides[currentSlide].classList.add('active');
+            dots[currentSlide].classList.add('active-dot');
         }
-
+    
         setInterval(showNextSlide, 4000); // 4000ms = 4 seconds
     </script>
+    
 </body>
 </html>
