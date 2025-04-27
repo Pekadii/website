@@ -15,7 +15,7 @@ header {
     position: relative;
     width: 90%;
     max-width: 900px;
-    height: 400px; /* 👈 ADD THIS */
+    height: 400px;
     margin: 20px auto 0;
     overflow: hidden;
     border-radius: 10px;
@@ -24,7 +24,7 @@ header {
 
 .banner-slideshow img {
     width: 100%;
-    height: 100%; /* 👈 CHANGE from auto to 100% */
+    height: 100%;
     object-fit: contain;
     position: absolute;
     top: 0;
@@ -55,7 +55,7 @@ header {
 }
 
 .active-dot {
-    background-color: #ffffff; /* Active dot is white */
+    background-color: #ffffff;
 }
 
 main {
@@ -79,7 +79,7 @@ h2 {
     background-color: #1f1f1f;
     padding: 20px;
     border-radius: 8px;
-    width: 450px; /* Smaller width so 2 can fit side by side */
+    width: 450px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
 
@@ -107,6 +107,33 @@ h2 {
     .builds-container {
         flex-direction: column;
         align-items: center;
+    }
+
+    .build {
+        width: 90%;
+        max-width: 500px;
+    }
+
+    .banner-slideshow {
+        width: 95%;
+        height: auto;
+    }
+
+    .banner-slideshow img {
+        object-fit: contain;
+    }
+
+    main {
+        padding: 10px;
+    }
+
+    h2 {
+        font-size: 22px;
+        text-align: center;
+    }
+
+    table, th, td {
+        font-size: 14px;
     }
 }
 
