@@ -120,27 +120,26 @@ h2 {
 }
 
 .contact-form {
-    max-width: 500px;
-    margin: 0 auto;
+    max-width: 900px;  /* Match your builds and service sections */
+    margin: 30px auto;  /* Center and give it breathing space */
     padding: 20px;
     background-color: #1f1f1f;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-  }
-  
-  /* Make sure the form inputs are 100% inside */
-  .contact-form input,
-  .contact-form textarea {
-    width: 100%;
+    box-shadow: 0 8px 8px rgba(0, 0, 0, 0.5);
+}
+.contact-form input,
+.contact-form textarea {
+    width: 95%; /* 👈 smaller than 100% */
     padding: 12px;
     margin-bottom: 15px;
     border: none;
     border-radius: 5px;
-  }
-  
-  /* Center the button too */
-  .contact-form button {
-    width: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.contact-form button {
+    width: 95%; /* 👈 match the inputs */
     padding: 12px;
     background-color: #4CAF50;
     color: white;
@@ -148,12 +147,13 @@ h2 {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    display: block;
+    margin: 10px auto 0; /* 👈 center the button */
     transition: background 0.3s;
-  }
-  
-  .contact-form button:hover {
+}
+.contact-form button:hover {
     background-color: #45a049;
-  }  
+}
 
 @media (max-width: 768px) {
     .builds-container {
@@ -168,7 +168,7 @@ h2 {
 
     .banner-slideshow {
         width: 95%;
-        height: 250px; /* <<< New: smaller height for mobile */
+        height: 250px;
         margin: 20px auto 0;
         overflow: hidden;
         position: relative;
@@ -178,7 +178,7 @@ h2 {
         width: 100%;
         height: 100%;
         object-fit: contain;
-        position: absolute; /* <<< Important: keep slideshow stacking */
+        position: absolute;
         top: 0;
         left: 0;
         opacity: 0;
@@ -205,8 +205,8 @@ h2 {
 }
 
 .service-pricing {
-    max-width: 900px; /* 👈 Match your builds width */
-    margin: 30px auto; /* 👈 Center it */
+    max-width: 900px;
+    margin: 30px auto;
     padding: 20px;
     background-color: #1f1f1f;
     border-radius: 8px;
