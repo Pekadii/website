@@ -166,7 +166,7 @@ h2 {
 .contact-form button {
     width: 95%; /* 👈 match the inputs */
     padding: 12px;
-    background-color: #4CAF50;
+    background-color: #2417e4;
     color: white;
     font-weight: bold;
     border: none;
@@ -177,7 +177,7 @@ h2 {
     transition: background 0.3s;
 }
 .contact-form button:hover {
-    background-color: #45a049;
+    background-color: #3c2ff3;
 }
 
 @media (max-width: 1024px) {
@@ -240,6 +240,22 @@ h2 {
     table, th, td {
         font-size: 14px;
     }
+
+    .affiliate-link {
+        text-align: center;
+        margin: 20px 0;
+    }
+    
+    .affiliate-link a {
+        font-size: 18px;
+        color: #2417e4;
+        text-decoration: none;
+        font-weight: bold;
+    }
+    
+    .affiliate-link a:hover {
+        text-decoration: underline;
+    }    
 
 .service-pricing {
     max-width: 900px;
