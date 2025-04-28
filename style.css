@@ -11,6 +11,38 @@ header {
     padding: 20px 0;
 }
 
+.windows-key-popup-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.6);
+    z-index: 9999;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.windows-key-popup-button:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+/* Mobile adjustment */
+@media (max-width: 768px) {
+    .windows-key-popup-button {
+        bottom: 10px;
+        right: 10px;
+        padding: 10px 16px;
+        font-size: 14px;
+    }
+}
+
 .statement-section {
     max-width: 900px;
     margin: 30px auto 10px auto;
