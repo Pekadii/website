@@ -13,9 +13,9 @@ header {
 
 .windows-key-popup-button {
     position: fixed;
-    bottom: 20px;
+    top: 20px;
     right: 20px;
-    background-color: #4CAF50;
+    background-color: #2417e4;
     color: white;
     padding: 12px 20px;
     font-size: 16px;
@@ -29,14 +29,14 @@ header {
 }
 
 .windows-key-popup-button:hover {
-    background-color: #45a049;
+    background-color: #0818ff;
     transform: scale(1.05);
 }
 
 /* Mobile adjustment */
 @media (max-width: 768px) {
     .windows-key-popup-button {
-        bottom: 10px;
+        top: 10px;
         right: 10px;
         padding: 10px 16px;
         font-size: 14px;
@@ -48,19 +48,85 @@ header {
     margin: 10px 0;
 }
 
-.flash-sale-button a {
-    background-color: #2417e4; 
+.flash-sale-button {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background-color: #2417e4;
     color: white;
-    padding: 10px 10px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: bold;
+    padding: 12px 20px;
     font-size: 16px;
-    transition: background-color 0.3s;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.6);
+    z-index: 9999;
+    transition: background-color 0.3s, transform 0.3s;
 }
 
 .flash-sale-button a:hover {
-    background-color: #0818ff; 
+    background-color: #0818ff;
+    transform: scale(1.05); 
+}
+
+.windows-key-popup-button {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #2417e4;
+    color: white;
+    padding: 12px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.6);
+    z-index: 9999;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.windows-key-popup-button:hover {
+    background-color: #0818ff;
+    transform: scale(1.05);
+}
+
+.flash-sale-popup-button {
+    position: fixed;
+    top: 80px; /* 👈 slightly lower */
+    right: 20px;
+    background-color: #2417e4;
+    color: white;
+    padding: 12px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.6);
+    z-index: 9999;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.flash-sale-popup-button:hover {
+    background-color: #0818ff;
+    transform: scale(1.05);
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    .windows-key-popup-button, .flash-sale-popup-button {
+        top: auto;
+        bottom: 20px;
+        right: 20px;
+        width: 85%;
+        margin-bottom: 10px;
+        font-size: 14px;
+    }
+    .flash-sale-popup-button {
+        bottom: 70px; /* so it stacks nicely above */
+    }
 }
 
 .statement-section {
