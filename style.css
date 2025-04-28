@@ -176,6 +176,51 @@ h2 {
     text-decoration: underline;
 }
 
+.search-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap; /* 👈 makes it wrap on smaller screens */
+}
+
+.search-container input[type="text"] {
+    padding: 10px;
+    width: 300px;
+    max-width: 80%;
+    border-radius: 5px;
+    border: none;
+    font-size: 16px;
+}
+
+.search-container button {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s;
+}
+
+.search-container button:hover {
+    background-color: #0056b3;
+}
+
+/* Mobile tweak */
+@media (max-width: 600px) {
+    .search-container {
+        flex-direction: column;
+    }
+    .search-container input[type="text"], 
+    .search-container button {
+        width: 90%;
+        max-width: 90%;
+    }
+}
+
 .contact-form {
     max-width: 900px;  /* Match your builds and service sections */
     margin: 30px auto;  /* Center and give it breathing space */
