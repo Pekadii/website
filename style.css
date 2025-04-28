@@ -180,8 +180,10 @@ h2 {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 10px;
+    margin-top: 10px; /* space from top */
+    margin-bottom: 20px; /* <<< add more space below search bar */
     gap: 5px;
+    flex-wrap: wrap; /* <<< important for mobile responsiveness */
 }
 
 .search-form input[type="text"] {
