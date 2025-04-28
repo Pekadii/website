@@ -11,6 +11,28 @@ header {
     padding: 20px 0;
 }
 
+.statement-section {
+    max-width: 900px;
+    margin: 30px auto 10px auto;
+    padding: 20px;
+    background-color: #1f1f1f;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+.statement-section h2 {
+    margin-bottom: 10px;
+    color: #ffffff;
+    font-size: 26px;
+}
+
+.statement-section p {
+    color: #cccccc;
+    font-size: 18px;
+    line-height: 1.5;
+}
+
 .banner-slideshow {
     position: relative;
     width: 90%;
@@ -69,10 +91,13 @@ h2 {
 
 .builds-container {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     gap: 40px;
-    flex-wrap: wrap;
     margin-top: 20px;
+    max-width: 1400px; /* <<< ADD this */
+    margin-left: auto; /* <<< ADD this */
+    margin-right: auto; /* <<< ADD this */
 }
 
 .build {
@@ -155,6 +180,18 @@ h2 {
     background-color: #45a049;
 }
 
+@media (max-width: 1024px) {
+    .builds-container {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .build {
+        width: 45%;
+        max-width: 500px;
+    }
+}
+
 @media (max-width: 768px) {
     .builds-container {
         flex-direction: column;
@@ -165,6 +202,7 @@ h2 {
         width: 90%;
         max-width: 500px;
     }
+}
 
     .banner-slideshow {
         width: 95%;
@@ -202,7 +240,6 @@ h2 {
     table, th, td {
         font-size: 14px;
     }
-}
 
 .service-pricing {
     max-width: 900px;
