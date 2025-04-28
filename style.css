@@ -43,6 +43,26 @@ header {
     }
 }
 
+.flash-sale-button {
+    text-align: center;
+    margin: 10px 0;
+}
+
+.flash-sale-button a {
+    background-color: #2417e4; 
+    color: white;
+    padding: 10px 10px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.flash-sale-button a:hover {
+    background-color: #0818ff; 
+}
+
 .statement-section {
     max-width: 900px;
     margin: 30px auto 10px auto;
