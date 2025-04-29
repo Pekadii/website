@@ -404,6 +404,24 @@ h2 {
     z-index: 1;
 }
 
+.cdkeys-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 10px 0;
+}
+
+@media (max-width: 768px) {
+    .cdkeys-banner {
+        width: 100%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+        padding: 10px;
+        box-sizing: border-box;
+    }
+}
 
     main {
         padding: 10px;
