@@ -33,7 +33,7 @@ header {
     transform: scale(1.05);
 }
 
-/* Mobile adjustment */
+
 @media (max-width: 768px) {
     .windows-key-popup-button {
         top: 10px;
@@ -92,9 +92,14 @@ header {
     transform: scale(1.05);
 }
 
+.center-banner {
+    text-align: center;
+    margin: 20px 0;
+  }
+  
 .flash-sale-popup-button {
     position: fixed;
-    top: 80px; /* 👈 slightly lower */
+    top: 80px; 
     right: 20px;
     background-color: #2417e4;
     color: white;
@@ -114,7 +119,6 @@ header {
     transform: scale(1.05);
 }
 
-/* Mobile adjustments */
 @media (max-width: 768px) {
     .windows-key-popup-button, .flash-sale-popup-button {
         top: auto;
@@ -125,7 +129,7 @@ header {
         font-size: 14px;
     }
     .flash-sale-popup-button {
-        bottom: 70px; /* so it stacks nicely above */
+        bottom: 70px;
     }
 }
 
@@ -213,9 +217,9 @@ h2 {
     justify-content: center;
     gap: 40px;
     margin-top: 20px;
-    max-width: 1400px; /* <<< ADD this */
-    margin-left: auto; /* <<< ADD this */
-    margin-right: auto; /* <<< ADD this */
+    max-width: 1400px;
+    margin-left: auto; 
+    margin-right: auto; 
 }
 
 .build {
@@ -266,10 +270,10 @@ h2 {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 10px; /* space from top */
-    margin-bottom: 20px; /* <<< add more space below search bar */
+    margin-top: 10px; 
+    margin-bottom: 20px;
     gap: 5px;
-    flex-wrap: wrap; /* <<< important for mobile responsiveness */
+    flex-wrap: wrap; 
 }
 
 .search-form input[type="text"] {
@@ -299,7 +303,7 @@ h2 {
     background-color: #e0e0e0;
 }
 
-/* Mobile adjustment */
+
 @media (max-width: 600px) {
     .search-container {
         flex-direction: column;
@@ -313,8 +317,8 @@ h2 {
 }
 
 .contact-form {
-    max-width: 900px;  /* Match your builds and service sections */
-    margin: 30px auto;  /* Center and give it breathing space */
+    max-width: 900px;  
+    margin: 30px auto;  
     padding: 20px;
     background-color: #1f1f1f;
     border-radius: 8px;
@@ -322,7 +326,7 @@ h2 {
 }
 .contact-form input,
 .contact-form textarea {
-    width: 95%; /* 👈 smaller than 100% */
+    width: 95%; 
     padding: 12px;
     margin-bottom: 15px;
     border: none;
@@ -332,7 +336,7 @@ h2 {
     margin-right: auto;
 }
 .contact-form button {
-    width: 95%; /* 👈 match the inputs */
+    width: 95%; 
     padding: 12px;
     background-color: #2417e4;
     color: white;
@@ -341,7 +345,7 @@ h2 {
     border-radius: 5px;
     cursor: pointer;
     display: block;
-    margin: 10px auto 0; /* 👈 center the button */
+    margin: 10px auto 0; 
     transition: background 0.3s;
 }
 .contact-form button:hover {
@@ -372,29 +376,34 @@ h2 {
     }
 }
 
-    .banner-slideshow {
-        width: 95%;
-        height: 250px;
-        margin: 20px auto 0;
-        overflow: hidden;
-        position: relative;
-    }
+.banner-slideshow {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    height: auto;
+    aspect-ratio: 16 / 9; 
+    margin: 20px auto;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
 
-    .banner-slideshow img {
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-        position: absolute;
-        top: 0;
-        left: 0;
-        opacity: 0;
-        transition: opacity 1s ease-in-out;
-    }
+.banner-slideshow img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
 
-    .banner-slideshow img.active {
-        opacity: 1;
-        z-index: 1;
-    }
+.banner-slideshow img.active {
+    opacity: 1;
+    z-index: 1;
+}
+
 
     main {
         padding: 10px;
