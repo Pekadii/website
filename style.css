@@ -262,9 +262,18 @@ h2 {
     font-size: 18px;
 }
 
-.social-links a:hover {
-    text-decoration: underline;
+.social-icon {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    vertical-align: middle;
+  }  
+
+.social-icon:hover {
+    transform: scale(1.1);
+    transition: transform 0.2s ease-in-out;
 }
+  
 
 .search-form {
     display: flex;
