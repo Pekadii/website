@@ -361,6 +361,15 @@ h2 {
     background-color: #3c2ff3;
 }
 
+.contact-image {
+    width: 100%;
+    max-width: 900px;
+    margin: 20px auto;
+    display: block;
+    border-radius: 8px;
+}
+  
+
 @media (max-width: 1024px) {
     .builds-container {
         flex-wrap: wrap;
