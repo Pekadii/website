@@ -1,47 +1,37 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>PS4 PKG Sender</title>
   <style>
-    body {
-      background-color: #121212;
-      color: #ffffff;
-      text-align: center;
-      font-family: Arial, sans-serif;
-    }
-    input {
-      width: 60%;
-      padding: 10px;
-      margin: 20px 0;
-      font-size: 16px;
-    }
-    button {
-      padding: 10px 20px;
-      font-size: 18px;
-      background-color: #ffc107;
-      color: #000;
-      border: none;
-      cursor: pointer;
-      border-radius: 8px;
-    }
-    button:hover {
-      background-color: #ff9800;
-    }
+    body { font-family: Arial; background: #111; color: white; padding: 20px; text-align: center; }
+    input, button { margin: 10px; padding: 10px; width: 80%; max-width: 400px; }
   </style>
 </head>
 <body>
   <h1>📦 PS4 PKG Sender</h1>
-  <p>Enter the direct link to your .pkg file below:</p>
-  <input type="text" id="pkgPath" placeholder="http://yourdomain.com/PS4_ITEM00001_v1.07.pkg">
-  <br>
-  <button onclick="sendPkg()">Send to PS4</button>
+  <form id="sendForm">
+    <input type="text" id="ps4ip" placeholder="PS4 IP (e.g. 192.168.0.50)" required><br>
+    <input type="text" id="pkgurl" placeholder="Direct PKG URL (http://...)" required><br>
+    <button type="submit">Send to PS4</button>
+  </form>
+  <div id="status"></div>
 
   <script>
-    function sendPkg() {
-      const url = document.getElementById("pkgPath").value;
-      window.location.href = url;
-    }
+    document.getElementById('sendForm').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const ps4ip = document.getElementById('ps4ip').value;
+      const pkgurl = document.getElementById('pkgurl').value;
+
+      const res = await fetch('/send', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({ ps4ip, pkgurl })
+      });
+
+      const data = await res.text();
+      document.getElementById('status').innerText = data;
+    });
   </script>
 </body>
 </html>
