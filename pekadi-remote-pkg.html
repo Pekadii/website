@@ -1,26 +1,51 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
   <title>PS4 PKG Sender (Mobile)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      background: #111;
+      color: white;
+      font-family: sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px;
+    }
+    input, button {
+      padding: 12px;
+      font-size: 1rem;
+      margin: 10px;
+      border-radius: 8px;
+      border: none;
+    }
+    button {
+      background-color: #28a745;
+      color: white;
+    }
+    #status {
+      margin-top: 20px;
+      font-size: 1.2rem;
+    }
+  </style>
 </head>
 <body>
-  <h2>PS4 PKG Sender (Mobile)</h2>
-  <input type="text" id="ps4ip" placeholder="PS4 IP (e.g. 192.168.0.125)">
-  <br><br>
+  <h1>📦 PS4 PKG Sender (Mobile)</h1>
+  <input type="text" id="ps4ip" placeholder="Enter PS4 IP (e.g. 192.168.0.125)">
   <input type="file" id="pkgfile" accept=".pkg">
-  <br><br>
   <button onclick="sendPKG()">Send PKG</button>
-  <br><br>
   <div id="status"></div>
 
   <script>
     async function sendPKG() {
-      const ip = document.getElementById('ps4ip').value;
+      const ip = document.getElementById('ps4ip').value.trim();
       const fileInput = document.getElementById('pkgfile');
       const status = document.getElementById('status');
 
       if (!ip || fileInput.files.length === 0) {
-        status.innerText = 'Please enter PS4 IP and select a .pkg file.';
+        status.textContent = '❌ Enter IP and choose a PKG file.';
         return;
       }
 
@@ -29,19 +54,19 @@
       formData.append('file', file);
 
       try {
-        status.innerText = 'Uploading...';
+        status.textContent = '⏳ Uploading...';
         const res = await fetch(`http://${ip}:12800/api/upload`, {
           method: 'POST',
           body: formData
         });
 
         if (res.ok) {
-          status.innerText = '✅ PKG sent successfully!';
+          status.textContent = '✅ PKG sent successfully!';
         } else {
-          status.innerText = `❌ Upload failed: ${res.statusText}`;
+          status.textContent = `❌ Upload failed: ${res.statusText}`;
         }
       } catch (err) {
-        status.innerText = '❌ Error: ' + err.message;
+        status.textContent = `❌ Error: ${err.message}`;
       }
     }
   </script>
