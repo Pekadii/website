@@ -1,3 +1,31 @@
+.gif {
+  display: block;
+  margin: 40px auto;
+  width: 480px;          /* desktop size */
+  max-width: 90%;        /* prevents overflow */
+  height: auto;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .gif {
+    width: 300px;        /* smaller for phones */
+  }
+}
+
+.center-badge {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 40px auto;
+  width: 100%;
+}
+
+.center-badge img {
+  max-width: 100%;
+  height: auto;
+}
+
 .highlight-link {
   color: #4da3ff;
   font-weight: 600;
