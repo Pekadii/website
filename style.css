@@ -10,7 +10,6 @@
   .gif{ width:320px; }
 }
 
-
 .center-badge{
   display:flex;
   justify-content:center;
@@ -18,14 +17,12 @@
   width:100%;
 }
 
-.center-badge .gif{
+img.gif{
   display:block;
-  margin:0 auto;     
-  max-width: 520px;  
-  width: 100%;
+  margin:0 auto;
+  max-width:100%;
   height:auto;
 }
-
 
 .highlight-link {
   color: #4da3ff;
