@@ -11,18 +11,21 @@
 }
 
 
-.center-badge {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 40px auto;
-  width: 100%;
+.center-badge{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  width:100%;
 }
 
-.center-badge img {
-  max-width: 100%;
-  height: auto;
+.center-badge .gif{
+  display:block;
+  margin:0 auto;     
+  max-width: 520px;  
+  width: 100%;
+  height:auto;
 }
+
 
 .highlight-link {
   color: #4da3ff;
