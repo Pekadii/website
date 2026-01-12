@@ -1,3 +1,179 @@
+.highlight-link {
+  color: #4da3ff;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.highlight-link:hover {
+  text-decoration: underline;
+}
+
+.guide-subtitle {
+  margin-bottom: 10px;
+  font-size: 14px;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.note-box {
+  margin-top: 14px;
+  padding: 12px 14px;
+  background: rgba(255, 193, 7, 0.1);
+  border-left: 4px solid #ffc107;
+  border-radius: 6px;
+  color: #ddd;
+  font-size: 13px;
+}
+
+.muted {
+  color: #aaa;
+  font-size: 13px;
+}
+
+.highlight-link {
+  color: #ffffff;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.highlight-link:hover {
+  text-decoration: underline;
+}
+
+
+.highlight-link:focus,
+.highlight-link:hover {
+  color: #f0c400;
+}
+
+.highlight {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.guide-sections {
+  width: min(900px, 92%);
+  margin: 30px auto 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+
+.guide-card {
+  background: linear-gradient(
+    180deg,
+    rgba(24, 24, 24, 0.95),
+    rgba(18, 18, 18, 0.95)
+  );
+  border-radius: 14px;
+  padding: 22px 24px 22px 28px;
+  position: relative;
+
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow:
+    0 10px 28px rgba(0, 0, 0, 0.6),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+.guide-card:hover {
+  box-shadow:
+    0 12px 32px rgba(0, 0, 0, 0.7),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+
+.guide-card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 18px;
+  bottom: 18px;
+  width: 4px;
+  background: #ff3b3b;
+  border-radius: 2px;
+}
+
+
+.guide-card h3 {
+  margin: 0 0 14px;
+  font-size: 20px;
+  font-weight: 600;
+  color: #f1f1f1;
+}
+
+.guide-content {
+  color: #cfcfcf;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.guide-content b {
+  color: #ffffff;
+}
+
+
+.guide-content ul {
+  margin: 10px 0 0 20px;
+  padding: 0;
+}
+
+.guide-content li {
+  margin-bottom: 8px;
+}
+
+@media (min-width: 1024px) {
+
+  .guide-card {
+    max-width: 900px;        /* keeps cards readable */
+    padding: 22px 26px;      /* bigger card feel */
+  }
+
+  .guide-card h3 {
+    font-size: 20px;         /* section title */
+    margin-bottom: 12px;
+  }
+
+  .guide-subtitle {
+    font-size: 15px;         /* Step-by-step Process */
+    margin-bottom: 14px;
+  }
+
+  .guide-content ul li {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  .note-box {
+    font-size: 14px;
+    padding: 14px 16px;
+  }
+}
+
+.muted {
+  color: #9aa0a6;
+  font-style: italic;
+  margin-left: 4px;
+}
+
+.note {
+  margin-top: 12px;
+  color: #bdbdbd;
+  font-size: 14px;
+}
+
+
+.guide-content a {
+  color: #4da3ff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.guide-content a:hover {
+  text-decoration: underline;
+}
+
+
 .header-card {
     width: min(900px, 92%);
     margin: 18px auto 0;
@@ -914,3 +1090,4 @@ footer {
     font-size: 14px;
     margin-top: 40px;
 }
+
