@@ -1,3 +1,24 @@
+
+.haz-wrapper {
+  display: flex;
+  justify-content: center;  
+  align-items: center;
+
+  width: 100%;              
+  margin: 50px auto;
+}
+
+
+.haz-banner {
+  display: block;
+  width: 100%;
+  max-width: 720px;       
+  height: auto;
+
+  border-radius: 15px;
+}
+
+
 .back-home {
   position: relative;
   display: inline-flex;        
