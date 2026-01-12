@@ -1,7 +1,7 @@
 .gif{
   display:block;
   margin:40px auto;
-  width:700px;     /* bigger on desktop */
+  width:700px;     
   max-width:92%;
   height:auto;
 }
@@ -151,17 +151,17 @@
 @media (min-width: 1024px) {
 
   .guide-card {
-    max-width: 900px;        /* keeps cards readable */
-    padding: 22px 26px;      /* bigger card feel */
+    max-width: 900px;        
+    padding: 22px 26px;      
   }
 
   .guide-card h3 {
-    font-size: 20px;         /* section title */
+    font-size: 20px;         
     margin-bottom: 12px;
   }
 
   .guide-subtitle {
-    font-size: 15px;         /* Step-by-step Process */
+    font-size: 15px;         
     margin-bottom: 14px;
   }
 
