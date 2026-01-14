@@ -3,18 +3,21 @@
 ========================= */
 
 :root {
-  --bg: #0b0f18;
-  --panel: #0f1523;
-  --panel2: #0c1220;
-  --text: #e7eaf2;
-  --muted: #a9b1c3;
-  --line: rgba(255, 255, 255, 0.08);
-  --accent: #ff2b4a;
-  --accent2: #1f6bff;
-  --good: #2ecc71;
-  --shadow: 0 14px 40px rgba(0, 0, 0, 0.45);
-  --radius: 18px;
+  --bg: #151515;        /* main background */
+  --bg-soft: #1b1b1b;   /* subtle lift areas */
+  --panel: #202020;     /* cards / panels */
+  --panel2: #252525;    /* hover / layered panels */
+
+  --text: #e6e6e6;
+  --muted: #a0a0a0;
+
+  --line: rgba(255, 255, 255, 0.06);
+  --shadow: 0 12px 30px rgba(0, 0, 0, 0.55);
+  --radius: 16px;
+
+  --accent: #ffffff;   /* keep neutral */
 }
+
 
 *,
 *::before,
@@ -33,11 +36,20 @@ body {
 body {
   font-family: Arial, sans-serif;
   background:
-    radial-gradient(1200px 600px at 20% -10%, rgba(31, 107, 255, 0.18), transparent 55%),
-    radial-gradient(900px 500px at 90% 0%, rgba(255, 43, 74, 0.12), transparent 60%),
+    radial-gradient(
+      600px 400px at 15% 0%,
+      rgba(31, 107, 255, 0.05),
+      transparent 70%
+    ),
+    radial-gradient(
+      600px 400px at 85% 0%,
+      rgba(255, 43, 74, 0.06),
+      transparent 70%
+    ),
     var(--bg);
   color: var(--text);
 }
+
 
 img,
 video,
