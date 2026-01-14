@@ -1,17 +1,15 @@
-/* =========================
-   TOP ACTIONS (SOCIAL + CART)
-   ========================= */
+
 
 .top-actions{
   position: relative;
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: center;  /* keeps social row centered */
+  justify-content: center;  
   padding: 10px 16px;
 }
 
-/* Social icons row */
+
 .social-row{
   display: flex;
   align-items: center;
@@ -19,7 +17,7 @@
   gap: 14px;
 }
 
-/* Your icon images */
+
 .social-icon{
   width: 40px;
   height: 40px;
@@ -32,7 +30,7 @@
   transform: scale(1.1);
 }
 
-/* Cart pinned to the right */
+
 .shop-icon-button{
   position: absolute;
   right: 1100px;
@@ -44,7 +42,7 @@
   text-decoration: none;
 }
 
-/* Force it to stay white (prevents purple visited link color) */
+
 .shop-icon-button:visited,
 .shop-icon-button:hover,
 .shop-icon-button:active,
@@ -53,12 +51,12 @@
   text-decoration: none;
 }
 
-/* Make the <i> inherit link color */
+
 .shop-icon-button i{
   color: inherit;
 }
 
-/* Mobile tuning */
+
 @media (max-width: 480px){
   .top-actions{
     padding: 10px 14px;
