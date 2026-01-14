@@ -525,11 +525,22 @@ body {
     color: var(--text);
 }
 
-.page {
-    max-width: 1200px;
-    margin: 28px auto 60px;
-    padding: 0 18px;
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
 }
+
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+img, video, canvas, svg {
+  max-width: 100%;
+  height: auto;
+}
+
 
 .product-hero {
     display: grid;
@@ -1140,7 +1151,19 @@ h2 {
     display: block;
     border-radius: 8px;
 }
-  
+
+@media (max-width: 768px) {
+  .top-actions {
+    padding: 0 12px;
+  }
+
+  /* If you have a big banner/hero image area */
+  .banner, .hero, .slider {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
 
 @media (max-width: 1024px) {
     .builds-container {
