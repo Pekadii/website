@@ -217,7 +217,7 @@ svg {
 .haz-banner {
   display: block;
   width: 100%;
-  max-width: 720px;
+  max-width: 320px;
   height: auto;
   border-radius: 15px;
 }
