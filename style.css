@@ -95,6 +95,16 @@ svg {
   gap: 14px;
 }
 
+.social-row::after, 
+.social-row::before {
+    display: none !important;
+}
+
+.social-links a {
+    display: inline-block;
+    vertical-align: middle;
+}
+
 .shop-icon-button{
   grid-column: 3;
   justify-self: end;
