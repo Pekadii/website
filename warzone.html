@@ -15,43 +15,36 @@
 <body>
     <header>
       
-<div class="top-actions">
-  <div class="social-row">
-    <a href="https://www.tiktok.com/@pekadii" target="_blank">
-      <img src="tiktok.png" alt="TikTok" class="social-icon">
-    </a>
-    <a href="https://youtube.com/pekadi" target="_blank">
-      <img src="youtube.png" alt="YouTube" class="social-icon">
-    </a>
-    <a href="https://github.com/Pekadii" target="_blank">
-      <img src="github_logo.png" alt="Github" class="social-icon">
-    </a>
-    <a href="https://discord.com/invite/h5EBn2zKBu" target="_blank">
-      <img src="discord.png" alt="Discord" class="social-icon">
+<header>
+  <div class="top-actions">
+    <div class="social-row">
+      <a href="https://www.tiktok.com/@pekadii" target="_blank"><img src="tiktok.png" class="social-icon" alt="TikTok"></a>
+      <a href="https://youtube.com/pekadi" target="_blank"><img src="youtube.png" class="social-icon" alt="YouTube"></a>
+      <a href="https://github.com/Pekadii" target="_blank"><img src="github_logo.png" class="social-icon" alt="Github"></a>
+      <a href="https://discord.com/invite/h5EBn2zKBu" target="_blank"><img src="discord.png" class="social-icon" alt="Discord"></a>
+    </div>
+
+    <a href="Shop.html" class="shop-icon-button" aria-label="Open shop" target="_blank" rel="noopener">
+      <img src="shop.png" alt="Open shop" class="shop-icon-img">
     </a>
   </div>
 
+  <div class="banner-section">
+    <div class="banner-slideshow" id="bannerSlideshow">
+      <img src="Render1.png" alt="Slide 1" class="slide active">
+      <img src="Render2.png" alt="Slide 2" class="slide">
+      <img src="Render3.png" alt="Slide 3" class="slide">
+      <img src="Render4.png" alt="Slide 4" class="slide">
+    </div>
 
-   <a class="shop-icon-button" href="https://discord.com/channels/940937605518868510/1075524155329478666" aria-label="Open shop">
-    <i class="fa-solid fa-cart-shopping"></i>
-  </a>
-</div>
-
-
-
-        <div class="banner-slideshow">
-            <img src="Render1.png" alt="Slide 1" class="slide active">
-            <img src="Render2.png" alt="Slide 2" class="slide">
-            <img src="Render3.png" alt="Slide 3" class="slide">
-            <img src="Render4.png" alt="Slide 4" class="slide">
-        </div>
-        <div class="dots">
-            <span class="dot active-dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-        </div>
-    </header>
+    <div class="dots" id="bannerDots">
+      <span class="dot active-dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+    </div>
+  </div>
+</header>
 
     <main>
         <div class="haz-wrapper">
@@ -67,7 +60,7 @@
 </section>
 
         <div class="header-card">
-            <h3>RUT BO7 & Warzone Cheat Setup Guide</h3>
+            <h3>TESTING</h3>
             <p class="header-card__intro">
                 In this topic, we will cover all of the information you need in order to launch your product safely. This includes:
             </p>
@@ -263,6 +256,12 @@
             <p>© Powered by Pekadi All rights reserved.</p>
         </footer>
 
+
+        <script>
+            function openWindowsKeyPopup() {
+                window.open('', '_blank', 'width=600,height=600');
+            }
+        </script>
 
         <script>
             const slides = document.querySelectorAll('.banner-slideshow .slide');
