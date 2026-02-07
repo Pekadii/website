@@ -1,7 +1,4 @@
-/* =========================
-   Photography / Editorial Theme (Updated)
-   Works with your existing HTML classes
-========================= */
+
 
 :root{
   --bg: #0f0f10;
@@ -20,14 +17,15 @@
   --container: min(1200px, 92vw);
 }
 
-/* Base */
+
 *{ box-sizing: border-box; }
 
 body{
   margin: 0;
   font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  background: radial-gradient(1200px 500px at 50% -80px, rgba(255,255,255,0.06), transparent 70%),
-              var(--bg);
+  background:
+    radial-gradient(1200px 500px at 50% -80px, rgba(255,255,255,0.06), transparent 70%),
+    var(--bg);
   color: var(--text);
   line-height: 1.6;
 }
@@ -42,7 +40,7 @@ a:hover{
   text-decoration-thickness: 1px;
 }
 
-/* Headings feel editorial */
+
 h1, h2, h3{
   font-family: "Playfair Display", serif;
   letter-spacing: 0.3px;
@@ -53,14 +51,38 @@ h2{
   font-size: 30px;
 }
 
-/* =========================
-   Header
-========================= */
+
 header{
   background: transparent;
   text-align: center;
   padding: 26px 0 10px;
 }
+
+.header-row{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.icon-row{
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+@media (max-width: 600px){
+  .header-row{
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .icon-row{
+    justify-content: center;
+  }
+}
+
 
 .social-links{
   display: flex;
@@ -71,7 +93,7 @@ header{
   padding: 0 16px;
 }
 
-/* Icons */
+
 .social-icon{
   width: 28px;
   height: 28px;
@@ -82,7 +104,7 @@ header{
 }
 .social-icon:hover{ opacity: 1; }
 
-/* Search form */
+
 .search-form{
   display: flex;
   justify-content: center;
@@ -119,7 +141,7 @@ header{
 }
 .search-form button:hover{ background: rgba(255,255,255,0.13); }
 
-/* Floating CTA buttons */
+
 .windows-key-popup-button,
 .flash-sale-button,
 .flash-sale-popup-button{
@@ -155,9 +177,7 @@ header{
   top: 18px;
 }
 
-/* =========================
-   Buttons
-========================= */
+
 .btn{
   display: inline-flex;
   align-items: center;
@@ -182,59 +202,48 @@ header{
   font-size: 14px;
 }
 
-/* =========================
-   HERO (Signature)
-========================= */
-.hero.hero-signature{
+
+.signature{
   width: var(--container);
   margin: 18px auto 0;
+  padding: 34px 22px 28px;
   border: 1px solid rgba(255,255,255,0.10);
   background: rgba(255,255,255,0.03);
-  overflow: hidden;
-  position: relative;
+  text-align: center;
 }
 
-.hero.hero-signature .hero-media{
-  height: clamp(220px, 42vh, 520px);
+.signature-media{
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 24px 18px;
+  padding: 8px 0 10px;
 }
 
-.hero.hero-signature .hero-media img{
-  max-width: min(900px, 92%);
-  max-height: 100%;
-  width: auto;
+
+.signature-media img{
+  width: min(980px, 95%);
   height: auto;
-  display: block;
+  max-height: 240px;
   object-fit: contain;
+  display: block;
 }
 
-/* Overlay text pinned to bottom with gradient */
-.hero.hero-signature .hero-overlay{
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  padding: 18px 22px;
-  background: linear-gradient(to top, rgba(0,0,0,0.75), rgba(0,0,0,0.0));
+.signature-text{
+  margin-top: 10px;
 }
 
-.hero.hero-signature .hero-title{
+.signature-title{
   margin: 0 0 6px;
-  font-size: clamp(22px, 2.4vw, 34px);
+  font-size: clamp(22px, 2.2vw, 34px);
 }
 
-.hero.hero-signature .hero-subtitle{
+.signature-subtitle{
   margin: 0;
   color: rgba(255,255,255,0.72);
   font-size: 14px;
 }
 
-/* =========================
-   ABOUT (CENTERED FIX)
-========================= */
+
 .about{
   width: var(--container);
   margin: 46px auto 0;
@@ -264,9 +273,7 @@ header{
   padding: 18px;
 }
 
-/* =========================
-   GALLERY (IMAGE SIZE FIX)
-========================= */
+
 .gallery{
   width: var(--container);
   margin: 34px auto 0;
@@ -307,15 +314,13 @@ header{
   filter: contrast(1.05) brightness(1.0);
 }
 
-/* =========================
-   Contact + Footer
-========================= */
+
 .contact-section{
   width: var(--container);
   margin: 46px auto 0;
 }
 
-/* Contact form */
+
 .contact-form{
   max-width: 980px;
   margin: 0 auto;
@@ -368,6 +373,7 @@ header{
   transform: translateY(-1px);
 }
 
+
 footer{
   background: transparent;
   text-align: center;
@@ -378,22 +384,15 @@ footer{
   border-top: 1px solid var(--line);
 }
 
-/* =========================
-   Responsive
-========================= */
+
 @media (max-width: 900px){
-  .about{
-    grid-template-columns: 1fr;
-  }
+  .about{ grid-template-columns: 1fr; }
 
   .tile{
     grid-column: span 12;
     aspect-ratio: 4 / 3;
   }
-
-  .tile-tall{
-    aspect-ratio: 4 / 3;
-  }
+  .tile-tall{ aspect-ratio: 4 / 3; }
 }
 
 @media (max-width: 768px){
@@ -405,12 +404,12 @@ footer{
     width: calc(100% - 32px);
   }
 
-  .flash-sale-popup-button{
-    bottom: 70px;
-  }
+  .flash-sale-popup-button{ bottom: 70px; }
 
-  .hero.hero-signature .hero-media{
-    height: clamp(200px, 36vh, 380px);
-    padding: 18px 14px;
+  .signature{
+    padding: 26px 16px 22px;
+  }
+  .signature-media img{
+    max-height: 180px;
   }
 }
