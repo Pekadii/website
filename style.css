@@ -273,6 +273,66 @@ header{
   padding: 18px;
 }
 
+.photo-guide{
+  width: var(--container);
+  margin: 46px auto 0;
+  padding: 26px 0;
+  border-top: 1px solid var(--line);
+}
+
+.photo-guide h2{
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.guide-intro{
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 28px;
+  color: rgba(255,255,255,0.65);
+}
+
+.guide-grid{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.guide-card{
+  border: 1px solid rgba(255,255,255,0.10);
+  background: rgba(255,255,255,0.04);
+  padding: 20px;
+}
+
+.guide-card h3{
+  margin: 0 0 8px;
+  font-size: 20px;
+}
+
+.guide-card p{
+  margin: 0 0 12px;
+  color: rgba(255,255,255,0.7);
+  font-size: 14px;
+}
+
+.guide-card ul{
+  margin: 0;
+  padding-left: 18px;
+  font-size: 14px;
+  color: rgba(255,255,255,0.75);
+}
+
+.guide-card li{
+  margin-bottom: 6px;
+}
+
+@media (max-width: 900px){
+  .guide-grid{
+    grid-template-columns: 1fr;
+  }
+}
+
 
 .gallery{
   width: var(--container);
