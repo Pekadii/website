@@ -397,6 +397,44 @@ header{
   }
 }
 
+.gear-note{
+  width: var(--container);
+  margin: 26px auto 0;
+  padding: 18px 18px;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  text-align: center;
+}
+
+.gear-note h3{
+  margin: 0 0 10px;
+  font-size: 24px;
+}
+
+.gear-note p{
+  margin: 0 auto 12px;
+  max-width: 860px;
+  color: rgba(255,255,255,0.74);
+  line-height: 1.75;
+}
+
+.gear-note ul{
+  list-style: none;
+  padding: 0;
+  margin: 10px auto 12px;
+  max-width: 860px;
+  color: rgba(255,255,255,0.74);
+}
+
+.gear-note li{
+  margin: 8px 0;
+}
+
+.gear-note-tip{
+  margin-top: 10px;
+  font-size: 13px;
+  opacity: 0.78;
+}
 
 .gallery{
   width: var(--container);
