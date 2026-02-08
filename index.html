@@ -41,26 +41,145 @@
   </section>
 
 
-  <section class="about" id="about">
-    <div class="about-left">
-      <h2>About Me</h2>
-      <p>
-        I focus on creating cinematic tones. Portraits, Street, Landscape, I want to share 
-        my vision also which lens to choose from depending on which photo style you want to take.
-        Follow my journey and learn new tips & tricks on camera settings as I learn something new everyday.
-      </p>
-    </div>
+<section class="about" id="about">
+  <div class="about-left">
+    <h2>About Me</h2>
+    <p>
+      I focus on creating cinematic tones. Portraits, Street, Landscape, I want to share my vision
+      also which lens to choose from depending on which photo style you want to take. Follow my journey
+      and learn new tips & tricks on camera settings as I learn something new everyday.
+    </p>
+  </div>
 
-    <div class="about-right">
-      <div class="about-card">
-        <h3>My Style</h3>
-        <p>Portraits • Street • Landscape </p>
-        <a class="btn btn-small" href="#contact">Contact me</a>
+  <div class="about-right">
+    <div class="about-card">
+      <h3>My Style</h3>
+      <p>Portraits • Street • Landscape</p>
+      <a class="btn btn-small" href="#contact">Contact me</a>
+    </div>
+  </div>
+</section>
+
+
+<section class="lenses" id="lenses">
+  <div class="lenses-head">
+    <h2>My Lenses</h2>
+    <p>
+      A quick look at the glass I’m currently using — what it’s best at, and the style it supports as I grow the kit.
+    </p>
+  </div>
+
+<div class="lens-tabs" role="tablist" aria-label="Lens tabs">
+  <button class="lens-tab is-active"
+          role="tab"
+          aria-selected="true"
+          aria-controls="lens-sigma"
+          id="tab-sigma">
+    <img class="tab-ico-img" src="sigma-18-35.png" alt="" aria-hidden="true">
+    Sigma 18–35mm f/1.8
+  </button>
+
+  <button class="lens-tab"
+          role="tab"
+          aria-selected="false"
+          aria-controls="lens-canon50"
+          id="tab-canon50"
+          tabindex="-1">
+    <img class="tab-ico-img" src="canon-50mm.png" alt="" aria-hidden="true">
+    Canon EF 50mm f/1.8 STM
+  </button>
+</div>
+
+</section>
+  <div class="lens-panels">
+    <article class="lens-panel is-active" role="tabpanel" id="lens-sigma" aria-labelledby="tab-sigma">
+      <div class="lens-grid">
+        <div class="lens-card">
+          <h3>Sigma 18–35mm f/1.8 (APS-C)</h3>
+          <p class="lens-meta">On Canon R50 (APS-C): feels like ~29–56mm equivalent • bright f/1.8 zoom</p>
+
+          <div class="pill-row">
+            <span class="pill">Portraits (environmental)</span>
+            <span class="pill">Street</span>
+            <span class="pill">Lifestyle</span>
+            <span class="pill">Low light</span>
+            <span class="pill">Video</span>
+          </div>
+
+          <ul class="lens-list">
+            <li><strong>Best for:</strong> versatile “cinematic” look, story shots, street + scenes with context.</li>
+            <li><strong>Strength:</strong> f/1.8 across the zoom gives strong subject separation + low-light ability.</li>
+            <li><strong>Look:</strong> wider frames at 18–24mm, tighter natural perspective at 30–35mm.</li>
+            <li><strong>Note:</strong> It’s an EF-mount lens — use your EF→RF adapter on the R50.</li>
+          </ul>
+        </div>
+
+        <div class="lens-card">
+          <h3>Suggested Use</h3>
+          <div class="mini-grid">
+            <div class="mini">
+              <h4>Street / Lifestyle</h4>
+              <p>24–35mm • f/1.8–2.8 • 1/250+ • ISO as needed</p>
+            </div>
+            <div class="mini">
+              <h4>Portrait w/ context</h4>
+              <p>30–35mm • f/1.8–2.2 • 1/200+ • soften background</p>
+            </div>
+            <div class="mini">
+              <h4>Moody low-light</h4>
+              <p>18–24mm • f/1.8 • 1/125–1/250 • raise ISO carefully</p>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-  </section>
+    </article>
 
-  <section class="photo-guide">
+    
+    <article class="lens-panel" role="tabpanel" id="lens-canon50" aria-labelledby="tab-canon50" hidden>
+      <div class="lens-grid">
+        <div class="lens-card">
+          <h3>Canon EF 50mm f/1.8 STM</h3>
+          <p class="lens-meta">On Canon R50 (APS-C): feels like ~80mm equivalent • classic budget portrait lens</p>
+
+          <div class="pill-row">
+            <span class="pill">Portraits</span>
+            <span class="pill">Details</span>
+            <span class="pill">Low light</span>
+            <span class="pill">Bokeh</span>
+          </div>
+
+          <ul class="lens-list">
+            <li><strong>Best for:</strong> portraits, tight compositions, detail shots, creamy background blur.</li>
+            <li><strong>Strength:</strong> light + sharp for the price; great for learning subject isolation.</li>
+            <li><strong>Look:</strong> more compression / “portrait feel” because it’s tighter on APS-C.</li>
+            <li><strong>Note:</strong> you’ll step back more indoors — it’s tighter than it sounds on R50.</li>
+          </ul>
+        </div>
+
+        <div class="lens-card">
+          <h3>Suggested Use</h3>
+          <div class="mini-grid">
+            <div class="mini">
+              <h4>Portraits</h4>
+              <p>f/1.8–2.8 • 1/200+ • focus on the eye • clean background</p>
+            </div>
+            <div class="mini">
+              <h4>Detail / Product</h4>
+              <p>f/2.8–5.6 • 1/125+ • sharper edges • more depth</p>
+            </div>
+            <div class="mini">
+              <h4>Low-light</h4>
+              <p>f/1.8 • keep shutter safe (1/160+) • raise ISO as needed</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+
+<section class="photo-guide">
   <h2>Understanding Exposure</h2>
   <p class="guide-intro">
     Photography is a balance between light, time, and sensitivity.
@@ -131,6 +250,57 @@
   <footer>
     <p>© Powered by Pekadi All rights reserved.</p>
   </footer>
+
+<script>
+  (function(){
+    const tablist = document.querySelector('.lens-tabs');
+    if(!tablist) return;
+
+    const tabs = Array.from(tablist.querySelectorAll('.lens-tab'));
+    const panels = tabs
+      .map(t => document.getElementById(t.getAttribute('aria-controls')))
+      .filter(Boolean);
+
+    function activateTab(tab){
+      
+      tabs.forEach(t => {
+        const on = (t === tab);
+        t.classList.toggle('is-active', on);
+        t.setAttribute('aria-selected', on ? 'true' : 'false');
+        t.tabIndex = on ? 0 : -1;
+      });
+
+      
+      panels.forEach(p => {
+        const on = (p.id === tab.getAttribute('aria-controls'));
+        p.classList.toggle('is-active', on);
+        if(on) p.removeAttribute('hidden');
+        else p.setAttribute('hidden', '');
+      });
+    }
+
+    
+    tabs.forEach(t => t.addEventListener('click', () => activateTab(t)));
+
+    
+    tablist.addEventListener('keydown', (e) => {
+      const i = tabs.indexOf(document.activeElement);
+      if(i < 0) return;
+      if(e.key === 'ArrowRight' || e.key === 'ArrowLeft'){
+        e.preventDefault();
+        const dir = e.key === 'ArrowRight' ? 1 : -1;
+        const next = tabs[(i + dir + tabs.length) % tabs.length];
+        next.focus();
+        activateTab(next);
+      }
+    });
+
+    
+    const initial = tabs.find(t => t.classList.contains('is-active')) || tabs[0];
+    if(initial) activateTab(initial);
+  })();
+</script>
+
 
   <script>
     function openWindowsKeyPopup() {

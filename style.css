@@ -249,29 +249,93 @@ header{
   margin: 46px auto 0;
   padding: 26px 0;
   display: grid;
-  grid-template-columns: 1.4fr 0.6fr;
-  gap: 22px;
+  grid-template-columns: 1fr 320px; 
+  gap: 28px;
   align-items: start;
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
 }
 
-.about-left h2{
-  margin: 0 0 10px;
-  font-size: 34px;
+.about-left{
+  max-width: 760px;
 }
 
 .about-left p{
   margin: 0;
-  color: rgba(255,255,255,0.68);
+  color: rgba(255,255,255,0.70);
   line-height: 1.75;
+  text-align: left; 
 }
 
-.about-card{
-  border: 1px solid rgba(255,255,255,0.10);
-  background: rgba(255,255,255,0.04);
-  padding: 18px;
+
+.lens-tabs{
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin: 18px auto 0;
 }
+
+.lens-tab{
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 10px 14px;
+  border-radius: 999px;
+
+  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(255,255,255,0.06);
+  color: rgba(255,255,255,0.92);
+
+  cursor: pointer;
+  user-select: none;
+
+  transition: background 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
+}
+
+.lens-tab:hover{
+  background: rgba(255,255,255,0.10);
+  transform: translateY(-1px);
+}
+
+.lens-tab.is-active{
+  border-color: rgba(255,255,255,0.28);
+  background: rgba(255,255,255,0.12);
+}
+
+
+.tab-ico-img{
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
+  object-fit: cover;
+  display: block;
+  border: 1px solid rgba(255,255,255,0.10);
+}
+
+
+.lens-panels{
+  width: var(--container);
+  margin: 18px auto 0;
+}
+
+
+.lens-panel{
+  display: none;
+  margin-top: 18px;
+}
+
+
+.lens-panel.is-active{
+  display: block;
+}
+
+
+.lens-panel[hidden]{
+  display: none !important;
+}
+
 
 .photo-guide{
   width: var(--container);
