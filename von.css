@@ -1,10 +1,6 @@
-
-body.von-page{
-  background:
-    radial-gradient(1200px 500px at 50% -80px, rgba(255,255,255,0.06), transparent 70%),
-    var(--bg);
-}
-
+/* =========================
+   VON PAGE 
+========================= */
 
 .von-wrap{
   width: var(--container);
@@ -16,18 +12,23 @@ body.von-page{
   display: inline-flex;
   align-items: center;
   gap: 10px;
+
   margin: 10px 0 18px;
+
   color: rgba(255,255,255,0.82);
   text-decoration: none;
   opacity: 0.9;
 }
+
 .von-back:hover{
   opacity: 1;
   text-decoration: underline;
   text-underline-offset: 4px;
 }
 
-
+/* =========================
+   HEADER
+========================= */
 .von-header{
   border: 1px solid rgba(255,255,255,0.10);
   background: rgba(255,255,255,0.03);
@@ -48,6 +49,29 @@ body.von-page{
 }
 
 
+.von-signature{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+
+.von-signature img{
+  width: min(820px, 95%);
+  max-height: 220px;
+  object-fit: contain;
+  display: block;
+}
+
+
+.von-actions{
+  display: flex;
+  justify-content: center;
+  margin-top: 16px;
+}
+
+/* =========================
+   SECTIONS
+========================= */
 .von-section{
   margin: 34px auto 0;
   padding: 26px 0;
@@ -76,10 +100,14 @@ body.von-page{
   line-height: 1.7;
 }
 
+/* =========================
+   ABOUT GRID 
+========================= */
 .von-about-grid{
   display: grid;
   grid-template-columns: minmax(0, 520px) minmax(0, 360px);
   gap: 48px;
+
   justify-content: center;
   align-items: start;
 }
@@ -101,18 +129,82 @@ body.von-page{
   color: rgba(255,255,255,0.75);
 }
 
-.von-grid > .von-card:last-child{
-  justify-self: center;
-  width: 100%;
-  max-width: 360px;
+/* =========================
+   CARDS / PILLS 
+========================= */
+body.von-page .photo-guide{
+  width: var(--container);
+  margin: 46px auto 0;
+  padding: 26px 0;
+  border-top: 1px solid var(--line);
+}
+
+
+body.von-page .guide-grid{
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+
+  max-width: 100%;
+  margin: 0 auto;
+  justify-content: center;
+}
+
+
+body.von-page .guide-card{
+  border: 1px solid rgba(255,255,255,0.10);
+  background: rgba(255,255,255,0.04);
+  padding: 20px;
+  text-align: left;
+}
+
+
+body.von-page .guide-card h3{
+  margin: 0 0 8px;
+  font-size: 20px;
+}
+
+body.von-page .guide-card p{
+  margin: 0 0 12px;
+  font-size: 14px;
+  color: rgba(255,255,255,0.7);
+}
+
+body.von-page .guide-card ul{
+  margin: 0;
+  padding-left: 18px;
+  font-size: 14px;
+  color: rgba(255,255,255,0.75);
+}
+
+body.von-page .photo-guide{
+  width: var(--container);      
+  margin: 46px auto 0;          
+  padding: 26px 0;
+  border-top: 1px solid var(--line);
+}
+
+/* Center the Exposure cards content (Von page only) */
+body.von-page .photo-guide .guide-card{
   text-align: center;
 }
 
+body.von-page .photo-guide .guide-card ul{
+  list-style-position: inside; /* keeps bullets centered-looking */
+  padding-left: 0;
+  margin: 12px 0 0;
+}
+
+
 .von-card{
-    width: 100%;
-    max-width: 520px;
-    text-align: center;
-  }
+  width: 100%;
+  max-width: 520px;
+  text-align: center;
+
+  border: 1px solid rgba(255,255,255,0.10);
+  background: rgba(255,255,255,0.04);
+  padding: 18px;
+}
 
 .von-card h3{
   margin: 0 0 10px;
@@ -126,65 +218,48 @@ body.von-page{
 }
 
 .von-pill-list{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+
   justify-content: center;
+  margin-top: 12px;
 }
 
 .von-pill{
   display: inline-flex;
   align-items: center;
+
   padding: 8px 12px;
   border-radius: 999px;
+
   border: 1px solid rgba(255,255,255,0.12);
   background: rgba(255,255,255,0.06);
   color: rgba(255,255,255,0.88);
+
   font-size: 13px;
 }
 
-
-.von-actions{
-  display: flex;
-  justify-content: center;
-  margin-top: 16px;
-}
-
-.signature-actions{
-  width: var(--container);
-  margin: 14px auto 0;
-  display: flex;
-  justify-content: center;
-}
-
+/* =========================
+   FOOTER
+========================= */
 .von-footer{
   margin-top: 46px;
   padding-top: 18px;
   border-top: 1px solid var(--line);
+
   color: rgba(255,255,255,0.55);
   font-size: 13px;
   text-align: center;
 }
 
+/* =========================
+   MOBILE
+========================= */
 @media (max-width: 900px){
   .von-about-grid{
     grid-template-columns: 1fr;
     gap: 26px;
     text-align: center;
   }
-
-  .von-about-left{
-    text-align: center;
-  }
 }
-
-.von-signature{
-  display: flex;
-  justify-content: center;
-  margin-bottom: 12px;
-}
-
-.von-signature img{
-  width: min(820px, 95%);
-  max-height: 220px;
-  object-fit: contain;
-  display: block;
-}
-
