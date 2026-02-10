@@ -344,6 +344,188 @@ header{
   display: none !important;
 }
 
+.ba-gallery{
+  width: var(--container);
+  margin: 46px auto 0;
+  padding: 34px 0;
+  border-top: 1px solid var(--line);
+}
+
+.ba-grid{
+  display: grid;
+  grid-template-columns: minmax(0, 420px) minmax(0, 1fr);
+  gap: 40px;
+  align-items: center;
+}
+
+.ba-copy .ba-icon{
+  font-size: 22px;
+  margin-bottom: 10px;
+  opacity: 0.9;
+}
+
+.ba-copy h2{
+  margin: 0 0 10px;
+  font-size: clamp(26px, 2.6vw, 40px);
+  line-height: 1.15;
+}
+
+.ba-copy p{
+  margin: 0;
+  color: rgba(255,255,255,0.70);
+  line-height: 1.7;
+  max-width: 46ch;
+}
+
+.ba-copy{
+  max-width: 520px;
+}
+
+.ba-copy h2{
+  margin: 0 0 12px;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+
+
+  text-wrap: balance;        
+  max-width: 18ch;           
+}
+
+.ba-copy p{
+  max-width: 44ch;
+  margin-top: 0;
+  line-height: 1.7;
+}
+
+
+.ba-card{
+  border: 1px solid rgba(255,255,255,0.10);
+  background: rgba(255,255,255,0.03);
+  padding: 18px;
+}
+
+
+.ba-stage{
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+}
+
+
+.ba-slide{
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 180ms ease;
+}
+
+.ba-slide.is-active{
+  opacity: 1;
+  pointer-events: auto;
+}
+
+
+.ba-before,
+.ba-after{
+  position: absolute;
+  inset: 0;
+}
+
+.ba-before img,
+.ba-after img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+
+.ba-slide{
+  --split: 50%;
+}
+
+.ba-after{
+  clip-path: inset(0 0 0 var(--split));
+}
+
+
+.ba-divider{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: var(--split);
+  width: 2px;
+  background: rgba(255,255,255,0.85);
+  transform: translateX(-1px);
+}
+
+
+.ba-handle{
+  position: absolute;
+  left: var(--split);
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 38px;
+  height: 38px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.25);
+  background: rgba(0,0,0,0.45);
+  backdrop-filter: blur(6px);
+  display: grid;
+  place-items: center;
+  color: rgba(255,255,255,0.95);
+  font-weight: 700;
+  user-select: none;
+  pointer-events: none;
+}
+
+
+.ba-range{
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: ew-resize;
+}
+
+.ba-ui{
+  display: grid;
+  grid-template-columns: 44px 1fr 44px;
+  align-items: center;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.ba-nav{
+  height: 40px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(255,255,255,0.06);
+  color: rgba(255,255,255,0.90);
+  cursor: pointer;
+}
+
+.ba-nav:hover{
+  background: rgba(255,255,255,0.09);
+}
+
+.ba-count{
+  text-align: center;
+  color: rgba(255,255,255,0.70);
+  font-size: 14px;
+}
+
+
+@media (max-width: 900px){
+  .ba-grid{
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
 
 .photo-guide{
   width: var(--container);

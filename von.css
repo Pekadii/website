@@ -1,5 +1,5 @@
 /* =========================
-   VON PAGE 
+   VON PAGE
 ========================= */
 
 body.von-page{
@@ -20,6 +20,7 @@ body.von-page .von-back{
   align-items: center;
   gap: 10px;
   margin: 10px 0 18px;
+
   color: rgba(255,255,255,0.82);
   text-decoration: none;
   opacity: 0.9;
@@ -37,6 +38,12 @@ body.von-page .von-header{
   padding: 30px 22px 28px;
   text-align: center;
 }
+body.von-page .von-header p{
+  margin: 0 auto;
+  max-width: 760px;
+  color: rgba(255,255,255,0.70);
+  line-height: 1.75;
+}
 
 
 body.von-page .von-signature{
@@ -53,16 +60,7 @@ body.von-page .von-signature img{
   display: block;
 }
 
-body.von-page .von-header p{
-  margin: 0 auto;
-  max-width: 760px;
-  color: rgba(255,255,255,0.70);
-  line-height: 1.75;
-}
 
-/* =========================
-   ABOUT 
-========================= */
 
 body.von-page section.about{
   width: var(--container);
@@ -74,13 +72,15 @@ body.von-page section.about{
 
 
 body.von-page .von-about-grid{
-  max-width: 980px;           
-  margin: 0 auto;             
+  max-width: 1080px;
+  margin: 0 auto;
+
   display: grid;
   grid-template-columns: minmax(0, 1fr) 360px;
   gap: 48px;
   align-items: start;
 }
+
 
 body.von-page .about-left{
   max-width: none;
@@ -88,7 +88,7 @@ body.von-page .about-left{
 
 body.von-page .about-left h2{
   margin: 0 0 12px;
-  text-align: center;         
+  text-align: center;
   font-size: 32px;
 }
 
@@ -96,20 +96,24 @@ body.von-page .about-left p{
   margin: 0;
   color: rgba(255,255,255,0.70);
   line-height: 1.75;
-  text-align: left;           
+  text-align: left;
 }
+
 
 body.von-page .about-right{
   display: flex;
-  justify-content: center;     
+  justify-content: center;
 }
+
 
 body.von-page .about-card{
   width: 100%;
   max-width: 360px;
-  border: 1px solid rgba(255,255,255,0.10);
-  background: rgba(255,255,255,0.04);
-  padding: 18px;
+
+  border: none;
+  background: transparent;
+  padding: 0;
+
   text-align: center;
 }
 
@@ -123,9 +127,7 @@ body.von-page .about-card p{
   color: rgba(255,255,255,0.75);
 }
 
-/* =========================
-   EXPOSURE 
-========================= */
+
 
 body.von-page .photo-guide{
   width: var(--container);
@@ -151,40 +153,58 @@ body.von-page .guide-intro{
 body.von-page .guide-grid{
   max-width: 1080px;
   margin: 0 auto;
+
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 340px));
   justify-content: center;
   gap: 20px;
 }
 
+
 body.von-page .guide-card{
   border: 1px solid rgba(255,255,255,0.10);
   background: rgba(255,255,255,0.04);
-  padding: 20px;
-  text-align: left;
+  padding: 22px;
 
-  
-  display: flex;
-  flex-direction: column;
-  min-height: 190px;
+  text-align: center;
 }
 
+
 body.von-page .guide-card h3{
-  margin: 0 0 8px;
+  margin: 0 0 10px;
   font-size: 20px;
 }
 
 body.von-page .guide-card p{
-  margin: 0 0 12px;
-  color: rgba(255,255,255,0.7);
+  margin: 0 auto 14px;
+  max-width: 280px;
+  color: rgba(255,255,255,0.70);
   font-size: 14px;
+  line-height: 1.6;
 }
 
+
 body.von-page .guide-card ul{
-  margin: 0;
-  padding-left: 18px;
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+
+  display: inline-block;
+  text-align: left;
+}
+body.von-page .guide-card li{
+  position: relative;
+  padding-left: 16px;
+  margin: 8px 0;
+  color: rgba(255,255,255,0.78);
   font-size: 14px;
-  color: rgba(255,255,255,0.75);
+}
+body.von-page .guide-card li::before{
+  content: "•";
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0.8;
 }
 
 
@@ -208,6 +228,13 @@ body.von-page .von-footer{
 }
 
 
+body.von-page section.about,
+body.von-page section.photo-guide{
+  display: block !important;
+  float: none !important;
+  clear: both;
+}
+
 @media (max-width: 900px){
   body.von-page .von-about-grid{
     grid-template-columns: 1fr;
@@ -221,11 +248,8 @@ body.von-page .von-footer{
   body.von-page .guide-grid{
     grid-template-columns: 1fr;
   }
-}
 
-body.von-page section.about,
-body.von-page section.photo-guide{
-  display: block !important;
-  float: none !important;
-  clear: both;
+  body.von-page .guide-card ul{
+    display: block;
+  }
 }
