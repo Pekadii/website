@@ -127,7 +127,30 @@ body.von-page .about-card p{
   color: rgba(255,255,255,0.75);
 }
 
+.gallery {
+  width: var(--container);
+  margin: 60px auto;
+}
 
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.tile {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 3 / 4; /* keep consistent framing */
+}
+
+.tile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;   /* THIS centers visually */
+  object-position: center;
+  display: block;
+}
 
 body.von-page .photo-guide{
   width: var(--container);
