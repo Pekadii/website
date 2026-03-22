@@ -854,21 +854,25 @@ footer{
 
 .privacy-page{
   min-height: 100vh;
+  background:
+    radial-gradient(900px 420px at 50% -10%, rgba(255,255,255,0.08), transparent 68%),
+    linear-gradient(180deg, #121214 0%, #0c0c0d 100%);
 }
 
 .privacy-shell{
-  width: min(960px, 92vw);
+  width: min(920px, calc(100vw - 32px));
   margin: 0 auto;
-  padding: 56px 0 72px;
+  padding: 42px 0 72px;
 }
 
 .privacy-hero{
   position: relative;
-  padding: 34px;
-  border: 1px solid rgba(255,255,255,0.10);
+  padding: 42px;
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 28px;
   background:
-    linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03)),
-    rgba(255,255,255,0.02);
+    linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.03)),
+    rgba(255,255,255,0.03);
   box-shadow: var(--shadow);
   overflow: hidden;
 }
@@ -888,16 +892,17 @@ footer{
   align-items: center;
   gap: 8px;
   margin-bottom: 20px;
-  padding: 8px 12px;
+  padding: 10px 14px;
   border: 1px solid rgba(255,255,255,0.12);
   border-radius: 999px;
-  background: rgba(255,255,255,0.05);
+  background: rgba(255,255,255,0.08);
   color: rgba(255,255,255,0.88);
   font-size: 14px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.22);
 }
 
 .privacy-back-link:hover{
-  background: rgba(255,255,255,0.10);
+  background: rgba(255,255,255,0.14);
   text-decoration: none;
 }
 
@@ -920,22 +925,24 @@ footer{
   max-width: 58ch;
   margin: 16px 0 0;
   color: rgba(255,255,255,0.76);
-  font-size: 17px;
+  font-size: 18px;
   line-height: 1.8;
 }
 
 .privacy-meta{
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 14px;
-  margin-top: 28px;
+  gap: 16px;
+  margin-top: 30px;
 }
 
 .privacy-meta-card{
-  padding: 16px 18px;
-  border: 1px solid rgba(255,255,255,0.10);
-  background: rgba(255,255,255,0.04);
+  padding: 18px 20px;
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 20px;
+  background: rgba(255,255,255,0.07);
   backdrop-filter: blur(10px);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.22);
 }
 
 .privacy-meta-label{
@@ -949,21 +956,25 @@ footer{
 
 .privacy-content{
   display: grid;
-  gap: 18px;
-  margin-top: 22px;
+  gap: 20px;
+  margin-top: 24px;
 }
 
 .privacy-card{
-  padding: 26px 28px;
-  border: 1px solid rgba(255,255,255,0.10);
-  background: rgba(255,255,255,0.03);
+  padding: 30px 32px;
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 24px;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.07), rgba(255,255,255,0.03)),
+    rgba(255,255,255,0.03);
   box-shadow: var(--shadow-soft);
 }
 
 .privacy-card--highlight{
   background:
-    linear-gradient(135deg, rgba(255,255,255,0.09), rgba(255,255,255,0.03)),
+    linear-gradient(135deg, rgba(255,255,255,0.12), rgba(255,255,255,0.04)),
     rgba(255,255,255,0.03);
+  border-color: rgba(255,255,255,0.16);
 }
 
 .privacy-card--contact{
@@ -978,6 +989,7 @@ footer{
 .privacy-card p{
   margin: 0 0 12px;
   color: rgba(255,255,255,0.76);
+  font-size: 16px;
 }
 
 .privacy-card p:last-child{
@@ -998,27 +1010,28 @@ footer{
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  margin-top: 6px;
-  padding: 12px 18px;
-  border-radius: 14px;
-  border: 1px solid rgba(255,255,255,0.14);
-  background: rgba(255,255,255,0.08);
-  font-weight: 500;
+  margin-top: 8px;
+  padding: 14px 20px;
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.16);
+  background: rgba(255,255,255,0.10);
+  font-weight: 600;
+  box-shadow: 0 12px 28px rgba(0,0,0,0.22);
 }
 
 .privacy-contact-link:hover{
-  background: rgba(255,255,255,0.14);
+  background: rgba(255,255,255,0.16);
   text-decoration: none;
 }
 
 @media (max-width: 760px){
   .privacy-shell{
-    padding: 24px 0 40px;
+    padding: 18px 0 36px;
   }
 
   .privacy-hero,
   .privacy-card{
-    padding: 22px 18px;
+    padding: 24px 18px;
   }
 
   .privacy-meta{
