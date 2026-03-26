@@ -1,3 +1,5 @@
 .vs/
 *.suo
 *.sqlite
+._*
+.DS_Store

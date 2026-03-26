@@ -22,8 +22,14 @@
 
 *{ box-sizing: border-box; }
 
+html{
+  min-height: 100%;
+  background-color: var(--bg);
+}
+
 body{
   margin: 0;
+  min-height: 100%;
   font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
   background:
     radial-gradient(1200px 500px at 50% -80px, rgba(255,255,255,0.06), transparent 70%),
@@ -144,7 +150,7 @@ header{
 .search-form button:hover{ background: rgba(255,255,255,0.13); }
 
 
-.windows-key-popup-button,
+.pekadi-app-popup-button,
 .flash-sale-button,
 .flash-sale-popup-button{
   position: fixed;
@@ -163,10 +169,10 @@ header{
   transition: background 0.25s ease, transform 0.25s ease;
 }
 
-.windows-key-popup-button{ top: 18px; }
+pekadi-app-popup-button{ top: 18px; }
 .flash-sale-popup-button{ top: 64px; }
 
-.windows-key-popup-button:hover,
+pekadi-app-popup-button:hover,
 .flash-sale-button:hover,
 .flash-sale-popup-button:hover{
   background: rgba(255,255,255,0.16);
@@ -834,7 +840,7 @@ footer{
 }
 
 @media (max-width: 768px){
-  .windows-key-popup-button,
+  .pekadi-app-popup-button,
   .flash-sale-popup-button{
     top: auto;
     bottom: 16px;
@@ -854,6 +860,8 @@ footer{
 
 .privacy-page{
   min-height: 100vh;
+  min-height: 100dvh;
+  background-color: #0c0c0d;
   background:
     radial-gradient(900px 420px at 50% -10%, rgba(255,255,255,0.08), transparent 68%),
     linear-gradient(180deg, #121214 0%, #0c0c0d 100%);
