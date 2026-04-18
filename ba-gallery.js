@@ -2,7 +2,7 @@
 (() => {
 
   const slides = [
-    { before: "Raw-1.JPG", after: "Preset-1.jpg" },
+    { before: "Raw-1.jpg", after: "Preset-1.jpg" },
     { before: "Raw-2.jpg", after: "Preset-2.jpg" },
     { before: "Raw-3.jpg", after: "Preset-3.jpg" },
   ];
