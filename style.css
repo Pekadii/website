@@ -1265,21 +1265,120 @@ footer{
 }
 
 @media (max-width: 768px){
+  body{
+    padding-bottom: calc(108px + env(safe-area-inset-bottom, 0px));
+  }
+
   .pekadi-app-popup-button,
   .flash-sale-popup-button{
     top: auto;
-    bottom: 16px;
+    bottom: calc(12px + env(safe-area-inset-bottom, 0px));
     right: 16px;
     width: calc(100% - 32px);
   }
 
-  .flash-sale-popup-button{ bottom: 70px; }
+  .flash-sale-popup-button{ bottom: calc(66px + env(safe-area-inset-bottom, 0px)); }
 
   .signature{
-    padding: 26px 16px 22px;
+    padding: 26px 16px 24px;
   }
   .signature-media img{
     max-height: 180px;
+  }
+
+  .about,
+  .photo-guide,
+  .ba-gallery,
+  .contact-section{
+    margin-top: 40px;
+  }
+
+  .gear-note{
+    margin-top: 24px;
+    padding: 24px 16px;
+  }
+
+  .gear-note h3{
+    font-size: 21px;
+    line-height: 1.2;
+    margin-bottom: 14px;
+  }
+
+  .gear-note p,
+  .gear-note ul{
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  .gear-note-tip{
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .gear-example{
+    gap: 18px;
+    margin-top: 24px;
+    padding-top: 0;
+  }
+
+  .gear-example-text{
+    max-width: 100%;
+    padding: 0 2px;
+  }
+
+  .gear-example-text p{
+    font-size: 15px;
+    line-height: 1.7;
+    margin-bottom: 16px;
+  }
+
+  .gear-example-settings{
+    margin: 16px 0 18px;
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  .gear-example-note{
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  .gear-example-image{
+    margin-top: 6px;
+  }
+
+  .photo-guide{
+    padding-top: 20px;
+  }
+
+  .photo-guide h2,
+  .contact-cta h2{
+    font-size: 26px;
+    line-height: 1.15;
+  }
+
+  .guide-intro{
+    margin-bottom: 22px;
+    font-size: 15px;
+    line-height: 1.65;
+  }
+
+  .guide-card{
+    padding: 18px;
+  }
+
+  .guide-card p,
+  .guide-card ul{
+    font-size: 15px;
+    line-height: 1.65;
+  }
+
+  .ba-copy{
+    padding: 0 6px;
+  }
+
+  .ba-copy p{
+    max-width: 32ch;
   }
 
   .contact-modal{
