@@ -250,6 +250,46 @@ body.von-page .von-footer{
   text-align: center;
 }
 
+body.von-page .contact-section{
+  width: var(--container);
+  margin: 46px auto 0;
+}
+
+body.von-page .contact-form{
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 26px 0 0;
+  background: transparent;
+  box-shadow: inset 0 1px 0 var(--line);
+  border: 0;
+}
+
+body.von-page .contact-form h2{
+  margin: 0 0 18px;
+  text-align: center;
+  font-size: 32px;
+}
+
+body.von-page .contact-form form{
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+body.von-page .contact-form input,
+body.von-page .contact-form textarea,
+body.von-page .contact-form button{
+  width: 100%;
+}
+
+body.von-page .contact-form input,
+body.von-page .contact-form textarea{
+  margin: 0 0 14px;
+}
+
+body.von-page .contact-form button{
+  margin-top: 10px;
+}
+
 
 body.von-page section.about,
 body.von-page section.photo-guide{
@@ -274,5 +314,56 @@ body.von-page section.photo-guide{
 
   body.von-page .guide-card ul{
     display: block;
+  }
+
+  body.von-page .contact-form{
+    padding-top: 22px;
+  }
+}
+
+@media (max-width: 768px){
+  body.von-page{
+    padding-bottom: 0;
+  }
+
+  body.von-page .von-wrap{
+    margin: 18px auto 42px;
+  }
+
+  body.von-page .von-header{
+    padding: 24px 16px 22px;
+  }
+
+  body.von-page .von-signature img{
+    max-height: 180px;
+  }
+
+  body.von-page section.about,
+  body.von-page .photo-guide,
+  body.von-page .gallery,
+  body.von-page .contact-section{
+    margin-top: 36px;
+  }
+
+  body.von-page .about-left h2,
+  body.von-page .photo-guide h2,
+  body.von-page .contact-form h2{
+    font-size: 26px;
+  }
+
+  body.von-page .guide-intro,
+  body.von-page .about-left p,
+  body.von-page .guide-card p,
+  body.von-page .guide-card ul{
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  body.von-page .contact-form form{
+    max-width: none;
+  }
+
+  body.von-page .contact-form{
+    padding-top: 20px;
   }
 }
