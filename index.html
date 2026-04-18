@@ -23,11 +23,12 @@
       </button>
 
       <div class="icon-row">
-    <a href="https://www.instagram.com/pekadi"><img src="instagram.png" class="social-icon"></a>
-    <a href="https://github.com/Pekadii"><img src="github.png" class="social-icon"></a>
-    <a href="https://discord.com/invite/h5EBn2zKBu"><img src="discord.png" class="social-icon"></a>
-  </div>
-</div>
+        <a href="https://www.instagram.com/pekadi"><img src="instagram.png" class="social-icon" alt="Instagram"></a>
+        <a href="https://github.com/Pekadii"><img src="github.png" class="social-icon" alt="GitHub"></a>
+        <a href="https://discord.com/invite/h5EBn2zKBu"><img src="discord.png" class="social-icon" alt="Discord"></a>
+      </div>
+    </div>
+  </header>
 
 
   <section class="signature signature--center">
@@ -73,30 +74,40 @@
     </p>
   </div>
 
-<div class="lens-tabs" role="tablist" aria-label="Lens tabs">
-  <button class="lens-tab is-active"
-          role="tab"
-          aria-selected="true"
-          aria-controls="lens-sigma"
-          id="tab-sigma">
-    <img class="tab-ico-img" src="sigma-18-35.png" alt="" aria-hidden="true">
-    Sigma 18–35mm f/1.8
-  </button>
+  <div class="lens-tabs" aria-label="Lens tabs">
+    <button class="lens-tab"
+            type="button"
+            aria-controls="lens-sigma"
+            id="tab-sigma"
+            data-lens-open>
+      <img class="tab-ico-img" src="sigma-18-35.png" alt="" aria-hidden="true">
+      <span>Sigma 18–35mm f/1.8</span>
+    </button>
 
-  <button class="lens-tab"
-          role="tab"
-          aria-selected="false"
-          aria-controls="lens-canon50"
-          id="tab-canon50"
-          tabindex="-1">
-    <img class="tab-ico-img" src="canon-50mm.png" alt="" aria-hidden="true">
-    Canon EF 50mm f/1.8 STM
-  </button>
-</div>
+    <button class="lens-tab"
+            type="button"
+            aria-controls="lens-canon50"
+            id="tab-canon50"
+            data-lens-open>
+      <img class="tab-ico-img" src="canon-50mm.png" alt="" aria-hidden="true">
+      <span>Canon EF 50mm f/1.8 STM</span>
+    </button>
+  </div>
 
-</section>
-  <div class="lens-panels">
-    <article class="lens-panel is-active" role="tabpanel" id="lens-sigma" aria-labelledby="tab-sigma">
+  <div class="lens-modal" id="lensModal" hidden>
+    <button class="lens-backdrop" type="button" aria-label="Close lens details" data-lens-close></button>
+
+    <div class="lens-window" role="dialog" aria-modal="true" aria-labelledby="lensDialogTitle">
+      <div class="lens-window-head">
+        <div>
+          <p class="lens-window-kicker">Lens Info</p>
+          <h3 id="lensDialogTitle">Lens details</h3>
+        </div>
+        <button class="lens-close" type="button" aria-label="Close lens details" data-lens-close>&times;</button>
+      </div>
+
+      <div class="lens-panels">
+    <article class="lens-panel" role="tabpanel" id="lens-sigma" aria-labelledby="tab-sigma" hidden>
       <div class="lens-grid">
         <div class="lens-card">
           <h3>Sigma 18–35mm f/1.8 (APS-C)</h3>
@@ -179,6 +190,8 @@
         </div>
       </div>
     </article>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -307,18 +320,38 @@
     <p class="pekadi-quote">
       “INSPIRED BY CREATIVITY. DEFINED BY BEAUTY.”
     </p>
-  </section>
 
  
   <section class="contact-section" id="contact">
-    <div class="contact-form">
-      <h2>Contact Me</h2>
-      <form action="https://formspree.io/f/mnndnyar" method="POST">
-        <input type="text" name="name" placeholder="Discord: @" required />
-        <input type="email" name="email" placeholder="Your Email" required />
-        <textarea name="message" placeholder="Your Message" required></textarea>
-        <button type="submit">Send Message</button>
-      </form>
+    <div class="contact-cta">
+      <p class="contact-kicker">Let’s talk</p>
+      <h2>Questions, edits, presets, or shoots.</h2>
+      <button class="contact-launch" type="button" data-contact-open>Open chat</button>
+    </div>
+
+    <div class="contact-modal" id="contactModal" hidden>
+      <button class="contact-backdrop" type="button" aria-label="Close contact form" data-contact-close></button>
+
+      <div class="contact-window" role="dialog" aria-modal="true" aria-labelledby="contactTitle">
+        <div class="contact-window-head">
+          <div>
+            <p class="contact-window-kicker">Pekadi</p>
+            <h3 id="contactTitle">Send a message</h3>
+          </div>
+          <button class="contact-close" type="button" aria-label="Close contact form" data-contact-close>&times;</button>
+        </div>
+
+        <div class="contact-thread" aria-hidden="true">
+          <div class="contact-bubble contact-bubble-reply">If you have any questions, please fill out the form below and I’ll get back to you as soon as I can!</div>
+        </div>
+
+        <form class="contact-form" action="https://formspree.io/f/mnndnyar" method="POST">
+          <input type="text" name="name" placeholder="Discord or name" required />
+          <input type="email" name="email" placeholder="Your email" required />
+          <textarea name="message" placeholder="Your message" required></textarea>
+          <button type="submit">Send Message</button>
+        </form>
+      </div>
     </div>
   </section>
 
@@ -331,56 +364,100 @@
 
 <script>
   (function(){
-    const tablist = document.querySelector('.lens-tabs');
-    if(!tablist) return;
+    const modal = document.getElementById("lensModal");
+    const buttons = Array.from(document.querySelectorAll("[data-lens-open]"));
+    if(!modal || buttons.length === 0) return;
 
-    const tabs = Array.from(tablist.querySelectorAll('.lens-tab'));
-    const panels = tabs
-      .map(t => document.getElementById(t.getAttribute('aria-controls')))
+    const panels = buttons
+      .map((button) => document.getElementById(button.getAttribute("aria-controls")))
       .filter(Boolean);
+    const closers = modal.querySelectorAll("[data-lens-close]");
+    const title = document.getElementById("lensDialogTitle");
 
-    function activateTab(tab){
-      
-      tabs.forEach(t => {
-        const on = (t === tab);
-        t.classList.toggle('is-active', on);
-        t.setAttribute('aria-selected', on ? 'true' : 'false');
-        t.tabIndex = on ? 0 : -1;
+    function openLens(button){
+      const panelId = button.getAttribute("aria-controls");
+      const panel = document.getElementById(panelId);
+      if(!panel) return;
+
+      buttons.forEach((item) => {
+        item.classList.toggle("is-active", item === button);
       });
 
-      
-      panels.forEach(p => {
-        const on = (p.id === tab.getAttribute('aria-controls'));
-        p.classList.toggle('is-active', on);
-        if(on) p.removeAttribute('hidden');
-        else p.setAttribute('hidden', '');
+      panels.forEach((item) => {
+        const on = item === panel;
+        item.classList.toggle("is-active", on);
+        if(on) item.removeAttribute("hidden");
+        else item.setAttribute("hidden", "");
       });
+
+      if(title){
+        title.textContent = button.textContent.trim();
+      }
+
+      modal.hidden = false;
+      document.body.classList.add("lens-open");
     }
 
-    
-    tabs.forEach(t => t.addEventListener('click', () => activateTab(t)));
+    function closeLens(){
+      modal.hidden = true;
+      document.body.classList.remove("lens-open");
+      buttons.forEach((item) => item.classList.remove("is-active"));
+      panels.forEach((item) => item.setAttribute("hidden", ""));
+    }
 
-    
-    tablist.addEventListener('keydown', (e) => {
-      const i = tabs.indexOf(document.activeElement);
-      if(i < 0) return;
-      if(e.key === 'ArrowRight' || e.key === 'ArrowLeft'){
-        e.preventDefault();
-        const dir = e.key === 'ArrowRight' ? 1 : -1;
-        const next = tabs[(i + dir + tabs.length) % tabs.length];
-        next.focus();
-        activateTab(next);
-      }
+    buttons.forEach((button) => {
+      button.addEventListener("click", () => openLens(button));
     });
 
-    
-    const initial = tabs.find(t => t.classList.contains('is-active')) || tabs[0];
-    if(initial) activateTab(initial);
+    closers.forEach((closer) => {
+      closer.addEventListener("click", closeLens);
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if(event.key === "Escape" && !modal.hidden){
+        closeLens();
+      }
+    });
   })();
 </script>
 
 
   <script>
+    (function(){
+      const modal = document.getElementById("contactModal");
+      if(!modal) return;
+
+      const openers = document.querySelectorAll('[data-contact-open], a[href="#contact"]');
+      const closers = modal.querySelectorAll("[data-contact-close]");
+      const firstInput = modal.querySelector("input, textarea");
+
+      function openContact(event){
+        if(event) event.preventDefault();
+        modal.hidden = false;
+        document.body.classList.add("contact-open");
+        if(firstInput) requestAnimationFrame(() => firstInput.focus());
+      }
+
+      function closeContact(){
+        modal.hidden = true;
+        document.body.classList.remove("contact-open");
+      }
+
+      openers.forEach((opener) => {
+        opener.addEventListener("click", openContact);
+      });
+
+      closers.forEach((closer) => {
+        closer.addEventListener("click", closeContact);
+      });
+
+      document.addEventListener("keydown", (event) => {
+        if(event.key === "Escape" && !modal.hidden){
+          closeContact();
+        }
+      });
+    })();
+
     function openPekadiAppPopup() {
       window.open("https://apps.apple.com/us/app/pekadi/id6760949198", "_blank", "width=600,height=600");
     }

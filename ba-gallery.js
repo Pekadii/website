@@ -2,8 +2,9 @@
 (() => {
 
   const slides = [
-    { before: "Image (5).jpg", after: "Image (1).jpg" },
-    { before: "Image (6).jpg", after: "Image (2).jpg" },
+    { before: "Raw-1.JPG", after: "Preset-1.jpg" },
+    { before: "Raw-2.jpg", after: "Preset-2.jpg" },
+    { before: "Raw-3.jpg", after: "Preset-3.jpg" },
   ];
 
   const stage = document.getElementById("baStage");
