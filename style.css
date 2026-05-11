@@ -1010,6 +1010,28 @@ header{
   opacity: 1;
 }
 
+.instagram-post-icon{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  width: clamp(36px, 5vw, 54px);
+  height: clamp(36px, 5vw, 54px);
+  background: url("instagram.png") center / contain no-repeat;
+  filter: drop-shadow(0 8px 18px rgba(0,0,0,0.46));
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.92);
+  pointer-events: none;
+  transition: opacity 160ms ease, transform 160ms ease;
+}
+
+.local-instagram-post:hover .instagram-post-icon,
+.local-instagram-post:focus-visible .instagram-post-icon,
+.local-instagram-post.is-opening .instagram-post-icon{
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
 .instagram-lightbox{
   position: fixed;
   inset: 0;
