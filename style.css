@@ -503,6 +503,11 @@ header{
   box-shadow: none;
 }
 
+#tab-nd64 .tab-ico-img{
+  width: 86px;
+  height: 86px;
+}
+
 .lens-tab span{
   max-width: 14ch;
   font-size: 18px;
@@ -660,6 +665,12 @@ header{
 
 .lens-list li + li{
   margin-top: 8px;
+}
+
+.gear-saving-tip{
+  margin: 16px 0 0;
+  padding-top: 14px;
+  border-top: 1px solid rgba(255,255,255,0.10);
 }
 
 .mini-grid{

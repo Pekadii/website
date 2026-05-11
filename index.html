@@ -69,9 +69,9 @@
 
 <section class="lenses" id="lenses">
   <div class="lenses-head">
-    <h2>My Lenses</h2>
+    <h2>My Gear</h2>
     <p>
-      A quick look at the glass I’m currently using — what it’s best at, and the style it supports as I grow the kit.
+      A quick look at the camera gear I’m currently using — what it’s best at, and the style it supports as I grow the kit.
     </p>
   </div>
 
@@ -93,6 +93,15 @@
       <img class="tab-ico-img" src="canon-50mm.png" alt="" aria-hidden="true">
       <span>Canon EF 50mm f/1.8 STM</span>
     </button>
+
+    <button class="lens-tab"
+            type="button"
+            aria-controls="gear-nd64"
+            id="tab-nd64"
+            data-lens-open>
+      <img class="tab-ico-img" src="ND64.png" alt="" aria-hidden="true">
+      <span>ND64 Filter</span>
+    </button>
   </div>
 
   <div class="lens-modal" id="lensModal" hidden>
@@ -101,7 +110,7 @@
     <div class="lens-window" role="dialog" aria-modal="true" aria-labelledby="lensDialogTitle">
       <div class="lens-window-head">
         <div>
-          <p class="lens-window-kicker">Lens Info</p>
+          <p class="lens-window-kicker">Gear Info</p>
           <h3 id="lensDialogTitle">Lens details</h3>
         </div>
         <button class="lens-close" type="button" aria-label="Close lens details" data-lens-close>&times;</button>
@@ -188,6 +197,51 @@
               <p>f/1.8 • keep shutter safe (1/160+) • raise ISO as needed</p>
             </div>
           </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="lens-panel" role="tabpanel" id="gear-nd64" aria-labelledby="tab-nd64" hidden>
+      <div class="lens-grid">
+        <div class="lens-card">
+          <h3>ND64 Filter</h3>
+          <p class="lens-meta">A 6-stop neutral density filter for controlling light without changing color.</p>
+
+          <div class="pill-row">
+            <span class="pill">Bright daylight</span>
+            <span class="pill">Video shutter control</span>
+            <span class="pill">Long exposure</span>
+            <span class="pill">Wide aperture</span>
+          </div>
+
+          <ul class="lens-list">
+            <li><strong>Purpose:</strong> reduces light entering the lens so you can use slower shutter speeds or wider apertures in bright conditions.</li>
+            <li><strong>For video:</strong> helps keep natural motion blur, such as 1/50 shutter for 24fps or 1/60 for 30fps, even outside.</li>
+            <li><strong>For photos:</strong> useful for smoothing water, adding motion blur, or shooting shallow depth of field in harsh sunlight.</li>
+            <li><strong>ND64 strength:</strong> cuts about 6 stops of light, which is strong enough for bright outdoor scenes.</li>
+          </ul>
+        </div>
+
+        <div class="lens-card">
+          <h3>ND Filter Types</h3>
+          <div class="mini-grid">
+            <div class="mini">
+              <h4>Fixed ND</h4>
+              <p>One strength, such as ND8, ND64, or ND1000. Best image quality and predictable color.</p>
+            </div>
+            <div class="mini">
+              <h4>Variable ND</h4>
+              <p>Adjustable strength in one filter. Convenient for video, but cheaper ones can add color shifts or cross patterns.</p>
+            </div>
+            <div class="mini">
+              <h4>Graduated ND</h4>
+              <p>Darker on one side, clear on the other. Helps balance bright skies with darker foregrounds.</p>
+            </div>
+          </div>
+
+          <p class="lens-meta gear-saving-tip">
+            Money-saving tip: buy one larger filter size and use step-up rings for smaller lenses. It is usually cheaper than buying the same ND filter in every lens thread size.
+          </p>
         </div>
       </div>
     </article>
