@@ -2,9 +2,9 @@
 (() => {
 
   const slides = [
-    { before: "Raw-1.jpg", after: "Preset-1.jpg" },
-    { before: "Raw-2.jpg", after: "Preset-2.jpg" },
-    { before: "Raw-3.jpg", after: "Preset-3.jpg" },
+    { before: "optimized/Raw-1.jpg", after: "optimized/Preset-1.jpg" },
+    { before: "optimized/Raw-2.jpg", after: "optimized/Preset-2.jpg" },
+    { before: "optimized/Raw-3.jpg", after: "optimized/Preset-3.jpg" },
   ];
 
   const stage = document.getElementById("baStage");
@@ -19,8 +19,8 @@
     .map(
       (s, i) => `
       <div class="ba-slide ${i === 0 ? "is-active" : ""}" data-index="${i}" style="--split:50%;">
-        <div class="ba-before"><img src="${s.before}" alt="Before ${i + 1}"></div>
-        <div class="ba-after"><img src="${s.after}" alt="After ${i + 1}"></div>
+        <div class="ba-before"><img src="${s.before}" alt="Before ${i + 1}" loading="lazy" decoding="async"></div>
+        <div class="ba-after"><img src="${s.after}" alt="After ${i + 1}" loading="lazy" decoding="async"></div>
 
         <div class="ba-divider" aria-hidden="true"></div>
         <div class="ba-handle" aria-hidden="true">↔</div>

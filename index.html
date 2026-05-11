@@ -7,7 +7,7 @@
   <meta name="impact-site-verification" value="22baa041-d7dd-41ad-849c-943b862145d0" />
   <link rel="stylesheet" href="style.css" />
   <link rel="icon" type="image/x-icon" href="icon.ico" />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&amp;family=Inter:wght@300;400;500&amp;display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -53,7 +53,7 @@
     <p>
       I focus on creating cinematic tones. Portraits, Street, Landscape, I want to share my vision
       also which lens to choose from depending on which photo style you want to take. Follow my journey
-      and learn new tips & tricks on camera settings as I learn something new everyday.
+      and learn new tips &amp; tricks on camera settings as I learn something new everyday.
     </p>
   </div>
 
@@ -248,7 +248,7 @@
   </div>
 
   <div class="gear-example-image">
-    <img src="Example.jpg" alt="Example photo shot on Canon EF 75-300mm lens">
+    <img src="optimized/Example.jpg" alt="Example photo shot on Canon EF 75-300mm lens" loading="lazy" decoding="async">
   </div>
 </div>
 
@@ -289,6 +289,100 @@
       </ul>
     </div>
   </div>
+
+  <section class="instagram-exposure" aria-label="Instagram feed">
+    <div class="instagram-exposure-head">
+      <p class="instagram-kicker">Latest Work</p>
+      <h3>@pekadi</h3>
+    </div>
+
+    <div class="instagram-frame">
+      <div class="local-instagram-grid">
+        <button
+          class="local-instagram-post"
+          type="button"
+          data-full="instagram/display/Nathan.jpg"
+          data-url="https://www.instagram.com/p/DYI1UomEcah/?img_index=1"
+          data-caption="📸 Just a part of the art. Vintage jacket purchased from @teeewhyyyyyy 🔥"
+          aria-label="Open Nathan Instagram post">
+          <img src="instagram/thumbs/Nathan.jpg" alt="Nathan portrait" loading="lazy" decoding="async">
+        </button>
+
+        <button
+          class="local-instagram-post"
+          type="button"
+          data-full="instagram/display/Car.jpg"
+          data-url="https://www.instagram.com/p/DX2Dd46EbqP/?img_index=1"
+          data-caption="👀 Silence before the chaos."
+          aria-label="Open car Instagram post">
+          <img src="instagram/thumbs/Car.jpg" alt="Car photo" loading="lazy" decoding="async">
+        </button>
+
+        <button
+          class="local-instagram-post"
+          type="button"
+          data-full="instagram/display/Stairs.jpg"
+          data-url="https://www.instagram.com/p/DX2Cu22ESHk/?img_index=1"
+          data-caption="🌃 Lost in the glow."
+          aria-label="Open stairs Instagram post">
+          <img src="instagram/thumbs/Stairs.jpg" alt="Stairs photo" loading="lazy" decoding="async">
+        </button>
+
+        <button
+          class="local-instagram-post"
+          type="button"
+          data-full="instagram/display/Von.jpg"
+          data-url="https://www.instagram.com/p/DXliMwGDmtm/?img_index=1"
+          data-caption="📸 You see a photo. I see a vision. @vonnrath"
+          aria-label="Open Von Instagram post">
+          <img src="instagram/thumbs/Von.jpg" alt="Von portrait" loading="lazy" decoding="async">
+        </button>
+
+        <button
+          class="local-instagram-post"
+          type="button"
+          data-full="instagram/display/Train.jpg"
+          data-url="https://www.instagram.com/p/DXlhi4Ojo4f/?img_index=1"
+          data-caption="🚊Night hits different when you see it like this."
+          aria-label="Open train Instagram post">
+          <img src="instagram/thumbs/Train.jpg" alt="Train station photo" loading="lazy" decoding="async">
+        </button>
+
+        <button
+          class="local-instagram-post"
+          type="button"
+          data-full="instagram/display/Bridge.jpg"
+          data-url="https://www.instagram.com/p/DXVXGpdEfhp/"
+          data-caption="🌌 Lost in the glow of somewhere between."
+          aria-label="Open bridge Instagram post">
+          <img src="instagram/thumbs/Bridge.jpg" alt="Bridge photo" loading="lazy" decoding="async">
+        </button>
+      </div>
+    </div>
+
+    <div class="instagram-lightbox" id="instagramLightbox" hidden>
+      <button class="instagram-lightbox-backdrop" type="button" aria-label="Close Instagram post" data-instagram-close></button>
+
+      <div class="instagram-lightbox-window" role="dialog" aria-modal="true" aria-labelledby="instagramPostUser">
+        <div class="instagram-lightbox-media">
+          <img id="instagramPostImage" src="" alt="">
+        </div>
+
+        <aside class="instagram-lightbox-copy">
+          <div class="instagram-lightbox-head">
+            <img class="instagram-avatar" src="instagram/thumbs/Instagram-profile.jpg" alt="" aria-hidden="true">
+            <strong id="instagramPostUser">pekadi</strong>
+          </div>
+
+          <p id="instagramPostCaption"></p>
+          <a class="instagram-post-link" id="instagramPostLink" href="#" target="_blank" rel="noopener">View on Instagram</a>
+          <time id="instagramPostDate"></time>
+        </aside>
+
+        <button class="instagram-lightbox-close" type="button" aria-label="Close Instagram post" data-instagram-close>&times;</button>
+      </div>
+    </div>
+  </section>
 </section>
 
 
@@ -462,6 +556,103 @@
     function openPekadiAppPopup() {
       window.open("https://apps.apple.com/us/app/pekadi/id6760949198", "_blank", "width=600,height=600");
     }
+  </script>
+  <script>
+    (() => {
+      const lightbox = document.getElementById("instagramLightbox");
+      if(!lightbox) return;
+
+      const image = document.getElementById("instagramPostImage");
+      const caption = document.getElementById("instagramPostCaption");
+      const link = document.getElementById("instagramPostLink");
+      const date = document.getElementById("instagramPostDate");
+      const posts = document.querySelectorAll(".local-instagram-post");
+      const closers = lightbox.querySelectorAll("[data-instagram-close]");
+      const preloadedImages = new Map();
+      let activeRequestId = 0;
+
+      function getPreload(post){
+        const full = post.dataset.full;
+        if(!full) return null;
+        if(preloadedImages.has(full)) return preloadedImages.get(full);
+
+        const preload = new Image();
+        preload.decoding = "async";
+        preload.src = full;
+        preloadedImages.set(full, preload);
+        return preload;
+      }
+
+      function preloadAll(){
+        posts.forEach((post) => getPreload(post));
+      }
+
+      if("requestIdleCallback" in window){
+        requestIdleCallback(preloadAll, { timeout: 2200 });
+      }else{
+        window.setTimeout(preloadAll, 900);
+      }
+
+      function openPost(post){
+        const requestId = ++activeRequestId;
+        const full = post.dataset.full;
+        const thumb = post.querySelector("img");
+        const cached = getPreload(post);
+
+        post.classList.add("is-opening");
+        image.src = thumb?.currentSrc || thumb?.src || "";
+        image.alt = thumb?.alt || "Instagram post";
+        caption.textContent = post.dataset.caption || "";
+        link.href = post.dataset.url || "#";
+        date.textContent = post.dataset.date || "";
+        date.dateTime = post.dataset.date || "";
+        date.hidden = !post.dataset.date;
+        lightbox.hidden = false;
+        document.body.classList.add("instagram-modal-open");
+        post.classList.remove("is-opening");
+
+        if(!cached) return;
+
+        const showFull = () => {
+          if(requestId === activeRequestId && !lightbox.hidden){
+            image.src = full;
+          }
+        };
+
+        if(cached.complete){
+          showFull();
+        }else if(cached.decode){
+          cached.decode().then(showFull).catch(showFull);
+        }else{
+          cached.onload = showFull;
+        }
+      }
+
+      function closePost(){
+        activeRequestId++;
+        lightbox.hidden = true;
+        document.body.classList.remove("instagram-modal-open");
+        image.src = "";
+      }
+
+      posts.forEach((post) => {
+        post.addEventListener("pointerenter", () => {
+          getPreload(post);
+        });
+
+        post.addEventListener("click", () => openPost(post));
+      });
+
+      closers.forEach((closer) => {
+        closer.addEventListener("click", closePost);
+      });
+
+      document.addEventListener("keydown", (event) => {
+        if(event.key === "Escape" && !lightbox.hidden){
+          closePost();
+        }
+      });
+    })();
   </script>
 </body>
 </html>
