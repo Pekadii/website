@@ -172,6 +172,7 @@ header{
 .privacy-back-link,
 .privacy-contact-link,
 .pekadi-app-popup-button,
+.privacy-page-button,
 .flash-sale-button,
 .flash-sale-popup-button{
   background:
@@ -214,8 +215,12 @@ header{
 }
 
 .pekadi-app-popup-button,
+.privacy-page-button,
 .flash-sale-button,
 .flash-sale-popup-button{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   position: fixed;
   right: 20px;
   color: var(--text);
@@ -229,9 +234,11 @@ header{
 }
 
 .pekadi-app-popup-button{ top: 18px; }
+.privacy-page-button{ top: 70px; }
 .flash-sale-popup-button{ top: 64px; }
 
 .pekadi-app-popup-button:hover,
+.privacy-page-button:hover,
 .flash-sale-button:hover,
 .flash-sale-popup-button:hover,
 .btn:hover,
@@ -265,6 +272,7 @@ header{
   transition: background 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
 }
 .btn:hover{ text-decoration: none; }
+.privacy-page-button:hover{ text-decoration: none; }
 .btn-small{
   padding: 9px 12px;
   border-radius: 12px;
@@ -1538,6 +1546,18 @@ footer{
   box-shadow: inset 0 1px 0 var(--line-soft);
 }
 
+.footer-privacy-link{
+  display: inline-flex;
+  margin-bottom: 8px;
+  color: rgba(255,255,255,0.78);
+  font-size: 13px;
+  font-weight: 500;
+}
+
+footer p{
+  margin: 0;
+}
+
 @media (max-width: 600px){
   .ba-copy{
     padding: 0 14px;
@@ -1581,6 +1601,7 @@ footer{
   }
 
   .pekadi-app-popup-button,
+  .privacy-page-button,
   .flash-sale-popup-button{
     top: auto;
     bottom: calc(12px + env(safe-area-inset-bottom, 0px));
@@ -1588,6 +1609,7 @@ footer{
     width: calc(100% - 32px);
   }
 
+  .privacy-page-button{ bottom: calc(66px + env(safe-area-inset-bottom, 0px)); }
   .flash-sale-popup-button{ bottom: calc(66px + env(safe-area-inset-bottom, 0px)); }
 
   .signature{
@@ -1784,10 +1806,7 @@ footer{
   min-height: 100vh;
   min-height: 100dvh;
   background-color: #0c0c0d;
-  background:
-    radial-gradient(900px 420px at 50% -10%, rgba(255,255,255,0.08), transparent 68%),
-    radial-gradient(700px 420px at 10% 10%, rgba(72,132,255,0.16), transparent 60%),
-    linear-gradient(180deg, #121214 0%, #0c0c0d 100%);
+  background: linear-gradient(180deg, #121214 0%, #0c0c0d 100%);
 }
 
 .privacy-shell{
@@ -1803,13 +1822,7 @@ footer{
 }
 
 .privacy-hero::before{
-  content: "";
-  position: absolute;
-  inset: -30% auto auto 55%;
-  width: 360px;
-  height: 360px;
-  background: radial-gradient(circle, rgba(255,255,255,0.12), transparent 68%);
-  pointer-events: none;
+  display: none;
 }
 
 .privacy-back-link{
