@@ -1394,10 +1394,8 @@ body.instagram-modal-open{
   inset: 0;
   z-index: 10000;
   display: grid;
-  place-items: start right;
+  place-items: end right;
   padding: 24px;
-  padding-bottom: calc(140px + env(safe-area-inset-bottom, 0px));
-  overflow-y: auto;
 }
 
 .contact-modal[hidden]{
@@ -1416,6 +1414,7 @@ body.instagram-modal-open{
   position: relative;
   z-index: 1;
   width: min(420px, calc(100vw - 32px));
+  height: min(900px, calc(100dvh - 48px));
   border-radius: 24px;
   background:
     linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02)),
@@ -1426,6 +1425,9 @@ body.instagram-modal-open{
     0 28px 70px rgba(0,0,0,0.48);
   backdrop-filter: blur(18px) saturate(130%);
   -webkit-backdrop-filter: blur(18px) saturate(130%);
+  max-height: calc(100dvh - 48px);
+  display: flex;
+  flex-direction: column;
   overflow: hidden;
 }
 
@@ -1509,6 +1511,8 @@ body.instagram-modal-open{
   background: transparent;
   border: 0;
   box-shadow: none;
+  flex: 1 1 auto;
+  min-height: 0;
   overflow: hidden;
 }
 
@@ -1640,7 +1644,7 @@ footer p{
   .flash-sale-popup-button{ bottom: calc(66px + env(safe-area-inset-bottom, 0px)); }
 
   .contact-jotform iframe{
-    min-height: 1320px;
+    min-height: 930px;
   }
 
   .signature{
@@ -1753,13 +1757,15 @@ footer p{
   }
 
   .contact-modal{
-    place-items: start center;
+    place-items: end center;
     padding: 16px;
-    padding-bottom: calc(150px + env(safe-area-inset-bottom, 0px));
+    padding-bottom: calc(16px + env(safe-area-inset-bottom, 0px));
   }
 
   .contact-window{
     width: min(100%, 460px);
+    height: min(820px, calc(100dvh - 32px));
+    max-height: calc(100dvh - 32px);
   }
 
   .lens-tab{
