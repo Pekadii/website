@@ -1414,6 +1414,7 @@ body.instagram-modal-open{
   position: relative;
   z-index: 1;
   width: min(420px, calc(100vw - 32px));
+  height: min(900px, calc(100dvh - 48px));
   border-radius: 24px;
   background:
     linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02)),
@@ -1424,6 +1425,9 @@ body.instagram-modal-open{
     0 28px 70px rgba(0,0,0,0.48);
   backdrop-filter: blur(18px) saturate(130%);
   -webkit-backdrop-filter: blur(18px) saturate(130%);
+  max-height: calc(100dvh - 48px);
+  display: flex;
+  flex-direction: column;
   overflow: hidden;
 }
 
@@ -1498,6 +1502,25 @@ body.instagram-modal-open{
   padding: 18px;
   border-top: 1px solid rgba(255,255,255,0.08);
   background: rgba(255,255,255,0.02);
+}
+
+.contact-form.contact-jotform{
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  overflow: hidden;
+}
+
+.contact-jotform iframe{
+  width: 100%;
+  max-width: 100%;
+  min-height: 1120px;
+  border: 0;
+  background: transparent;
+  display: block;
 }
 
 .contact-form input,

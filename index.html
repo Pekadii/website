@@ -50,6 +50,41 @@
   <a class="btn btn-small" href="portfolio.html">Portfolio</a>
 </div>
 
+    <p class="pekadi-quote">
+      “INSPIRED BY CREATIVITY. DEFINED BY BEAUTY.”
+    </p>
+
+ 
+  <section class="contact-section" id="contact">
+    <div class="contact-cta">
+      <p class="contact-kicker">Book Appointment</p>
+      <h2>Fill out the contact form, or ask my AI assistant!</h2>
+      <button class="contact-launch" type="button" data-contact-open>Open chat</button>
+    </div>
+
+    <div class="contact-modal" id="contactModal" hidden>
+      <button class="contact-backdrop" type="button" aria-label="Close contact form" data-contact-close></button>
+
+      <div class="contact-window" role="dialog" aria-modal="true" aria-labelledby="contactTitle">
+        <div class="contact-window-head">
+          <div>
+            <p class="contact-window-kicker">Pekadi</p>
+            <h3 id="contactTitle">Send a message</h3>
+          </div>
+          <button class="contact-close" type="button" aria-label="Close contact form" data-contact-close>&times;</button>
+        </div>
+
+        <div class="contact-thread" aria-hidden="true">
+          <div class="contact-bubble contact-bubble-reply">If you have any questions, please fill out the form below and I’ll get back to you as soon as I can!</div>
+        </div>
+
+        <div class="contact-form contact-jotform">
+          <script type="text/javascript" src="https://form.jotform.com/jsform/261530925170048"></script>
+        </div>
+      </div>
+    </div>
+  </section>
+
 <section class="app-showcase" id="apps" aria-labelledby="appsTitle">
   <div class="app-showcase-head">
     <p class="app-kicker">Pekadi Apps</p>
@@ -540,44 +575,6 @@
 </section>
 
 
-    <p class="pekadi-quote">
-      “INSPIRED BY CREATIVITY. DEFINED BY BEAUTY.”
-    </p>
-
- 
-  <section class="contact-section" id="contact">
-    <div class="contact-cta">
-      <p class="contact-kicker">Let’s talk</p>
-      <h2>Questions, edits, presets, or shoots.</h2>
-      <button class="contact-launch" type="button" data-contact-open>Open chat</button>
-    </div>
-
-    <div class="contact-modal" id="contactModal" hidden>
-      <button class="contact-backdrop" type="button" aria-label="Close contact form" data-contact-close></button>
-
-      <div class="contact-window" role="dialog" aria-modal="true" aria-labelledby="contactTitle">
-        <div class="contact-window-head">
-          <div>
-            <p class="contact-window-kicker">Pekadi</p>
-            <h3 id="contactTitle">Send a message</h3>
-          </div>
-          <button class="contact-close" type="button" aria-label="Close contact form" data-contact-close>&times;</button>
-        </div>
-
-        <div class="contact-thread" aria-hidden="true">
-          <div class="contact-bubble contact-bubble-reply">If you have any questions, please fill out the form below and I’ll get back to you as soon as I can!</div>
-        </div>
-
-        <form class="contact-form" action="https://formspree.io/f/mnndnyar" method="POST">
-          <input type="text" name="name" placeholder="Discord or name" required />
-          <input type="email" name="email" placeholder="Your email" required />
-          <textarea name="message" placeholder="Your message" required></textarea>
-          <button type="submit">Send Message</button>
-        </form>
-      </div>
-    </div>
-  </section>
-
   <footer>
     <a class="footer-privacy-link" href="https://pekadi.com/privacy">Privacy Policy</a>
     <p>Copyright © 2025 - Pekadi Photography - All rights reserved.</p>
@@ -653,13 +650,13 @@
 
       const openers = document.querySelectorAll('[data-contact-open], a[href="#contact"]');
       const closers = modal.querySelectorAll("[data-contact-close]");
-      const firstInput = modal.querySelector("input, textarea");
+      const focusTarget = modal.querySelector(".contact-close");
 
       function openContact(event){
         if(event) event.preventDefault();
         modal.hidden = false;
         document.body.classList.add("contact-open");
-        if(firstInput) requestAnimationFrame(() => firstInput.focus());
+        if(focusTarget) requestAnimationFrame(() => focusTarget.focus());
       }
 
       function closeContact(){
@@ -781,5 +778,6 @@
       });
     })();
   </script>
+  <script src='https://cdn.jotfor.ms/agent/embedjs/019e92f25d0a7af1a5be47a883be4bca314f/embed.js'></script>
 </body>
 </html>

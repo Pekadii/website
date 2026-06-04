@@ -290,6 +290,25 @@ body.von-page .contact-form button{
   margin-top: 10px;
 }
 
+body.von-page .contact-form.contact-jotform{
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  overflow: hidden;
+}
+
+body.von-page .contact-jotform iframe{
+  width: 100%;
+  max-width: 100%;
+  min-height: 1120px;
+  border: 0;
+  background: transparent;
+  display: block;
+}
+
 
 body.von-page section.about,
 body.von-page section.photo-guide{
