@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <meta name="theme-color" content="#090b0f" />
+  <meta name="theme-color" content="#07080b" />
+  <meta name="color-scheme" content="dark" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <title>Pekadi</title>
   <meta name="impact-site-verification" value="22baa041-d7dd-41ad-849c-943b862145d0" />
@@ -344,18 +345,40 @@
     (function(){
       let agentLoaded = false;
       const agentScriptUrl = "https://cdn.jotfor.ms/agent/embedjs/019e92f25d0a7af1a5be47a883be4bca314f/embed.js";
+      const siteThemeColor = "#07080b";
+
+      function lockMobileThemeColor(){
+        let themeMeta = document.querySelector('meta[name="theme-color"]');
+        if(!themeMeta){
+          themeMeta = document.createElement("meta");
+          themeMeta.name = "theme-color";
+          document.head.appendChild(themeMeta);
+        }
+        themeMeta.content = siteThemeColor;
+      }
+
+      function lockMobileThemeColorSoon(){
+        lockMobileThemeColor();
+        window.setTimeout(lockMobileThemeColor, 300);
+        window.setTimeout(lockMobileThemeColor, 1200);
+      }
 
       function loadAgent(){
         if(agentLoaded) return;
         agentLoaded = true;
+        lockMobileThemeColor();
 
         const script = document.createElement("script");
         script.src = agentScriptUrl;
         script.async = true;
         document.body.appendChild(script);
+
+        lockMobileThemeColorSoon();
+        window.setTimeout(lockMobileThemeColor, 3500);
       }
 
       function scheduleAgent(){
+        lockMobileThemeColor();
         if("requestIdleCallback" in window){
           requestIdleCallback(loadAgent, { timeout: 4500 });
         }else{
@@ -364,6 +387,8 @@
       }
 
       window.addEventListener("load", scheduleAgent, { once: true });
+      document.addEventListener("visibilitychange", lockMobileThemeColor);
+      document.addEventListener("click", lockMobileThemeColorSoon, true);
     })();
   </script>
 
