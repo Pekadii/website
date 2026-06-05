@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <base href="/">
+<meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Von</title>
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="von.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+</head>
+
+<body class="von-page">
+
+  <div class="von-wrap">
+
+    <a class="von-back" href="https://pekadi.com">← Back Home</a>
+
+    <header class="von-header">
+      <div class="von-signature">
+        <img src="Von.png" alt="Von Photography signature">
+      </div>
+    </header>
+
+    <section class="about" id="about">
+      <div class="von-about-grid">
+        <div class="about-left">
+          <h2>About Me</h2>
+          <p>I visualize the moment and take action. No matter where the path leads, I am driven to capture the scenes that feel truly meaningful. That is what Photography means to me follow my path on where the world takes me.</p>
+        </div>
+
+        <div class="about-right">
+          <div class="about-card">
+            <h3>My Style</h3>
+            <p>Portraits • Street • Landscape</p>
+            <a class="btn btn-small" href="#contact">Contact me</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+      <div class="contact-cta">
+        <p class="contact-kicker">Book Appointment</p>
+        <h2>Fill out the contact form, or ask my AI assistant!</h2>
+        <button class="contact-launch" type="button" data-contact-open>Open chat</button>
+      </div>
+
+      <div class="contact-modal" id="contactModal" hidden>
+        <button class="contact-backdrop" type="button" aria-label="Close contact form" data-contact-close></button>
+
+        <div class="contact-window" role="dialog" aria-modal="true" aria-labelledby="contactTitle">
+          <div class="contact-window-head">
+            <div>
+              <p class="contact-window-kicker">Von</p>
+              <h3 id="contactTitle">Send a message</h3>
+            </div>
+            <button class="contact-close" type="button" aria-label="Close contact form" data-contact-close>&times;</button>
+          </div>
+
+          <div class="contact-thread" aria-hidden="true">
+            <div class="contact-bubble contact-bubble-reply">If you have any questions, please fill out the form below and I’ll get back to you as soon as I can!</div>
+          </div>
+
+          <div class="contact-form contact-jotform">
+            <script type="text/javascript" src="https://form.jotform.com/jsform/261530925170048"></script>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="photo-guide">
+      <h2>Understanding Exposure</h2>
+      <p class="guide-intro">
+        Photography is a balance between light, time, and sensitivity. Mastering exposure comes down
+        to three core settings.
+      </p>
+
+      <div class="guide-grid">
+        <div class="guide-card">
+          <h3>Aperture</h3>
+          <p>Controls depth of field and how much light enters the lens.</p>
+          <ul>
+            <li><strong>Low f-stop:</strong> brighter, shallow background</li>
+            <li><strong>High f-stop:</strong> darker, deeper focus</li>
+          </ul>
+        </div>
+
+        <div class="guide-card">
+          <h3>Shutter Speed</h3>
+          <p>Controls motion and exposure time.</p>
+          <ul>
+            <li><strong>Slow:</strong> motion blur, creative movement</li>
+            <li><strong>Fast:</strong> freeze action</li>
+          </ul>
+        </div>
+
+        <div class="guide-card">
+          <h3>ISO</h3>
+          <p>Controls sensor sensitivity to light.</p>
+          <ul>
+            <li><strong>Low:</strong> clean, sharp images</li>
+            <li><strong>High:</strong> brighter, more grain</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="gallery" id="gallery">
+      <div class="gallery-grid">
+        <a class="tile" href="Von-1.jpg" target="_blank" rel="noopener">
+          <img src="Von-1.jpg" alt="Gallery photo 1" />
+        </a>
+
+        <a class="tile tile-tall" href="Von-3.jpg" target="_blank" rel="noopener">
+          <img src="Von-3.jpg" alt="Gallery photo 2" />
+        </a>
+      </div>
+
+      <p class="von-quote">
+        “The world is full of paths, but only your lens can find the meaning in the journey. Capture what moves you, and you’ll move the world.”
+      </p>
+    </section>
+
+    <footer class="von-footer">
+      Copyright © 2025 - Pekadi Photography - All rights reserved.
+    </footer>
+  </div>
+
+  <script>
+    (function(){
+      const modal = document.getElementById("contactModal");
+      if(!modal) return;
+
+      const openers = document.querySelectorAll('[data-contact-open], a[href="#contact"]');
+      const closers = modal.querySelectorAll("[data-contact-close]");
+      const focusTarget = modal.querySelector(".contact-close");
+
+      function openContact(event){
+        if(event) event.preventDefault();
+        modal.hidden = false;
+        document.body.classList.add("contact-open");
+        if(focusTarget) requestAnimationFrame(() => focusTarget.focus());
+      }
+
+      function closeContact(){
+        modal.hidden = true;
+        document.body.classList.remove("contact-open");
+      }
+
+      openers.forEach((opener) => {
+        opener.addEventListener("click", openContact);
+      });
+
+      closers.forEach((closer) => {
+        closer.addEventListener("click", closeContact);
+      });
+
+      document.addEventListener("keydown", (event) => {
+        if(event.key === "Escape" && !modal.hidden){
+          closeContact();
+        }
+      });
+    })();
+  </script>
+  <script src="https://cdn.jotfor.ms/agent/embedjs/019e92f25d0a7af1a5be47a883be4bca314f/embed.js"></script>
+
+</body>
+</html>

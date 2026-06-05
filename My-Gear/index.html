@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <base href="/">
+<meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Gear - Pekadi</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/x-icon" href="icon.ico" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&amp;family=Inter:wght@300;400;500&amp;display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <div class="site-nav header-row">
+      <button class="menu-toggle" type="button" aria-label="Open site menu" aria-expanded="false" aria-controls="siteMenu" data-menu-toggle>
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <div class="icon-row">
+        <a href="https://www.instagram.com/pekadi"><img src="instagram.png" class="social-icon" alt="Instagram"></a>
+        <a href="https://github.com/Pekadii"><img src="github.png" class="social-icon" alt="GitHub"></a>
+      </div>
+    </div>
+
+    <div class="site-menu" id="siteMenu" hidden data-site-menu>
+      <button class="site-menu-backdrop" type="button" aria-label="Close site menu" data-menu-close></button>
+      <nav class="site-menu-panel" aria-label="Site menu">
+        <a href="/"><strong>Home</strong></a>
+        <a href="/Presets/"><strong>Presets</strong></a>
+        <a href="/about-me/"><strong>About Me</strong></a>
+        <a href="/My-Gear/"><strong>My Gear</strong></a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page-main">
+
+<section class="lenses" id="lenses">
+  <div class="lenses-head">
+    <h2>My Gear</h2>
+    <p>
+      A quick look at the camera gear I’m currently using — what it’s best at, and the style it supports as I grow the kit.
+    </p>
+  </div>
+
+  <div class="lens-tabs" aria-label="Lens tabs">
+    <button class="lens-tab"
+            type="button"
+            aria-controls="lens-sigma"
+            id="tab-sigma"
+            data-lens-open>
+      <img class="tab-ico-img" src="sigma-18-35.png" alt="" aria-hidden="true">
+      <span>Sigma 18–35mm f/1.8</span>
+    </button>
+
+    <button class="lens-tab"
+            type="button"
+            aria-controls="lens-canon50"
+            id="tab-canon50"
+            data-lens-open>
+      <img class="tab-ico-img" src="canon-50mm.png" alt="" aria-hidden="true">
+      <span>Canon EF 50mm f/1.8 STM</span>
+    </button>
+
+    <button class="lens-tab"
+            type="button"
+            aria-controls="gear-nd64"
+            id="tab-nd64"
+            data-lens-open>
+      <img class="tab-ico-img" src="ND64.png" alt="" aria-hidden="true">
+      <span>ND64 Filter</span>
+    </button>
+  </div>
+
+  <div class="lens-modal" id="lensModal" hidden>
+    <button class="lens-backdrop" type="button" aria-label="Close lens details" data-lens-close></button>
+
+    <div class="lens-window" role="dialog" aria-modal="true" aria-labelledby="lensDialogTitle">
+      <div class="lens-window-head">
+        <div>
+          <p class="lens-window-kicker">Gear Info</p>
+          <h3 id="lensDialogTitle">Lens details</h3>
+        </div>
+        <button class="lens-close" type="button" aria-label="Close lens details" data-lens-close>&times;</button>
+      </div>
+
+      <div class="lens-panels">
+    <article class="lens-panel" role="tabpanel" id="lens-sigma" aria-labelledby="tab-sigma" hidden>
+      <div class="lens-grid">
+        <div class="lens-card">
+          <h3>Sigma 18–35mm f/1.8 (APS-C)</h3>
+          <p class="lens-meta">On Canon R50 (APS-C): feels like ~29–56mm equivalent • bright f/1.8 zoom</p>
+
+          <div class="pill-row">
+            <span class="pill">Portraits (environmental)</span>
+            <span class="pill">Street</span>
+            <span class="pill">Lifestyle</span>
+            <span class="pill">Low light</span>
+            <span class="pill">Video</span>
+          </div>
+
+          <ul class="lens-list">
+            <li><strong>Best for:</strong> versatile “cinematic” look, story shots, street + scenes with context.</li>
+            <li><strong>Strength:</strong> f/1.8 across the zoom gives strong subject separation + low-light ability.</li>
+            <li><strong>Look:</strong> wider frames at 18–24mm, tighter natural perspective at 30–35mm.</li>
+            <li><strong>Note:</strong> It’s an EF-mount lens — use your EF→RF adapter on mirrorless cameras.</li>
+          </ul>
+        </div>
+
+        <div class="lens-card">
+          <h3>Suggested Use</h3>
+          <div class="mini-grid">
+            <div class="mini">
+              <h4>Street / Lifestyle</h4>
+              <p>24–35mm • f/1.8–2.8 • 1/250+ • ISO as needed</p>
+            </div>
+            <div class="mini">
+              <h4>Portrait w/ context</h4>
+              <p>30–35mm • f/1.8–2.2 • 1/200+ • soften background</p>
+            </div>
+            <div class="mini">
+              <h4>Moody low-light</h4>
+              <p>18–24mm • f/1.8 • 1/125–1/250 • raise ISO carefully</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    
+    <article class="lens-panel" role="tabpanel" id="lens-canon50" aria-labelledby="tab-canon50" hidden>
+      <div class="lens-grid">
+        <div class="lens-card">
+          <h3>Canon EF 50mm f/1.8 STM</h3>
+          <p class="lens-meta">On Canon R50 (APS-C): feels like ~80mm equivalent • classic budget portrait lens</p>
+
+          <div class="pill-row">
+            <span class="pill">Portraits</span>
+            <span class="pill">Details</span>
+            <span class="pill">Low light</span>
+            <span class="pill">Bokeh</span>
+          </div>
+
+          <ul class="lens-list">
+            <li><strong>Best for:</strong> portraits, tight compositions, detail shots, creamy background blur.</li>
+            <li><strong>Strength:</strong> light + sharp for the price; great for learning subject isolation.</li>
+            <li><strong>Look:</strong> more compression / “portrait feel” because it’s tighter on APS-C.</li>
+            <li><strong>Note:</strong> you’ll step back more indoors — it’s tighter than it sounds on mirrorless cameras.</li>
+          </ul>
+        </div>
+
+        <div class="lens-card">
+          <h3>Suggested Use</h3>
+          <div class="mini-grid">
+            <div class="mini">
+              <h4>Portraits</h4>
+              <p>f/1.8–2.8 • 1/200+ • focus on the eye • clean background</p>
+            </div>
+            <div class="mini">
+              <h4>Detail / Product</h4>
+              <p>f/2.8–5.6 • 1/125+ • sharper edges • more depth</p>
+            </div>
+            <div class="mini">
+              <h4>Low-light</h4>
+              <p>f/1.8 • keep shutter safe (1/160+) • raise ISO as needed</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="lens-panel" role="tabpanel" id="gear-nd64" aria-labelledby="tab-nd64" hidden>
+      <div class="lens-grid">
+        <div class="lens-card">
+          <h3>ND64 Filter</h3>
+          <p class="lens-meta">A 6-stop neutral density filter for controlling light without changing color.</p>
+
+          <div class="pill-row">
+            <span class="pill">Bright daylight</span>
+            <span class="pill">Video shutter control</span>
+            <span class="pill">Long exposure</span>
+            <span class="pill">Wide aperture</span>
+          </div>
+
+          <ul class="lens-list">
+            <li><strong>Purpose:</strong> reduces light entering the lens so you can use slower shutter speeds or wider apertures in bright conditions.</li>
+            <li><strong>For video:</strong> helps keep natural motion blur, such as 1/50 shutter for 24fps or 1/60 for 30fps, even outside.</li>
+            <li><strong>For photos:</strong> useful for smoothing water, adding motion blur, or shooting shallow depth of field in harsh sunlight.</li>
+            <li><strong>ND64 strength:</strong> cuts about 6 stops of light, which is strong enough for bright outdoor scenes.</li>
+          </ul>
+        </div>
+
+        <div class="lens-card">
+          <h3>ND Filter Types</h3>
+          <div class="mini-grid">
+            <div class="mini">
+              <h4>Fixed ND</h4>
+              <p>One strength, such as ND8, ND64, or ND1000. Best image quality and predictable color.</p>
+            </div>
+            <div class="mini">
+              <h4>Variable ND</h4>
+              <p>Adjustable strength in one filter. Convenient for video, but cheaper ones can add color shifts or cross patterns.</p>
+            </div>
+            <div class="mini">
+              <h4>Graduated ND</h4>
+              <p>Darker on one side, clear on the other. Helps balance bright skies with darker foregrounds.</p>
+            </div>
+          </div>
+
+          <p class="lens-meta gear-saving-tip">
+            Money-saving tip: buy one larger filter size and use step-up rings for smaller lenses. It is usually cheaper than buying the same ND filter in every lens thread size.
+          </p>
+        </div>
+      </div>
+    </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <section class="gear-note" aria-label="Kit lens vs fast lens summary">
+  <h3>Kit Lens vs “Fast” Lens (Why Aperture Matters)</h3>
+  <p>
+    A typical <strong>kit lens</strong> usually has a <strong>smaller maximum aperture</strong>
+    (for example <strong>f/3.5–5.6</strong>), which means it lets in less light. In darker scenes,
+    you’ll often need a <strong>higher ISO</strong> (more grain) or a <strong>slower shutter</strong>
+    (more motion blur).
+  </p>
+
+  <p>
+    A <strong>fast lens</strong> (like <strong>f/1.8</strong> or <strong>f/2.8</strong>) lets in
+    much more light, so you can shoot <strong>cleaner</strong> at night, keep your shutter
+    <strong>faster</strong>, and get more <strong>background blur</strong> for portraits.
+  </p>
+
+  <ul>
+    <li><strong>Kit lens:</strong> great starter, travel, daylight — sharp enough, but needs more light.</li>
+    <li><strong>Fast lens:</strong> better low-light + more subject separation (blurred background).</li>
+  </ul>
+
+<p class="gear-note-tip">
+  Tip: a lens with a “higher f-number” (like f/5.6) isn’t “better” — it just means less light enters the lens.
+</p>
+</section>
+
+<div class="gear-example">
+  <div class="gear-example-text">
+    <p class="gear-note-tip">
+      <strong>Real-world example:</strong> Basic lenses aren’t bad — they just require
+      understanding light and timing.
+    </p>
+
+    <p>
+      This image was shot using a <strong>Canon EF 75–300mm</strong> (a common kit/basic telephoto lens).
+      While it has a smaller maximum aperture, good lighting made it possible to keep noise controlled.
+    </p>
+
+    <ul class="gear-example-settings">
+      <li><strong>Lens:</strong> EF 75–300mm</li>
+      <li><strong>Focal Length:</strong> 280mm</li>
+      <li><strong>Aperture:</strong> f/5.6</li>
+      <li><strong>Shutter:</strong> 1/1250 sec</li>
+      <li><strong>ISO:</strong> 320</li>
+    </ul>
+
+    <p class="gear-example-note">
+      When light hits the lens correctly, even slower glass can produce clean images.
+      A touch of grain can be embraced and refined in post for a <em>vintage, cinematic feel</em>.
+    </p>
+  </div>
+
+  <div class="gear-example-image">
+    <img src="optimized/Example.jpg" alt="Example photo shot on Canon EF 75-300mm lens" loading="lazy" decoding="async">
+  </div>
+</div>
+
+
+  </main>
+  <footer>
+    <nav class="footer-links" aria-label="Footer links">
+      <a href="https://pekadi.com/support">Support</a>
+      <a href="https://pekadi.com/privacy">Privacy Policy</a>
+    </nav>
+    <p>Copyright © 2025 - Pekadi Photography - All rights reserved.</p>
+  </footer>
+
+
+<script>
+  (function(){
+    const toggle = document.querySelector("[data-menu-toggle]");
+    const menu = document.querySelector("[data-site-menu]");
+    if(!toggle || !menu) return;
+
+    const closers = menu.querySelectorAll("[data-menu-close]");
+
+    function openMenu(){
+      menu.hidden = false;
+      toggle.setAttribute("aria-expanded", "true");
+      document.body.classList.add("site-menu-open");
+    }
+
+    function closeMenu(){
+      menu.hidden = true;
+      toggle.setAttribute("aria-expanded", "false");
+      document.body.classList.remove("site-menu-open");
+    }
+
+    toggle.addEventListener("click", () => {
+      if(menu.hidden) openMenu();
+      else closeMenu();
+    });
+
+    closers.forEach((closer) => closer.addEventListener("click", closeMenu));
+
+    document.addEventListener("keydown", (event) => {
+      if(event.key === "Escape" && !menu.hidden){
+        closeMenu();
+      }
+    });
+  })();
+</script>
+<script>
+  (function(){
+    const modal = document.getElementById("lensModal");
+    const buttons = Array.from(document.querySelectorAll("[data-lens-open]"));
+    if(!modal || buttons.length === 0) return;
+
+    const panels = buttons
+      .map((button) => document.getElementById(button.getAttribute("aria-controls")))
+      .filter(Boolean);
+    const closers = modal.querySelectorAll("[data-lens-close]");
+    const title = document.getElementById("lensDialogTitle");
+
+    function openLens(button){
+      const panelId = button.getAttribute("aria-controls");
+      const panel = document.getElementById(panelId);
+      if(!panel) return;
+
+      buttons.forEach((item) => {
+        item.classList.toggle("is-active", item === button);
+      });
+
+      panels.forEach((item) => {
+        const on = item === panel;
+        item.classList.toggle("is-active", on);
+        if(on) item.removeAttribute("hidden");
+        else item.setAttribute("hidden", "");
+      });
+
+      if(title){
+        title.textContent = button.textContent.trim();
+      }
+
+      modal.hidden = false;
+      document.body.classList.add("lens-open");
+    }
+
+    function closeLens(){
+      modal.hidden = true;
+      document.body.classList.remove("lens-open");
+      buttons.forEach((item) => item.classList.remove("is-active"));
+      panels.forEach((item) => item.setAttribute("hidden", ""));
+    }
+
+    buttons.forEach((button) => {
+      button.addEventListener("click", () => openLens(button));
+    });
+
+    closers.forEach((closer) => {
+      closer.addEventListener("click", closeLens);
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if(event.key === "Escape" && !modal.hidden){
+        closeLens();
+      }
+    });
+  })();
+</script>
+</body>
+</html>

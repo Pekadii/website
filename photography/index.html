@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <base href="/">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#000000" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <title>Pekadi Photography</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/x-icon" href="icon.ico" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <header class="photography-header">
+    <div class="photography-nav">
+      <button class="menu-toggle" type="button" aria-label="Open site menu" aria-expanded="false" aria-controls="siteMenu" data-menu-toggle>
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <div class="icon-row photography-socials">
+        <a href="https://www.instagram.com/pekadi"><img src="instagram.png" class="social-icon" alt="Instagram"></a>
+        <a href="https://github.com/Pekadii"><img src="github.png" class="social-icon" alt="GitHub"></a>
+      </div>
+    </div>
+
+    <div class="site-menu" id="siteMenu" hidden data-site-menu>
+      <button class="site-menu-backdrop" type="button" aria-label="Close site menu" data-menu-close></button>
+      <nav class="site-menu-panel" aria-label="Site menu">
+        <a href="/"><strong>Home</strong></a>
+        <a href="/Presets/"><strong>Presets</strong></a>
+        <a href="/about-me/"><strong>About Me</strong></a>
+        <a href="/My-Gear/"><strong>My Gear</strong></a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="photography-visual-hero" aria-label="Pekadi photography">
+    <a class="photography-hero-logo" href="/" aria-label="Back to home">
+      <img class="photography-hero-signature" src="Signature.png" alt="Pekadi Photography signature">
+    </a>
+  </section>
+
+  <section class="portfolio-section portfolio-categories" id="collections" aria-label="Photography categories">
+    <div class="category-grid">
+      <a class="category-cover category-cover-contained" href="#von-portraits" data-gallery-open="von-portraits">
+        <img src="Von-3.jpg" alt="Low angle portrait under station lights">
+        <span>VON'S HIGHLIGHTS</span>
+      </a>
+
+      <a class="category-cover category-cover-contained" href="#nathan-highlights" data-gallery-open="nathan-highlights">
+        <img src="Nathan-1.jpg" alt="Nathan portrait highlight">
+        <span>NATHAN HIGHLIGHTS</span>
+      </a>
+
+      <a class="category-cover category-cover-contained" href="#boston-nightshots" data-gallery-open="boston-nightshots">
+        <img src="Boston-1.jpg" alt="Boston night photo highlight">
+        <span>BOSTON NIGHTSHOTS</span>
+      </a>
+
+      <a class="category-cover" href="#low-light-landscapes" data-gallery-open="low-light-landscapes">
+        <img src="Landscape.jpg" alt="Low light train station landscape">
+        <span>LOW LIGHT LANDSCAPES</span>
+      </a>
+
+      <a class="category-cover category-cover-contained" href="#vertical-nightshots" data-gallery-open="vertical-nightshots">
+        <img src="Train-3.jpg" alt="Vertical train scene with motion and shadow">
+        <span>VERTICAL NIGHTSHOTS</span>
+      </a>
+    </div>
+  </section>
+
+  <section class="portfolio-section gallery-panel" id="von-portraits" data-gallery-panel hidden>
+    <a class="gallery-back" href="#collections">Collections</a>
+    <h2>VON HIGHLIGHTS</h2>
+    <div class="gallery-grid">
+      <div class="tile tile-tall"><img src="Von-3.jpg" alt="Moody portrait lighting"></div>
+      <div class="tile tile-tall"><img src="Von-1.jpg" alt="Cinematic night portrait"></div>
+      <div class="tile tile-tall"><img src="Von-5.jpg" alt="Late night portrait"></div>
+      <div class="tile tile-tall"><img src="Von-2.jpg" alt="Close-up portrait"></div>
+      <div class="tile tile-tall"><img src="Von-4.jpg" alt="Side profile portrait"></div>
+    </div>
+  </section>
+
+  <section class="portfolio-section gallery-panel" id="nathan-highlights" data-gallery-panel hidden>
+    <a class="gallery-back" href="#collections">Collections</a>
+    <h2>NATHAN HIGHLIGHTS</h2>
+    <div class="gallery-grid">
+      <div class="tile tile-tall"><img src="Nathan-1.jpg" alt="Nathan portrait highlight 1"></div>
+      <div class="tile tile-tall"><img src="Nathan-2.jpg" alt="Nathan portrait highlight 2"></div>
+      <div class="tile tile-tall"><img src="Nathan-3.jpg" alt="Nathan portrait highlight 3"></div>
+      <div class="tile tile-tall"><img src="Nathan-4.jpg" alt="Nathan portrait highlight 4"></div>
+    </div>
+  </section>
+
+  <section class="portfolio-section gallery-panel" id="boston-nightshots" data-gallery-panel hidden>
+    <a class="gallery-back" href="#collections">Collections</a>
+    <h2>BOSTON NIGHTSHOTS</h2>
+    <div class="gallery-grid">
+      <div class="tile tile-tall"><img src="Boston-1.jpg" alt="Boston night photo 1"></div>
+      <div class="tile tile-tall"><img src="Boston-2.jpg" alt="Boston night photo 2"></div>
+      <div class="tile tile-tall"><img src="Boston-3.jpg" alt="Boston night photo 3"></div>
+      <div class="tile tile-tall"><img src="Boston-4.jpg" alt="Boston night photo 4"></div>
+      <div class="tile tile-tall"><img src="Boston-5.jpg" alt="Boston night photo 5"></div>
+    </div>
+  </section>
+
+  <section class="portfolio-section gallery-panel" id="low-light-landscapes" data-gallery-panel hidden>
+    <a class="gallery-back" href="#collections">Collections</a>
+    <h2>LOW LIGHT LANDSCAPES</h2>
+    <div class="gallery-grid">
+      <div class="tile"><img src="Train-2.jpg" alt="Night train station photo"></div>
+      <div class="tile"><img src="Train-1.jpg" alt="MBTA train at night"></div>
+      <div class="tile"><img src="Landscape.jpg" alt="Train platform lights"></div>
+    </div>
+  </section>
+
+  <section class="portfolio-section gallery-panel" id="vertical-nightshots" data-gallery-panel hidden>
+    <a class="gallery-back" href="#collections">Collections</a>
+    <h2>VERTICAL NIGHTSHOTS</h2>
+    <div class="gallery-grid">
+      <div class="tile tile-tall"><img src="Train-3.jpg" alt="Train in motion"></div>
+      <div class="tile tile-tall"><img src="Train-4.jpg" alt="Vertical low light train scene"></div>
+    </div>
+  </section>
+
+  <footer>
+    <p>Copyright © 2025 - Pekadi Photography - All rights reserved.</p>
+  </footer>
+  <script>
+    (function(){
+      const toggle = document.querySelector("[data-menu-toggle]");
+      const menu = document.querySelector("[data-site-menu]");
+      if(!toggle || !menu) return;
+
+      const closers = menu.querySelectorAll("[data-menu-close]");
+
+      function openMenu(){
+        menu.hidden = false;
+        toggle.setAttribute("aria-expanded", "true");
+        document.body.classList.add("site-menu-open");
+      }
+
+      function closeMenu(){
+        menu.hidden = true;
+        toggle.setAttribute("aria-expanded", "false");
+        document.body.classList.remove("site-menu-open");
+      }
+
+      toggle.addEventListener("click", () => {
+        if(menu.hidden) openMenu();
+        else closeMenu();
+      });
+
+      closers.forEach((closer) => closer.addEventListener("click", closeMenu));
+
+      document.addEventListener("keydown", (event) => {
+        if(event.key === "Escape" && !menu.hidden){
+          closeMenu();
+        }
+      });
+    })();
+  </script>
+  <script>
+    (function(){
+      const panels = Array.from(document.querySelectorAll("[data-gallery-panel]"));
+      const openers = Array.from(document.querySelectorAll("[data-gallery-open]"));
+      const collectionTarget = document.querySelector(".portfolio-categories");
+      if(!panels.length || !openers.length) return;
+
+      function showGallery(id, shouldScroll){
+        panels.forEach((panel) => {
+          panel.hidden = panel.id !== id;
+          panel.classList.toggle("gallery-panel-active", panel.id === id);
+        });
+
+        const active = panels.find((panel) => panel.id === id);
+        if(active && shouldScroll){
+          active.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      }
+
+      function showCollections(shouldScroll){
+        panels.forEach((panel) => {
+          panel.hidden = true;
+          panel.classList.remove("gallery-panel-active");
+        });
+
+        if(collectionTarget && shouldScroll){
+          collectionTarget.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      }
+
+      openers.forEach((opener) => {
+        opener.addEventListener("click", (event) => {
+          event.preventDefault();
+          const galleryId = opener.getAttribute("data-gallery-open");
+          if(!galleryId) return;
+          history.pushState(null, "", "#" + galleryId);
+          showGallery(galleryId, true);
+        });
+      });
+
+      document.querySelectorAll(".gallery-back").forEach((back) => {
+        back.addEventListener("click", (event) => {
+          event.preventDefault();
+          history.pushState(null, "", "#collections");
+          showCollections(true);
+        });
+      });
+
+      window.addEventListener("hashchange", () => {
+        const id = window.location.hash.replace("#", "");
+        if(panels.some((panel) => panel.id === id)){
+          showGallery(id, true);
+        } else {
+          showCollections(false);
+        }
+      });
+
+      const initialId = window.location.hash.replace("#", "");
+      if(panels.some((panel) => panel.id === initialId)){
+        showGallery(initialId, false);
+      } else {
+        showCollections(false);
+      }
+    })();
+  </script>
+</body>
+</html>
