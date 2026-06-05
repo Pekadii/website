@@ -2276,7 +2276,7 @@ footer p{
   overflow: hidden;
   background:
     linear-gradient(to bottom, rgba(0,0,0,0.32), rgba(0,0,0,0.04) 40%, rgba(0,0,0,0.38)),
-    url("Providence.jpg") center / cover no-repeat;
+    url("Fall-River.jpg") center / cover no-repeat;
 }
 
 .photography-visual-hero::after{
@@ -2294,7 +2294,7 @@ footer p{
 }
 
 .photography-hero-logo{
-  margin-top: clamp(76px, 7.5vw, 118px);
+  margin-top: clamp(48px, 5vw, 76px);
   position: relative;
   z-index: 1;
   display: block;
@@ -2535,7 +2535,7 @@ footer p{
   }
 
   .photography-hero-logo{
-    margin-top: 82px;
+    margin-top: 58px;
   }
 
   .photography-hero-signature{
