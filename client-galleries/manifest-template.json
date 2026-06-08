@@ -1,0 +1,27 @@
+{
+  "title": "Client Name Photoshoot",
+  "date": "May 2026",
+  "note": "Your preview gallery is ready. Full-quality downloads are shared privately.",
+  "downloads": [
+    {
+      "label": "Download Edited Photos",
+      "detail": "Private link shared directly",
+      "href": ""
+    },
+    {
+      "label": "Download RAW Photos",
+      "detail": "Private link shared directly",
+      "href": ""
+    }
+  ],
+  "previews": [
+    {
+      "src": "client-galleries/client-folder/previews/photo-001.jpg",
+      "alt": "Preview photo 1"
+    },
+    {
+      "src": "client-galleries/client-folder/previews/photo-002.jpg",
+      "alt": "Preview photo 2"
+    }
+  ]
+}

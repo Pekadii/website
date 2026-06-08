@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <base href="/">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#000000" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <title>Client Gallery | Pekadi</title>
+  <link rel="preload" as="image" href="optimized/portfolio/Fall-River-hero.jpg" fetchpriority="high" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/x-icon" href="icon.ico" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&amp;family=Inter:wght@300;400;500&amp;display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <header class="photography-header">
+    <div class="photography-nav">
+      <button class="menu-toggle" type="button" aria-label="Open site menu" aria-expanded="false" aria-controls="siteMenu" data-menu-toggle>
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <div class="icon-row photography-socials">
+        <a href="https://www.instagram.com/pekadi"><img src="instagram.png" class="social-icon" alt="Instagram"></a>
+      </div>
+    </div>
+
+    <div class="site-menu" id="siteMenu" hidden data-site-menu>
+      <button class="site-menu-backdrop" type="button" aria-label="Close site menu" data-menu-close></button>
+      <nav class="site-menu-panel" aria-label="Site menu">
+        <a href="/"><strong>Home</strong></a>
+        <a href="/photography/"><strong>Portfolio</strong></a>
+        <a href="/client-gallery/"><strong>Gallery</strong></a>
+        <a href="/Presets/"><strong>Presets</strong></a>
+        <a href="/about-me/"><strong>About Me</strong></a>
+        <a href="/My-Gear/"><strong>My Gear</strong></a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="client-gallery-hero" aria-labelledby="clientGalleryTitle">
+      <img class="client-gallery-hero-image" src="optimized/portfolio/Fall-River-hero.jpg" alt="" aria-hidden="true" fetchpriority="high" decoding="async">
+      <div class="client-gallery-hero-copy">
+        <p class="client-gallery-kicker">Pekadi Client Gallery</p>
+        <h1 id="clientGalleryTitle">Photoshoot Delivery</h1>
+        <p>Private session folders for previewing and downloading delivered photos.</p>
+      </div>
+    </section>
+
+    <section class="client-gallery-shell" aria-label="Client photo sessions">
+      <div class="client-gallery-head">
+        <p class="client-gallery-kicker">Sessions</p>
+        <h2>Enter your access code to open a folder.</h2>
+      </div>
+
+      <div class="client-session-grid" data-session-grid></div>
+    </section>
+
+    <section class="client-unlocked" data-unlocked-gallery hidden aria-live="polite"></section>
+  </main>
+
+  <footer>
+    <p>Copyright © 2025 - Pekadi Photography - All rights reserved.</p>
+  </footer>
+
+  <script>
+    const CLIENT_SESSIONS = [
+      {
+        id: "nathan-portraits",
+        title: "Nathan Portrait Session",
+        date: "May 2026",
+        folder: "client-galleries/nathan-portraits",
+        cover: "client-galleries/nathan-portraits/previews/nathan-01.jpg"
+      },
+      {
+        id: "graduation",
+        title: "Graduation Session",
+        date: "June 2026",
+        folder: "client-galleries/Graduation",
+        cover: "client-galleries/Graduation/previews/graduation-01.jpg"
+      }
+      /*
+        Add each delivered shoot here.
+        Example:
+        {
+          id: "client-session-id",
+          title: "Client Portrait Session",
+          date: "May 2026",
+          folder: "client-galleries/client-folder",
+          cover: "client-galleries/client-folder/previews/photo-001.jpg"
+        }
+
+        Put the private manifest at:
+        client-galleries/client-folder/YOUR-CODE.json
+      */
+    ];
+
+    (function(){
+      const grid = document.querySelector("[data-session-grid]");
+      const unlocked = document.querySelector("[data-unlocked-gallery]");
+      if(!grid || !unlocked) return;
+
+      function getScrollBehavior(){
+        const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        const mobileViewport = window.matchMedia("(max-width: 700px)").matches;
+        return reduceMotion || mobileViewport ? "auto" : "smooth";
+      }
+
+      function cleanCode(value){
+        return value.trim().replace(/[^a-zA-Z0-9_-]/g, "");
+      }
+
+      function escapeHtml(value){
+        return String(value ?? "").replace(/[&<>"']/g, (character) => ({
+          "&": "&amp;",
+          "<": "&lt;",
+          ">": "&gt;",
+          '"': "&quot;",
+          "'": "&#39;"
+        }[character]));
+      }
+
+      function escapeAttribute(value){
+        return escapeHtml(value);
+      }
+
+      function escapeCssUrl(value){
+        return String(value ?? "").replace(/\\/g, "\\\\").replace(/'/g, "\\'");
+      }
+
+      function cleanAspectRatio(value){
+        return /^\d+(?:\.\d+)?\s*\/\s*\d+(?:\.\d+)?$/.test(value || "") ? value : "4 / 5";
+      }
+
+      function cleanPreviewFit(value){
+        return value === "contain" ? "contain" : "cover";
+      }
+
+      function showEmptyState(){
+        grid.innerHTML = `
+          <article class="client-session-empty">
+            <p class="client-gallery-kicker">No Active Deliveries</p>
+            <h3>Client folders will appear here after a session is ready.</h3>
+          </article>
+        `;
+      }
+
+      function toRootPath(path){
+        if(!path || /^(https?:)?\/\//i.test(path) || path.startsWith("/")) return path;
+        return `/${path}`;
+      }
+
+      function renderSessions(){
+        if(!CLIENT_SESSIONS.length){
+          showEmptyState();
+          return;
+        }
+
+        grid.innerHTML = CLIENT_SESSIONS.map((session) => `
+          <article class="client-session-card" data-session-id="${escapeAttribute(session.id)}">
+            ${session.cover ? `<div class="client-session-cover" style="background-image: url('${escapeCssUrl(toRootPath(session.cover))}')" role="img" aria-label="${escapeAttribute(session.title || "Client session cover")}" oncontextmenu="return false;"></div>` : `<div class="client-session-cover client-session-cover-empty" aria-hidden="true"></div>`}
+            <div class="client-session-copy">
+              <p class="client-gallery-kicker">${escapeHtml(session.date || "Client Session")}</p>
+              <h3>${escapeHtml(session.title)}</h3>
+              <form class="client-code-form" data-code-form>
+                <label for="${escapeAttribute(session.id)}-code">Access Code</label>
+                <div class="client-code-row">
+                  <input id="${escapeAttribute(session.id)}-code" name="code" type="password" autocomplete="off" inputmode="text" required>
+                  <button class="btn btn-small" type="submit">Unlock</button>
+                </div>
+                <p class="client-code-status" data-code-status></p>
+              </form>
+            </div>
+          </article>
+        `).join("");
+
+        grid.querySelectorAll("[data-code-form]").forEach((form) => {
+          form.addEventListener("submit", unlockSession);
+        });
+
+        grid.querySelectorAll(".client-session-cover").forEach((cover) => {
+          cover.addEventListener("contextmenu", (event) => event.preventDefault());
+          cover.addEventListener("dragstart", (event) => event.preventDefault());
+        });
+      }
+
+      async function unlockSession(event){
+        event.preventDefault();
+        const card = event.currentTarget.closest("[data-session-id]");
+        const session = CLIENT_SESSIONS.find((item) => item.id === card.dataset.sessionId);
+        const status = card.querySelector("[data-code-status]");
+        const input = event.currentTarget.elements.code;
+        const code = cleanCode(input.value);
+
+        if(!session || !code){
+          status.textContent = "Enter the access code for this folder.";
+          return;
+        }
+
+        status.textContent = "Checking code...";
+
+        try{
+          const response = await fetch(`${session.folder}/${code}.json`, { cache: "no-store" });
+          if(!response.ok) throw new Error("locked");
+          const manifest = await response.json();
+          renderUnlocked(session, manifest);
+          status.textContent = "Unlocked.";
+        }catch(error){
+          status.textContent = "That code did not unlock this folder.";
+        }
+      }
+
+      function renderUnlocked(session, manifest){
+        const previews = Array.isArray(manifest.previews) ? manifest.previews : [];
+        const downloads = Array.isArray(manifest.downloads) ? manifest.downloads : [];
+        const isUrl = (value) => /^https?:\/\//i.test(value || "");
+        const getDownloadHref = (item) => item.href || item.url || (isUrl(item.detail) ? item.detail : "");
+        const getDownloadDetail = (item) => {
+          if(item.displayDetail) return item.displayDetail;
+          if(item.detail && !isUrl(item.detail)) return item.detail;
+          return getDownloadHref(item) ? "Open private download" : "Shared privately";
+        };
+
+        unlocked.hidden = false;
+        unlocked.innerHTML = `
+          <div class="client-unlocked-head">
+            <p class="client-gallery-kicker">${escapeHtml(manifest.date || session.date || "Unlocked")}</p>
+            <h2>${escapeHtml(manifest.title || session.title)}</h2>
+            ${manifest.note ? `<p>${escapeHtml(manifest.note)}</p>` : ""}
+          </div>
+
+          <div class="client-download-row">
+            ${downloads.map((item) => `
+              ${getDownloadHref(item) ? `<a class="client-download-card" href="${escapeAttribute(getDownloadHref(item))}" target="_blank" rel="noopener noreferrer">` : `<div class="client-download-card client-download-card-disabled" aria-disabled="true">`}
+                <span>${escapeHtml(item.label || "Download Photos")}</span>
+                <strong>${escapeHtml(getDownloadDetail(item))}</strong>
+              ${getDownloadHref(item) ? `</a>` : `</div>`}
+            `).join("")}
+          </div>
+
+          ${previews.length ? `
+            <div class="client-preview-grid">
+              ${previews.map((photo) => `
+                <figure class="client-preview-tile" style="background-image: url('${escapeCssUrl(toRootPath(photo.src))}'); --client-preview-aspect: ${cleanAspectRatio(photo.aspectRatio)}; --client-preview-fit: ${cleanPreviewFit(photo.fit)};" role="img" aria-label="${escapeAttribute(photo.alt || "Client gallery preview")}" oncontextmenu="return false;">
+                </figure>
+              `).join("")}
+            </div>
+          ` : ""}
+        `;
+
+        unlocked.querySelectorAll(".client-preview-grid, .client-preview-tile").forEach((element) => {
+          element.addEventListener("contextmenu", (event) => event.preventDefault());
+          element.addEventListener("dragstart", (event) => event.preventDefault());
+        });
+
+        unlocked.scrollIntoView({ behavior: getScrollBehavior(), block: "start" });
+      }
+
+      renderSessions();
+    })();
+  </script>
+
+  <script>
+    (function(){
+      const toggle = document.querySelector("[data-menu-toggle]");
+      const menu = document.querySelector("[data-site-menu]");
+      if(!toggle || !menu) return;
+
+      const closers = menu.querySelectorAll("[data-menu-close]");
+
+      function openMenu(){
+        menu.hidden = false;
+        toggle.setAttribute("aria-expanded", "true");
+        document.body.classList.add("site-menu-open");
+      }
+
+      function closeMenu(){
+        menu.hidden = true;
+        toggle.setAttribute("aria-expanded", "false");
+        document.body.classList.remove("site-menu-open");
+      }
+
+      toggle.addEventListener("click", () => {
+        if(menu.hidden) openMenu();
+        else closeMenu();
+      });
+
+      closers.forEach((closer) => closer.addEventListener("click", closeMenu));
+
+      document.addEventListener("keydown", (event) => {
+        if(event.key === "Escape" && !menu.hidden){
+          closeMenu();
+        }
+      });
+    })();
+  </script>
+</body>
+</html>

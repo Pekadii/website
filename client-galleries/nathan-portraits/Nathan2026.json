@@ -1,0 +1,35 @@
+{
+  "title": "Nathan Portrait Session",
+  "date": "May 2026",
+  "note": "Your preview gallery is ready. Full-quality downloads are delivered through the private Mega link shared directly with the client.",
+  "downloads": [
+    {
+      "label": "Download Edited Photos",
+      "detail": "Open private download",
+      "href": "https://mega.nz/folder/63hnHKKZ"
+    },
+    {
+      "label": "Download RAW Photos",
+      "detail": "Open private download",
+      "href": "https://mega.nz/folder/63hnHKKZ"
+    }
+  ],
+  "previews": [
+    {
+      "src": "client-galleries/nathan-portraits/previews/nathan-01.jpg",
+      "alt": "Nathan portrait preview"
+    },
+    {
+      "src": "client-galleries/nathan-portraits/previews/nathan-02.jpg",
+      "alt": "Nathan portrait preview"
+    },
+    {
+      "src": "client-galleries/nathan-portraits/previews/nathan-03.jpg",
+      "alt": "Nathan portrait preview"
+    },
+    {
+      "src": "client-galleries/nathan-portraits/previews/nathan-04.jpg",
+      "alt": "Nathan portrait preview"
+    }
+  ]
+}

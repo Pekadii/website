@@ -1,0 +1,55 @@
+{
+  "title": "Graduation Session",
+  "date": "June 2026",
+  "note": "Your preview gallery is ready. Full-quality downloads are shared privately.",
+  "downloads": [
+    {
+      "label": "Download Edited Photos",
+      "detail": "Open private download",
+      "href": "https://mega.nz/folder/CnRQxAiL"
+    },
+    {
+      "label": "Download RAW Photos",
+      "detail": "Open private download",
+      "href": "https://mega.nz/folder/CnRQxAiL"
+    }
+  ],
+  "previews": [
+    {
+      "src": "client-galleries/Graduation/previews/graduation-01.jpg",
+      "alt": "Graduation preview photo 1",
+      "aspectRatio": "3 / 2",
+      "fit": "contain"
+    },
+    {
+      "src": "client-galleries/Graduation/previews/graduation-02.jpg",
+      "alt": "Graduation preview photo 2",
+      "aspectRatio": "3 / 2",
+      "fit": "contain"
+    },
+    {
+      "src": "client-galleries/Graduation/previews/graduation-04.jpg",
+      "alt": "Graduation preview photo 4",
+      "aspectRatio": "3 / 2",
+      "fit": "contain"
+    },
+    {
+      "src": "client-galleries/Graduation/previews/graduation-06.jpg",
+      "alt": "Graduation preview photo 6",
+      "aspectRatio": "3 / 2",
+      "fit": "contain"
+    },
+    {
+      "src": "client-galleries/Graduation/previews/graduation-13.jpg",
+      "alt": "Graduation preview photo 13",
+      "aspectRatio": "3 / 2",
+      "fit": "contain"
+    },
+    {
+      "src": "client-galleries/Graduation/previews/graduation-19.jpg",
+      "alt": "Graduation preview photo 19",
+      "aspectRatio": "3 / 2",
+      "fit": "contain"
+    }
+  ]
+}

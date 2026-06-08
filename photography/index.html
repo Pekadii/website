@@ -7,6 +7,7 @@
   <meta name="theme-color" content="#000000" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <title>Pekadi Photography</title>
+  <link rel="preload" as="image" href="optimized/portfolio/Fall-River-hero.jpg" fetchpriority="high" />
   <link rel="stylesheet" href="style.css" />
   <link rel="icon" type="image/x-icon" href="icon.ico" />
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap" rel="stylesheet">
@@ -23,7 +24,6 @@
 
       <div class="icon-row photography-socials">
         <a href="https://www.instagram.com/pekadi"><img src="instagram.png" class="social-icon" alt="Instagram"></a>
-        <a href="https://github.com/Pekadii"><img src="github.png" class="social-icon" alt="GitHub"></a>
       </div>
     </div>
 
@@ -31,6 +31,7 @@
       <button class="site-menu-backdrop" type="button" aria-label="Close site menu" data-menu-close></button>
       <nav class="site-menu-panel" aria-label="Site menu">
         <a href="/"><strong>Home</strong></a>
+        <a href="/client-gallery/"><strong>Gallery</strong></a>
         <a href="/Presets/"><strong>Presets</strong></a>
         <a href="/about-me/"><strong>About Me</strong></a>
         <a href="/My-Gear/"><strong>My Gear</strong></a>
@@ -39,35 +40,36 @@
   </header>
 
   <section class="photography-visual-hero" aria-label="Pekadi photography">
+    <img class="photography-hero-image" src="optimized/portfolio/Fall-River-hero.jpg" alt="" aria-hidden="true" fetchpriority="high" decoding="async" draggable="false" oncontextmenu="return false;">
     <a class="photography-hero-logo" href="/" aria-label="Back to home">
-      <img class="photography-hero-signature" src="Signature.png" alt="Pekadi Photography signature">
+      <img class="photography-hero-signature" src="Signature.png" alt="Pekadi Photography signature" width="1920" height="444" fetchpriority="high" decoding="async">
     </a>
   </section>
 
   <section class="portfolio-section portfolio-categories" id="collections" aria-label="Photography categories">
     <div class="category-grid">
       <a class="category-cover category-cover-contained" href="#von-portraits" data-gallery-open="von-portraits">
-        <img src="Von-3.jpg" alt="Low angle portrait under station lights">
+        <div class="portfolio-photo" style="background-image: url('/optimized/portfolio/Von-3-cover.jpg')" role="img" aria-label="Low angle portrait under station lights" oncontextmenu="return false;"></div>
         <span>VON'S HIGHLIGHTS</span>
       </a>
 
       <a class="category-cover category-cover-contained" href="#nathan-highlights" data-gallery-open="nathan-highlights">
-        <img src="Nathan-1.jpg" alt="Nathan portrait highlight">
+        <div class="portfolio-photo" style="background-image: url('/optimized/portfolio/Nathan-1-cover.jpg')" role="img" aria-label="Nathan portrait highlight" oncontextmenu="return false;"></div>
         <span>NATHAN HIGHLIGHTS</span>
       </a>
 
       <a class="category-cover category-cover-contained" href="#boston-nightshots" data-gallery-open="boston-nightshots">
-        <img src="Boston-1.jpg" alt="Boston night photo highlight">
+        <div class="portfolio-photo" style="background-image: url('/optimized/portfolio/Boston-1-cover.jpg')" role="img" aria-label="Boston night photo highlight" oncontextmenu="return false;"></div>
         <span>BOSTON NIGHTSHOTS</span>
       </a>
 
       <a class="category-cover" href="#low-light-landscapes" data-gallery-open="low-light-landscapes">
-        <img src="Landscape.jpg" alt="Low light train station landscape">
+        <div class="portfolio-photo" style="background-image: url('/optimized/portfolio/Landscape-cover.jpg')" role="img" aria-label="Low light train station landscape" oncontextmenu="return false;"></div>
         <span>LOW LIGHT LANDSCAPES</span>
       </a>
 
       <a class="category-cover category-cover-contained" href="#train-nightshots" data-gallery-open="train-nightshots">
-        <img src="Train-3.jpg" alt="Vertical train scene with motion and shadow">
+        <div class="portfolio-photo" style="background-image: url('/optimized/portfolio/Train-3-cover.jpg')" role="img" aria-label="Vertical train scene with motion and shadow" oncontextmenu="return false;"></div>
         <span>TRAIN NIGHTSHOTS</span>
       </a>
     </div>
@@ -77,11 +79,11 @@
     <a class="gallery-back" href="#collections">Collections</a>
     <h2>VON HIGHLIGHTS</h2>
     <div class="gallery-grid">
-      <div class="tile tile-tall"><img src="Von-3.jpg" alt="Moody portrait lighting"></div>
-      <div class="tile tile-tall"><img src="Von-1.jpg" alt="Cinematic night portrait"></div>
-      <div class="tile tile-tall"><img src="Von-5.jpg" alt="Late night portrait"></div>
-      <div class="tile tile-tall"><img src="Von-2.jpg" alt="Close-up portrait"></div>
-      <div class="tile tile-tall"><img src="Von-4.jpg" alt="Side profile portrait"></div>
+      <div class="tile tile-tall"><div class="portfolio-photo" data-bg="/optimized/portfolio/display/Von-3.jpg" role="img" aria-label="Moody portrait lighting" oncontextmenu="return false;"></div></div>
+      <div class="tile tile-tall"><div class="portfolio-photo" data-bg="/optimized/portfolio/display/Von-1.jpg" role="img" aria-label="Cinematic night portrait" oncontextmenu="return false;"></div></div>
+      <div class="tile tile-tall"><div class="portfolio-photo" data-bg="/optimized/portfolio/display/Von-5.jpg" role="img" aria-label="Late night portrait" oncontextmenu="return false;"></div></div>
+      <div class="tile tile-tall"><div class="portfolio-photo" data-bg="/optimized/portfolio/display/Von-2.jpg" role="img" aria-label="Close-up portrait" oncontextmenu="return false;"></div></div>
+      <div class="tile tile-tall"><div class="portfolio-photo" data-bg="/optimized/portfolio/display/Von-4.jpg" role="img" aria-label="Side profile portrait" oncontextmenu="return false;"></div></div>
     </div>
   </section>
 
@@ -89,10 +91,10 @@
     <a class="gallery-back" href="#collections">Collections</a>
     <h2>NATHAN HIGHLIGHTS</h2>
     <div class="gallery-grid">
-      <div class="tile tile-tall"><img src="Nathan-1.jpg" alt="Nathan portrait highlight 1"></div>
-      <div class="tile tile-tall"><img src="Nathan-2.jpg" alt="Nathan portrait highlight 2"></div>
-      <div class="tile tile-tall"><img src="Nathan-3.jpg" alt="Nathan portrait highlight 3"></div>
-      <div class="tile tile-tall"><img src="Nathan-4.jpg" alt="Nathan portrait highlight 4"></div>
+      <div class="tile tile-tall"><div class="portfolio-photo" data-bg="/optimized/portfolio/display/Nathan-1.jpg" role="img" aria-label="Nathan portrait highlight 1" oncontextmenu="return false;"></div></div>
+      <div class="tile tile-tall"><div class="portfolio-photo" data-bg="/optimized/portfolio/display/Nathan-2.jpg" role="img" aria-label="Nathan portrait highlight 2" oncontextmenu="return false;"></div></div>
+      <div class="tile tile-tall"><div class="portfolio-photo" data-bg="/optimized/portfolio/display/Nathan-3.jpg" role="img" aria-label="Nathan portrait highlight 3" oncontextmenu="return false;"></div></div>
+      <div class="tile tile-tall"><div class="portfolio-photo" data-bg="/optimized/portfolio/display/Nathan-4.jpg" role="img" aria-label="Nathan portrait highlight 4" oncontextmenu="return false;"></div></div>
     </div>
   </section>
 
@@ -100,11 +102,11 @@
     <a class="gallery-back" href="#collections">Collections</a>
     <h2>BOSTON NIGHTSHOTS</h2>
     <div class="gallery-grid">
-      <div class="tile tile-tall"><img src="Boston-1.jpg" alt="Boston night photo 1"></div>
-      <div class="tile tile-tall"><img src="Boston-2.jpg" alt="Boston night photo 2"></div>
-      <div class="tile tile-tall"><img src="Boston-3.jpg" alt="Boston night photo 3"></div>
-      <div class="tile tile-tall"><img src="Boston-4.jpg" alt="Boston night photo 4"></div>
-      <div class="tile tile-tall"><img src="Boston-5.jpg" alt="Boston night photo 5"></div>
+      <div class="tile tile-tall"><div class="portfolio-photo" data-bg="/optimized/portfolio/display/Boston-1.jpg" role="img" aria-label="Boston night photo 1" oncontextmenu="return false;"></div></div>
+      <div class="tile tile-tall"><div class="portfolio-photo" data-bg="/optimized/portfolio/display/Boston-2.jpg" role="img" aria-label="Boston night photo 2" oncontextmenu="return false;"></div></div>
+      <div class="tile tile-tall"><div class="portfolio-photo" data-bg="/optimized/portfolio/display/Boston-3.jpg" role="img" aria-label="Boston night photo 3" oncontextmenu="return false;"></div></div>
+      <div class="tile tile-tall"><div class="portfolio-photo" data-bg="/optimized/portfolio/display/Boston-4.jpg" role="img" aria-label="Boston night photo 4" oncontextmenu="return false;"></div></div>
+      <div class="tile tile-tall"><div class="portfolio-photo" data-bg="/optimized/portfolio/display/Boston-5.jpg" role="img" aria-label="Boston night photo 5" oncontextmenu="return false;"></div></div>
     </div>
   </section>
 
@@ -112,9 +114,9 @@
     <a class="gallery-back" href="#collections">Collections</a>
     <h2>LOW LIGHT LANDSCAPES</h2>
     <div class="gallery-grid">
-      <div class="tile"><img src="Train-2.jpg" alt="Night train station photo"></div>
-      <div class="tile"><img src="Train-1.jpg" alt="MBTA train at night"></div>
-      <div class="tile"><img src="Landscape.jpg" alt="Train platform lights"></div>
+      <div class="tile"><div class="portfolio-photo" data-bg="/optimized/portfolio/display/Train-2.jpg" role="img" aria-label="Night train station photo" oncontextmenu="return false;"></div></div>
+      <div class="tile"><div class="portfolio-photo" data-bg="/optimized/portfolio/display/Train-1.jpg" role="img" aria-label="MBTA train at night" oncontextmenu="return false;"></div></div>
+      <div class="tile"><div class="portfolio-photo" data-bg="/optimized/portfolio/display/Landscape.jpg" role="img" aria-label="Train platform lights" oncontextmenu="return false;"></div></div>
     </div>
   </section>
 
@@ -122,8 +124,8 @@
     <a class="gallery-back" href="#collections">Collections</a>
     <h2>TRAIN NIGHTSHOTS</h2>
     <div class="gallery-grid">
-      <div class="tile tile-tall"><img src="Train-3.jpg" alt="Train in motion"></div>
-      <div class="tile tile-tall"><img src="Train-4.jpg" alt="Vertical low light train scene"></div>
+      <div class="tile tile-tall"><div class="portfolio-photo" data-bg="/optimized/portfolio/display/Train-3.jpg" role="img" aria-label="Train in motion" oncontextmenu="return false;"></div></div>
+      <div class="tile tile-tall"><div class="portfolio-photo" data-bg="/optimized/portfolio/display/Train-4.jpg" role="img" aria-label="Vertical low light train scene" oncontextmenu="return false;"></div></div>
     </div>
   </section>
 
@@ -171,6 +173,20 @@
       const collectionTarget = document.querySelector(".portfolio-categories");
       if(!panels.length || !openers.length) return;
 
+      function getScrollBehavior(){
+        const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        const mobileViewport = window.matchMedia("(max-width: 700px)").matches;
+        return reduceMotion || mobileViewport ? "auto" : "smooth";
+      }
+
+      function hydratePhotos(root){
+        if(!root) return;
+        root.querySelectorAll(".portfolio-photo[data-bg]").forEach((photo) => {
+          photo.style.backgroundImage = `url('${photo.dataset.bg}')`;
+          photo.removeAttribute("data-bg");
+        });
+      }
+
       function showGallery(id, shouldScroll){
         panels.forEach((panel) => {
           panel.hidden = panel.id !== id;
@@ -178,8 +194,9 @@
         });
 
         const active = panels.find((panel) => panel.id === id);
+        hydratePhotos(active);
         if(active && shouldScroll){
-          active.scrollIntoView({ behavior: "smooth", block: "start" });
+          active.scrollIntoView({ behavior: getScrollBehavior(), block: "start" });
         }
       }
 
@@ -190,7 +207,7 @@
         });
 
         if(collectionTarget && shouldScroll){
-          collectionTarget.scrollIntoView({ behavior: "smooth", block: "start" });
+          collectionTarget.scrollIntoView({ behavior: getScrollBehavior(), block: "start" });
         }
       }
 
@@ -227,6 +244,11 @@
       } else {
         showCollections(false);
       }
+
+      document.querySelectorAll(".portfolio-photo, .photography-hero-image").forEach((photo) => {
+        photo.addEventListener("contextmenu", (event) => event.preventDefault());
+        photo.addEventListener("dragstart", (event) => event.preventDefault());
+      });
     })();
   </script>
 </body>
