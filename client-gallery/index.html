@@ -159,10 +159,6 @@
         return escapeHtml(value);
       }
 
-      function escapeCssUrl(value){
-        return String(value ?? "").replace(/\\/g, "\\\\").replace(/'/g, "\\'");
-      }
-
       function cleanAspectRatio(value){
         return /^\d+(?:\.\d+)?\s*\/\s*\d+(?:\.\d+)?$/.test(value || "") ? value : "4 / 5";
       }
@@ -204,9 +200,24 @@
           return;
         }
 
-        target.innerHTML = sessions.map((session) => `
+        target.innerHTML = sessions.map((session, index) => {
+          const coverLoading = target === publicGrid && index === 0 ? "eager" : "lazy";
+          const coverPriority = target === publicGrid && index === 0 ? "high" : "auto";
+
+          return `
           <article class="client-session-card" data-session-id="${escapeAttribute(session.id)}" data-session-visibility="${session.public ? "public" : "client"}">
-            ${session.cover ? `<div class="client-session-cover" style="background-image: url('${escapeCssUrl(toRootPath(session.cover))}')" role="img" aria-label="${escapeAttribute(session.title || "Client session cover")}" oncontextmenu="return false;"></div>` : `<div class="client-session-cover client-session-cover-empty" aria-hidden="true"></div>`}
+            ${session.cover ? `
+              <div class="client-session-cover" oncontextmenu="return false;">
+                <img
+                  src="${escapeAttribute(toRootPath(session.cover))}"
+                  alt="${escapeAttribute(session.title || "Client session cover")}"
+                  loading="${coverLoading}"
+                  fetchpriority="${coverPriority}"
+                  decoding="async"
+                  draggable="false"
+                  sizes="(max-width: 900px) 92vw, 38vw">
+              </div>
+            ` : `<div class="client-session-cover client-session-cover-empty" aria-hidden="true"></div>`}
             <div class="client-session-copy">
               <p class="client-gallery-kicker">${escapeHtml(session.date || "Client Session")}</p>
               <h3>${escapeHtml(session.title)}</h3>
@@ -230,7 +241,8 @@
               `}
             </div>
           </article>
-        `).join("");
+        `;
+        }).join("");
 
         target.querySelectorAll("[data-code-form]").forEach((form) => {
           form.addEventListener("submit", unlockSession);
