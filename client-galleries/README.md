@@ -17,4 +17,21 @@ client-galleries/nathan-portraits/
 
 Add the session folder to `CLIENT_SESSIONS` in `client-gallery/index.html`, then copy `manifest-template.json` into the session folder and rename it to the access code you want the client to use.
 
-Keep preview JPGs small. If the full-quality files use a Mega share link or any URL with a private key, do not commit that URL to this repo. Leave the manifest `href` empty and share the link directly with the client, or inject it only in a private deploy step.
+Keep preview JPGs small. If the full-quality files use a Mega share link or any URL with a private key, do not commit that URL to this repo. Leave the manifest `href` empty and share the link directly with the client, inject it only in a private deploy step, or use the private download gate in `download-gate/`.
+
+For download-gated sessions, keep the public manifest limited to labels and previews:
+
+```json
+{
+  "downloadGate": true,
+  "downloads": [
+    {
+      "label": "Download Edited Photos",
+      "detail": "Private download unlocks with your access code",
+      "downloadId": "edited"
+    }
+  ]
+}
+```
+
+Add matching download gate secrets for each private session, such as `GRADUATION_ACCESS_CODE`, `GRADUATION_EDITED_MEGA_URL`, and `GRADUATION_RAW_MEGA_URL`.

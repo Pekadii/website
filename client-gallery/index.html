@@ -50,13 +50,26 @@
       </div>
     </section>
 
-    <section class="client-gallery-shell" aria-label="Client photo sessions">
+    <section class="client-gallery-shell" aria-label="Recent public galleries">
       <div class="client-gallery-head">
-        <p class="client-gallery-kicker">Sessions</p>
-        <h2>Enter your access code to open a folder.</h2>
+        <h2>Public Galleries.</h2>
+        <div class="client-gallery-actions">
+          <button class="client-area-toggle" type="button" aria-expanded="false" aria-controls="clientAreaSessions" data-client-area-toggle>
+            Client Area
+          </button>
+        </div>
       </div>
 
-      <div class="client-session-grid" data-session-grid></div>
+      <div class="client-session-grid" data-public-session-grid></div>
+    </section>
+
+    <section class="client-gallery-shell client-area-shell" id="clientAreaSessions" data-client-area-section hidden aria-label="Private client gallery sessions">
+      <div class="client-gallery-head">
+        <p class="client-gallery-kicker">Client Area</p>
+        <h2>Client gallery sessions.</h2>
+      </div>
+
+      <div class="client-session-grid" data-client-session-grid></div>
     </section>
 
     <section class="client-unlocked" data-unlocked-gallery hidden aria-live="polite"></section>
@@ -67,6 +80,8 @@
   </footer>
 
   <script>
+    const DOWNLOAD_GATE_ENDPOINT = "https://pekadi-download-gate.theofficialaustinrath.workers.dev";
+
     const CLIENT_SESSIONS = [
       {
         id: "nathan-portraits",
@@ -84,10 +99,12 @@
       },
       {
         id: "family-2026",
-        title: "Family Session",
+        title: "Family 2026",
         date: "June 2026",
         folder: "client-galleries/Family",
-        cover: "client-galleries/Family/previews/family-05.jpg"
+        cover: "client-galleries/Family/previews/family-05.jpg",
+        manifest: "client-galleries/Family/Family2026.json",
+        public: true
       },
       {
         id: "adventure-2024",
@@ -111,14 +128,17 @@
     ];
 
     (function(){
-      const grid = document.querySelector("[data-session-grid]");
+      const publicGrid = document.querySelector("[data-public-session-grid]");
+      const clientGrid = document.querySelector("[data-client-session-grid]");
+      const clientAreaSection = document.querySelector("[data-client-area-section]");
       const unlocked = document.querySelector("[data-unlocked-gallery]");
-      if(!grid || !unlocked) return;
+      const clientAreaToggle = document.querySelector("[data-client-area-toggle]");
+      if(!publicGrid || !clientGrid || !unlocked) return;
+
+      let clientAreaOpen = false;
 
       function getScrollBehavior(){
-        const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-        const mobileViewport = window.matchMedia("(max-width: 700px)").matches;
-        return reduceMotion || mobileViewport ? "auto" : "smooth";
+        return "auto";
       }
 
       function cleanCode(value){
@@ -151,11 +171,22 @@
         return value === "contain" ? "contain" : "cover";
       }
 
-      function showEmptyState(){
-        grid.innerHTML = `
+      function showEmptyState(target, title = "Client folders will appear here after a session is ready."){
+        if(!target) return;
+        target.innerHTML = `
           <article class="client-session-empty">
             <p class="client-gallery-kicker">No Active Deliveries</p>
-            <h3>Client folders will appear here after a session is ready.</h3>
+            <h3>${escapeHtml(title)}</h3>
+          </article>
+        `;
+      }
+
+      function showPublicEmptyState(target){
+        if(!target) return;
+        target.innerHTML = `
+          <article class="client-session-empty">
+            <p class="client-gallery-kicker">No Public Galleries</p>
+            <h3>Recent public galleries will appear here.</h3>
           </article>
         `;
       }
@@ -165,14 +196,16 @@
         return `/${path}`;
       }
 
-      function renderSessions(){
-        if(!CLIENT_SESSIONS.length){
-          showEmptyState();
+      function renderSessionGrid(target, sessions){
+        if(!target) return;
+
+        if(!sessions.length){
+          target === publicGrid ? showPublicEmptyState(target) : showEmptyState(target);
           return;
         }
 
-        grid.innerHTML = CLIENT_SESSIONS.map((session) => `
-          <article class="client-session-card" data-session-id="${escapeAttribute(session.id)}">
+        target.innerHTML = sessions.map((session) => `
+          <article class="client-session-card" data-session-id="${escapeAttribute(session.id)}" data-session-visibility="${session.public ? "public" : "client"}">
             ${session.cover ? `<div class="client-session-cover" style="background-image: url('${escapeCssUrl(toRootPath(session.cover))}')" role="img" aria-label="${escapeAttribute(session.title || "Client session cover")}" oncontextmenu="return false;"></div>` : `<div class="client-session-cover client-session-cover-empty" aria-hidden="true"></div>`}
             <div class="client-session-copy">
               <p class="client-gallery-kicker">${escapeHtml(session.date || "Client Session")}</p>
@@ -199,17 +232,39 @@
           </article>
         `).join("");
 
-        grid.querySelectorAll("[data-code-form]").forEach((form) => {
+        target.querySelectorAll("[data-code-form]").forEach((form) => {
           form.addEventListener("submit", unlockSession);
         });
 
-        grid.querySelectorAll("[data-public-gallery]").forEach((button) => {
+        target.querySelectorAll("[data-public-gallery]").forEach((button) => {
           button.addEventListener("click", loadPublicSession);
         });
 
-        grid.querySelectorAll(".client-session-cover").forEach((cover) => {
+        target.querySelectorAll(".client-session-cover").forEach((cover) => {
           cover.addEventListener("contextmenu", (event) => event.preventDefault());
           cover.addEventListener("dragstart", (event) => event.preventDefault());
+        });
+      }
+
+      function renderSessions(){
+        renderSessionGrid(publicGrid, CLIENT_SESSIONS.filter((session) => session.public));
+        renderSessionGrid(clientGrid, CLIENT_SESSIONS.filter((session) => !session.public));
+      }
+
+      function updateClientAreaToggle(){
+        if(clientAreaSection) clientAreaSection.hidden = !clientAreaOpen;
+        if(!clientAreaToggle) return;
+        clientAreaToggle.setAttribute("aria-expanded", String(clientAreaOpen));
+        clientAreaToggle.classList.toggle("is-active", clientAreaOpen);
+      }
+
+      if(clientAreaToggle){
+        clientAreaToggle.addEventListener("click", () => {
+          clientAreaOpen = !clientAreaOpen;
+          updateClientAreaToggle();
+          if(clientAreaOpen && clientAreaSection){
+            clientAreaSection.scrollIntoView({ behavior: getScrollBehavior(), block: "start" });
+          }
         });
       }
 
@@ -255,10 +310,58 @@
           const response = await fetch(`${session.folder}/${code}.json`, { cache: "no-store" });
           if(!response.ok) throw new Error("locked");
           const manifest = await response.json();
+          const downloadsReady = await attachPrivateDownloads(session, manifest, code);
           renderUnlocked(session, manifest);
-          status.textContent = "Unlocked.";
+          status.textContent = downloadsReady === false ? "Unlocked. Private downloads need attention." : "Unlocked.";
         }catch(error){
           status.textContent = "That code did not unlock this folder.";
+        }
+      }
+
+      async function attachPrivateDownloads(session, manifest, code){
+        if(!manifest.downloadGate) return true;
+
+        if(!DOWNLOAD_GATE_ENDPOINT){
+          manifest.downloads = (Array.isArray(manifest.downloads) ? manifest.downloads : []).map((item) => ({
+            ...item,
+            href: "",
+            detail: "Download gate not connected yet"
+          }));
+          return false;
+        }
+
+        try{
+          const response = await fetch(DOWNLOAD_GATE_ENDPOINT, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              sessionId: session.id,
+              code
+            })
+          });
+
+          if(!response.ok){
+            let message = `download gate returned ${response.status}`;
+            try{
+              const errorPayload = await response.json();
+              if(errorPayload && errorPayload.error) message += `: ${errorPayload.error}`;
+            }catch(error){}
+            throw new Error(message);
+          }
+
+          const payload = await response.json();
+          if(Array.isArray(payload.downloads)){
+            manifest.downloads = payload.downloads;
+          }
+          return true;
+        }catch(error){
+          console.error("Private download lookup failed", error);
+          manifest.downloads = (Array.isArray(manifest.downloads) ? manifest.downloads : []).map((item) => ({
+            ...item,
+            href: "",
+            detail: `Private download lookup failed${error.message ? `: ${error.message}` : ""}`
+          }));
+          return false;
         }
       }
 
@@ -295,14 +398,15 @@
           ${previews.length ? `
             <div class="client-preview-grid">
               ${previews.map((photo) => `
-                <figure class="client-preview-tile" style="background-image: url('${escapeCssUrl(toRootPath(photo.src))}'); --client-preview-aspect: ${cleanAspectRatio(photo.aspectRatio)}; --client-preview-fit: ${cleanPreviewFit(photo.fit)};" role="img" aria-label="${escapeAttribute(photo.alt || "Client gallery preview")}" oncontextmenu="return false;">
+                <figure class="client-preview-tile" style="--client-preview-aspect: ${cleanAspectRatio(photo.aspectRatio)}; --client-preview-fit: ${cleanPreviewFit(photo.fit)};" oncontextmenu="return false;">
+                  <img class="client-preview-image" src="${escapeAttribute(toRootPath(photo.src))}" alt="${escapeAttribute(photo.alt || "Client gallery preview")}" loading="lazy" decoding="async" draggable="false">
                 </figure>
               `).join("")}
             </div>
           ` : ""}
         `;
 
-        unlocked.querySelectorAll(".client-preview-grid, .client-preview-tile").forEach((element) => {
+        unlocked.querySelectorAll(".client-preview-grid, .client-preview-tile, .client-preview-image").forEach((element) => {
           element.addEventListener("contextmenu", (event) => event.preventDefault());
           element.addEventListener("dragstart", (event) => event.preventDefault());
         });
@@ -310,6 +414,7 @@
         unlocked.scrollIntoView({ behavior: getScrollBehavior(), block: "start" });
       }
 
+      updateClientAreaToggle();
       renderSessions();
     })();
   </script>

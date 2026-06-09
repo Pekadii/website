@@ -1,17 +1,18 @@
 {
   "title": "Graduation Session",
   "date": "June 2026",
-  "note": "Your preview gallery is ready. Full-quality downloads are shared privately.",
+  "note": "Your preview gallery is ready. Full-quality downloads unlock here after your access code is accepted.",
+  "downloadGate": true,
   "downloads": [
     {
       "label": "Download Edited Photos",
-      "detail": "Open private download",
-      "href": "https://mega.nz/folder/CnRQxAiL"
+      "detail": "Private download unlocks with your access code",
+      "downloadId": "edited"
     },
     {
       "label": "Download RAW Photos",
-      "detail": "Open private download",
-      "href": "https://mega.nz/folder/CnRQxAiL"
+      "detail": "Private download unlocks with your access code",
+      "downloadId": "raw"
     }
   ],
   "previews": [

@@ -1,19 +1,8 @@
 {
-  "title": "Family Session",
+  "title": "Family 2026",
   "date": "June 2026",
-  "note": "Your preview gallery is ready. Full-quality downloads are shared privately.",
-  "downloads": [
-    {
-      "label": "Download Edited Photos",
-      "detail": "Open private download",
-      "href": "https://mega.nz/folder/X6oDWYaK"
-    },
-    {
-      "label": "Download RAW Photos",
-      "detail": "Open private download",
-      "href": "https://mega.nz/folder/X6oDWYaK"
-    }
-  ],
+  "note": "Family Celebration 2026, Graduation",
+  "downloads": [],
   "previews": [
     {
       "src": "client-galleries/Family/previews/family-01.jpg",

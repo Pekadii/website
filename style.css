@@ -3,6 +3,9 @@
    PEKADI WEB PAGE 
 ========================= */
 :root{
+  --font-heading: "Playfair Display", Georgia, serif;
+  --font-body: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+
   --bg: #08090c;
   --bg-2: #0d1016;
   --text: rgba(255,255,255,0.96);
@@ -46,7 +49,7 @@ body{
   min-height: 100%;
   min-height: 100vh;
   min-height: 100dvh;
-  font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-family: var(--font-body);
   color: var(--text);
   line-height: 1.6;
   background: var(--page-bg);
@@ -54,6 +57,13 @@ body{
   background-repeat: no-repeat;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+}
+
+button,
+input,
+textarea,
+select{
+  font-family: var(--font-body);
 }
 
 .glass{
@@ -92,7 +102,7 @@ a:hover{
 }
 
 h1, h2, h3{
-  font-family: "Playfair Display", serif;
+  font-family: var(--font-heading);
   letter-spacing: 0.3px;
 }
 
@@ -307,7 +317,7 @@ header{
 }
 
 .site-menu-panel strong{
-  font-family: "Playfair Display", serif;
+  font-family: var(--font-heading);
   font-size: clamp(23px, 2.4vw, 30px);
   line-height: 1.05;
 }
@@ -1021,12 +1031,11 @@ header{
 
 .instagram-exposure h3{
   margin: 0;
-  font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-family: var(--font-heading);
   font-size: clamp(34px, 6vw, 78px);
-  font-weight: 900;
-  line-height: 0.95;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: 0.02em;
 }
 
 .instagram-frame{
@@ -2210,7 +2219,7 @@ footer p{
 
 .portfolio-hero h1{
   margin: 0;
-  font-family: "Playfair Display", serif;
+  font-family: var(--font-heading);
   font-weight: 600;
   letter-spacing: -0.5px;
   font-size: clamp(42px, 6vw, 72px);
@@ -2420,11 +2429,11 @@ footer p{
   z-index: 1;
   max-width: calc(100% - 32px);
   padding: 0 16px 34px;
-  font-family: "Inter", system-ui, sans-serif;
+  font-family: var(--font-heading);
   font-size: clamp(18px, 2vw, 28px);
-  font-weight: 800;
-  line-height: 1.1;
-  letter-spacing: 0.12em;
+  font-weight: 600;
+  line-height: 1.05;
+  letter-spacing: 0.04em;
   text-align: center;
   text-transform: uppercase;
   text-shadow: 0 2px 18px rgba(0,0,0,0.72);
@@ -2456,7 +2465,7 @@ footer p{
   border-radius: 999px;
   background: rgba(255,255,255,0.04);
   color: rgba(255,255,255,0.72);
-  font-family: "Inter", system-ui, sans-serif;
+  font-family: var(--font-body);
   font-size: 13px;
   font-weight: 700;
   letter-spacing: 0.08em;
@@ -2835,9 +2844,9 @@ footer p{
   min-height: min(520px, 62vh);
   position: relative;
   display: grid;
-  place-items: end center;
+  place-items: start center;
   overflow: hidden;
-  padding: calc(112px + env(safe-area-inset-top, 0px)) 20px 58px;
+  padding: calc(118px + env(safe-area-inset-top, 0px)) 20px 82px;
   background: #050607;
 }
 
@@ -2847,8 +2856,8 @@ footer p{
   inset: 0;
   pointer-events: none;
   background:
-    linear-gradient(to bottom, rgba(0,0,0,0.38), rgba(0,0,0,0.16) 45%, #08090c 100%),
-    radial-gradient(760px 260px at 50% 78%, rgba(255,255,255,0.08), transparent 70%);
+    linear-gradient(to bottom, rgba(0,0,0,0.62), rgba(0,0,0,0.42) 42%, #08090c 100%),
+    radial-gradient(760px 260px at 50% 34%, rgba(0,0,0,0.24), transparent 72%);
 }
 
 .client-gallery-hero-image{
@@ -2859,6 +2868,7 @@ footer p{
   object-fit: cover;
   object-position: center;
   display: block;
+  filter: brightness(0.72) saturate(0.88);
 }
 
 .client-gallery-hero-copy{
@@ -2866,6 +2876,7 @@ footer p{
   z-index: 1;
   width: min(760px, 92vw);
   text-align: center;
+  text-shadow: 0 3px 24px rgba(0,0,0,0.72);
 }
 
 .client-gallery-kicker{
@@ -2900,6 +2911,11 @@ footer p{
   margin: 44px auto 0;
 }
 
+.client-area-shell{
+  padding-top: 34px;
+  border-top: 1px solid var(--line-soft);
+}
+
 .client-gallery-head,
 .client-unlocked-head{
   max-width: 760px;
@@ -2912,6 +2928,49 @@ footer p{
   margin: 0;
   font-size: clamp(30px, 4vw, 52px);
   line-height: 1.04;
+}
+
+.client-gallery-actions{
+  display: flex;
+  justify-content: center;
+  margin-top: 18px;
+}
+
+.client-area-toggle{
+  min-height: 38px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 9px 15px;
+  border: 1px solid rgba(255,255,255,0.16);
+  border-radius: 999px;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.13), rgba(255,255,255,0.045)),
+    rgba(255,255,255,0.04);
+  color: rgba(255,255,255,0.78);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  line-height: 1;
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.16),
+    0 10px 28px rgba(0,0,0,0.18);
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.client-area-toggle:hover,
+.client-area-toggle.is-active{
+  border-color: rgba(255,255,255,0.30);
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.20), rgba(255,255,255,0.075)),
+    rgba(255,255,255,0.08);
+  color: rgba(255,255,255,0.96);
+}
+
+.client-area-toggle:hover{
+  transform: translateY(-1px);
 }
 
 .client-session-grid{
@@ -2931,6 +2990,15 @@ footer p{
   box-shadow:
     inset 0 1px 0 rgba(255,255,255,0.10),
     0 18px 46px rgba(0,0,0,0.34);
+}
+
+@supports (content-visibility: auto){
+  .client-session-card,
+  .client-download-card,
+  .client-preview-tile{
+    content-visibility: auto;
+    contain-intrinsic-size: 360px 420px;
+  }
 }
 
 .client-session-card{
@@ -3089,13 +3157,22 @@ footer p{
 
 .client-preview-tile{
   aspect-ratio: var(--client-preview-aspect, 4 / 5);
+  position: relative;
   overflow: hidden;
   margin: 0;
   border-radius: 14px;
   background-color: #050607;
-  background-size: var(--client-preview-fit, cover);
-  background-position: center;
-  background-repeat: no-repeat;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-user-drag: none;
+}
+
+.client-preview-image{
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: var(--client-preview-fit, cover);
+  object-position: center;
   user-select: none;
   -webkit-user-select: none;
   -webkit-user-drag: none;
@@ -3191,7 +3268,8 @@ footer p{
 
   .client-gallery-hero{
     min-height: 430px;
-    padding-bottom: 46px;
+    padding-top: calc(104px + env(safe-area-inset-top, 0px));
+    padding-bottom: 64px;
   }
 
   .client-session-grid,
@@ -3231,10 +3309,6 @@ footer p{
 }
 
 @media (max-width: 640px){
-  .client-gallery-hero-copy{
-    text-align: left;
-  }
-
   .client-gallery-hero h1{
     font-size: clamp(40px, 14vw, 58px);
   }
@@ -3242,6 +3316,10 @@ footer p{
   .client-gallery-head,
   .client-unlocked-head{
     text-align: left;
+  }
+
+  .client-gallery-actions{
+    justify-content: flex-start;
   }
 
   .client-code-row{
