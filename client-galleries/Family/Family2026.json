@@ -1,0 +1,49 @@
+{
+  "title": "Family Session",
+  "date": "June 2026",
+  "note": "Your preview gallery is ready. Full-quality downloads are shared privately.",
+  "downloads": [
+    {
+      "label": "Download Edited Photos",
+      "detail": "Open private download",
+      "href": "https://mega.nz/folder/X6oDWYaK"
+    },
+    {
+      "label": "Download RAW Photos",
+      "detail": "Open private download",
+      "href": "https://mega.nz/folder/X6oDWYaK"
+    }
+  ],
+  "previews": [
+    {
+      "src": "client-galleries/Family/previews/family-01.jpg",
+      "alt": "Family preview photo 1",
+      "aspectRatio": "2 / 3",
+      "fit": "contain"
+    },
+    {
+      "src": "client-galleries/Family/previews/family-02.jpg",
+      "alt": "Family preview photo 2",
+      "aspectRatio": "2 / 3",
+      "fit": "contain"
+    },
+    {
+      "src": "client-galleries/Family/previews/family-03.jpg",
+      "alt": "Family preview photo 3",
+      "aspectRatio": "2 / 3",
+      "fit": "contain"
+    },
+    {
+      "src": "client-galleries/Family/previews/family-04.jpg",
+      "alt": "Family preview photo 4",
+      "aspectRatio": "3 / 2",
+      "fit": "contain"
+    },
+    {
+      "src": "client-galleries/Family/previews/family-05.jpg",
+      "alt": "Family preview photo 5",
+      "aspectRatio": "3 / 2",
+      "fit": "contain"
+    }
+  ]
+}

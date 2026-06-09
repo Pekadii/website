@@ -1,0 +1,62 @@
+{
+  "title": "New York 2025",
+  "date": "Sep 2025",
+  "note": "A public New York gallery from 2025.",
+  "downloads": [],
+  "previews": [
+    {
+      "src": "client-galleries/NewYork/previews/newyork-04.jpg",
+      "alt": "New York preview photo 4",
+      "aspectRatio": "3 / 2",
+      "fit": "contain"
+    },
+    {
+      "src": "client-galleries/NewYork/previews/newyork-08.jpg",
+      "alt": "New York preview photo 8",
+      "aspectRatio": "3 / 2",
+      "fit": "contain"
+    },
+    {
+      "src": "client-galleries/NewYork/previews/newyork-09.jpg",
+      "alt": "New York preview photo 9",
+      "aspectRatio": "3 / 2",
+      "fit": "contain"
+    },
+    {
+      "src": "client-galleries/NewYork/previews/newyork-01.jpg",
+      "alt": "New York preview photo 1",
+      "aspectRatio": "2 / 3",
+      "fit": "contain"
+    },
+    {
+      "src": "client-galleries/NewYork/previews/newyork-02.jpg",
+      "alt": "New York preview photo 2",
+      "aspectRatio": "2 / 3",
+      "fit": "contain"
+    },
+    {
+      "src": "client-galleries/NewYork/previews/newyork-03.jpg",
+      "alt": "New York preview photo 3",
+      "aspectRatio": "2 / 3",
+      "fit": "contain"
+    },
+    {
+      "src": "client-galleries/NewYork/previews/newyork-05.jpg",
+      "alt": "New York preview photo 5",
+      "aspectRatio": "2 / 3",
+      "fit": "contain"
+    },
+    {
+      "src": "client-galleries/NewYork/previews/newyork-06.jpg",
+      "alt": "New York preview photo 6",
+      "aspectRatio": "2 / 3",
+      "fit": "contain"
+    },
+    {
+      "src": "client-galleries/NewYork/previews/newyork-07.jpg",
+      "alt": "New York preview photo 7",
+      "aspectRatio": "2 / 3",
+      "fit": "contain"
+    }
+  ]
+}

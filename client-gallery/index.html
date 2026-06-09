@@ -73,7 +73,7 @@
         title: "Nathan Portrait Session",
         date: "May 2026",
         folder: "client-galleries/nathan-portraits",
-        cover: "client-galleries/nathan-portraits/previews/nathan-01.jpg"
+        cover: "client-galleries/nathan-portraits/previews/nathan-03.jpg"
       },
       {
         id: "graduation",
@@ -81,21 +81,33 @@
         date: "June 2026",
         folder: "client-galleries/Graduation",
         cover: "client-galleries/Graduation/previews/graduation-01.jpg"
+      },
+      {
+        id: "family-2026",
+        title: "Family Session",
+        date: "June 2026",
+        folder: "client-galleries/Family",
+        cover: "client-galleries/Family/previews/family-05.jpg"
+      },
+      {
+        id: "adventure-2024",
+        title: "Adventure 2024",
+        date: "June 2024",
+        folder: "client-galleries/Adventure",
+        cover: "client-galleries/Adventure/previews/adventure-25.jpg",
+        manifest: "client-galleries/Adventure/Adventure2024.json",
+        public: true
+      },
+      {
+        id: "newyork-2025",
+        title: "New York 2025",
+        date: "Sep 2025",
+        folder: "client-galleries/NewYork",
+        cover: "client-galleries/NewYork/previews/newyork-01.jpg",
+        manifest: "client-galleries/NewYork/NewYork2025.json",
+        public: true
       }
-      /*
-        Add each delivered shoot here.
-        Example:
-        {
-          id: "client-session-id",
-          title: "Client Portrait Session",
-          date: "May 2026",
-          folder: "client-galleries/client-folder",
-          cover: "client-galleries/client-folder/previews/photo-001.jpg"
-        }
 
-        Put the private manifest at:
-        client-galleries/client-folder/YOUR-CODE.json
-      */
     ];
 
     (function(){
@@ -165,14 +177,24 @@
             <div class="client-session-copy">
               <p class="client-gallery-kicker">${escapeHtml(session.date || "Client Session")}</p>
               <h3>${escapeHtml(session.title)}</h3>
-              <form class="client-code-form" data-code-form>
-                <label for="${escapeAttribute(session.id)}-code">Access Code</label>
-                <div class="client-code-row">
-                  <input id="${escapeAttribute(session.id)}-code" name="code" type="password" autocomplete="off" inputmode="text" required>
-                  <button class="btn btn-small" type="submit">Unlock</button>
+              ${session.public ? `
+                <div class="client-code-form">
+                  <label>Public Gallery</label>
+                  <div class="client-code-row">
+                    <button class="btn btn-small" type="button" data-public-gallery>View Gallery</button>
+                  </div>
+                  <p class="client-code-status" data-code-status></p>
                 </div>
-                <p class="client-code-status" data-code-status></p>
-              </form>
+              ` : `
+                <form class="client-code-form" data-code-form>
+                  <label for="${escapeAttribute(session.id)}-code">Access Code</label>
+                  <div class="client-code-row">
+                    <input id="${escapeAttribute(session.id)}-code" name="code" type="password" autocomplete="off" inputmode="text" required>
+                    <button class="btn btn-small" type="submit">Unlock</button>
+                  </div>
+                  <p class="client-code-status" data-code-status></p>
+                </form>
+              `}
             </div>
           </article>
         `).join("");
@@ -181,10 +203,37 @@
           form.addEventListener("submit", unlockSession);
         });
 
+        grid.querySelectorAll("[data-public-gallery]").forEach((button) => {
+          button.addEventListener("click", loadPublicSession);
+        });
+
         grid.querySelectorAll(".client-session-cover").forEach((cover) => {
           cover.addEventListener("contextmenu", (event) => event.preventDefault());
           cover.addEventListener("dragstart", (event) => event.preventDefault());
         });
+      }
+
+      async function loadPublicSession(event){
+        const card = event.currentTarget.closest("[data-session-id]");
+        const session = CLIENT_SESSIONS.find((item) => item.id === card.dataset.sessionId);
+        const status = card.querySelector("[data-code-status]");
+
+        if(!session || !session.manifest){
+          status.textContent = "This gallery is not available yet.";
+          return;
+        }
+
+        status.textContent = "Opening gallery...";
+
+        try{
+          const response = await fetch(session.manifest, { cache: "no-store" });
+          if(!response.ok) throw new Error("missing");
+          const manifest = await response.json();
+          renderUnlocked(session, manifest);
+          status.textContent = "Gallery opened.";
+        }catch(error){
+          status.textContent = "This gallery is not available yet.";
+        }
       }
 
       async function unlockSession(event){
@@ -232,14 +281,16 @@
             ${manifest.note ? `<p>${escapeHtml(manifest.note)}</p>` : ""}
           </div>
 
-          <div class="client-download-row">
-            ${downloads.map((item) => `
-              ${getDownloadHref(item) ? `<a class="client-download-card" href="${escapeAttribute(getDownloadHref(item))}" target="_blank" rel="noopener noreferrer">` : `<div class="client-download-card client-download-card-disabled" aria-disabled="true">`}
-                <span>${escapeHtml(item.label || "Download Photos")}</span>
-                <strong>${escapeHtml(getDownloadDetail(item))}</strong>
-              ${getDownloadHref(item) ? `</a>` : `</div>`}
-            `).join("")}
-          </div>
+          ${downloads.length ? `
+            <div class="client-download-row">
+              ${downloads.map((item) => `
+                ${getDownloadHref(item) ? `<a class="client-download-card" href="${escapeAttribute(getDownloadHref(item))}" target="_blank" rel="noopener noreferrer">` : `<div class="client-download-card client-download-card-disabled" aria-disabled="true">`}
+                  <span>${escapeHtml(item.label || "Download Photos")}</span>
+                  <strong>${escapeHtml(getDownloadDetail(item))}</strong>
+                ${getDownloadHref(item) ? `</a>` : `</div>`}
+              `).join("")}
+            </div>
+          ` : ""}
 
           ${previews.length ? `
             <div class="client-preview-grid">
