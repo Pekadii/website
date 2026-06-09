@@ -7,7 +7,7 @@ Example:
 ```text
 client-galleries/folder-name/
   cover.jpg
-  PEKADI2026.json
+  NAME.json
   edited-full-quality.zip
   raw-originals.zip
   previews/

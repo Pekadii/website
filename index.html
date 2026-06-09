@@ -9,7 +9,7 @@
   <meta name="impact-site-verification" value="22baa041-d7dd-41ad-849c-943b862145d0" />
   <link rel="preload" as="image" href="optimized/portfolio/Fall-River-hero.jpg" fetchpriority="high" />
   <link rel="stylesheet" href="style.css" />
-  <link rel="icon" type="image/x-icon" href="icon.ico" />
+  <link rel="icon" type="image/x-icon" href="assets/ico/icon.ico" />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&amp;family=Inter:wght@300;400;500&amp;display=swap" rel="stylesheet">
 </head>
 
@@ -23,7 +23,7 @@
       </button>
 
       <div class="icon-row photography-socials">
-        <a href="https://www.instagram.com/pekadi"><img src="instagram.png" class="social-icon" alt="Instagram"></a>
+        <a href="https://www.instagram.com/pekadi"><img src="assets/png/instagram.png" class="social-icon" alt="Instagram"></a>
       </div>
     </div>
 
@@ -43,7 +43,7 @@
   <section class="photography-visual-hero" aria-label="Pekadi photography">
     <img class="photography-hero-image" src="optimized/portfolio/Fall-River-hero.jpg" alt="" aria-hidden="true" fetchpriority="high" decoding="async">
     <a class="photography-hero-logo" href="/" aria-label="Back to home">
-      <img class="photography-hero-signature" src="Signature.png" alt="Pekadi Photography camera logo" width="817" height="647" fetchpriority="high" decoding="async">
+      <img class="photography-hero-signature" src="assets/png/Signature.png" alt="Pekadi Photography camera logo" width="817" height="647" fetchpriority="high" decoding="async">
     </a>
   </section>
 
@@ -81,8 +81,8 @@
           <div class="contact-bubble contact-bubble-reply">If you have any questions, please fill out the form below and I’ll get back to you as soon as I can!</div>
         </div>
 
-        <div class="contact-form contact-jotform" data-jotform-container>
-          <div class="contact-loading" aria-live="polite">Loading form...</div>
+        <div class="contact-form contact-jotform">
+          <script type="text/javascript" src="https://form.jotform.com/jsform/261530925170048"></script>
         </div>
       </div>
     </div>
@@ -100,7 +100,7 @@
   <div class="app-grid">
     <article class="app-card app-card--password">
       <div class="app-card-copy">
-        <img class="app-icon" src="Pekadi-Password.png" alt="Pekadi Password app icon" width="128" height="128" loading="lazy" decoding="async">
+        <img class="app-icon" src="assets/png/Pekadi-Password.png" alt="Pekadi Password app icon" width="128" height="128" loading="lazy" decoding="async">
         <p class="app-label">Password Manager</p>
         <h3>Pekadi Password</h3>
         <p>
@@ -116,7 +116,7 @@
 
     <article class="app-card app-card--local">
       <div class="app-card-copy">
-        <img class="app-icon" src="Pekadi-Local.png" alt="Pekadi Local app icon" width="128" height="128" loading="lazy" decoding="async">
+        <img class="app-icon" src="assets/png/Pekadi-Local.png" alt="Pekadi Local app icon" width="128" height="128" loading="lazy" decoding="async">
         <p class="app-label">Share Photos Over Local Wi-Fi</p>
         <h3>Pekadi Local</h3>
         <p>
@@ -286,35 +286,11 @@
       const openers = document.querySelectorAll('[data-contact-open], a[href="#contact"]');
       const closers = modal.querySelectorAll("[data-contact-close]");
       const focusTarget = modal.querySelector(".contact-close");
-      const formContainer = modal.querySelector("[data-jotform-container]");
-      const loading = modal.querySelector(".contact-loading");
-      let jotformLoaded = false;
-
-      function loadJotform(){
-        if(jotformLoaded || !formContainer) return;
-        jotformLoaded = true;
-
-        const observer = new MutationObserver(() => {
-          if(formContainer.querySelector("iframe")){
-            if(loading) loading.hidden = true;
-            formContainer.classList.add("is-loaded");
-            observer.disconnect();
-          }
-        });
-        observer.observe(formContainer, { childList: true, subtree: true });
-
-        const script = document.createElement("script");
-        script.type = "text/javascript";
-        script.src = "https://form.jotform.com/jsform/261530925170048";
-        script.async = true;
-        formContainer.appendChild(script);
-      }
 
       function openContact(event){
         if(event) event.preventDefault();
         modal.hidden = false;
         document.body.classList.add("contact-open");
-        loadJotform();
         if(focusTarget) requestAnimationFrame(() => focusTarget.focus());
       }
 

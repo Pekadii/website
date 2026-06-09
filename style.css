@@ -1114,7 +1114,7 @@ header{
   z-index: 1;
   width: clamp(36px, 5vw, 54px);
   height: clamp(36px, 5vw, 54px);
-  background: url("instagram.png") center / contain no-repeat;
+  background: url("assets/png/instagram.png") center / contain no-repeat;
   filter: drop-shadow(0 8px 18px rgba(0,0,0,0.46));
   opacity: 0;
   transform: translate(-50%, -50%) scale(0.92);
@@ -1609,9 +1609,10 @@ body.instagram-modal-open{
   background: transparent;
   border: 0;
   box-shadow: none;
+  position: relative;
   flex: 1 1 auto;
   min-height: 0;
-  overflow-y: auto;
+  overflow-y: hidden;
   overflow-x: hidden;
   -webkit-overflow-scrolling: touch;
 }
@@ -1631,7 +1632,7 @@ body.instagram-modal-open{
 .contact-jotform iframe{
   width: 100%;
   max-width: 100%;
-  min-height: 980px;
+  min-height: 1120px;
   border: 0;
   background: transparent;
   display: block;
