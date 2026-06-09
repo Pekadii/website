@@ -5,7 +5,7 @@ Use one folder per photoshoot session.
 Example:
 
 ```text
-client-galleries/nathan-portraits/
+client-galleries/folder-name/
   cover.jpg
   PEKADI2026.json
   edited-full-quality.zip
