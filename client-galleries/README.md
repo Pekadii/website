@@ -34,4 +34,4 @@ For download-gated sessions, keep the public manifest limited to labels and prev
 }
 ```
 
-Add matching download gate secrets for each private session, such as `GRADUATION_ACCESS_CODE`, `GRADUATION_EDITED_MEGA_URL`, and `GRADUATION_RAW_MEGA_URL`.
+Add matching download gate secrets for each private session, such as `NAME_ACCESS_CODE`, `NAME_EDITED_MEGA_URL`, and `NAME_RAW_MEGA_URL`.
