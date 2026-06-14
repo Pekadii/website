@@ -150,6 +150,7 @@
 				DEVELOPMENT_TEAM = 4GS95W957Y;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = PekadiShowcase/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Website;
 				INFOPLIST_KEY_CFBundleIdentifier = com.pekadi.showcase;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.photography";
 				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
@@ -180,6 +181,7 @@
 				DEVELOPMENT_TEAM = 4GS95W957Y;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = PekadiShowcase/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Website;
 				INFOPLIST_KEY_CFBundleIdentifier = com.pekadi.showcase;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.photography";
 				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
