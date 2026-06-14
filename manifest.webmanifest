@@ -1,0 +1,51 @@
+{
+  "name": "Pekadi",
+  "short_name": "Pekadi",
+  "description": "Pekadi photography portfolio, client galleries, presets, and booking.",
+  "id": "/",
+  "start_url": "/?source=pwa",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#000000",
+  "orientation": "portrait",
+  "categories": ["photo", "portfolio", "business"],
+  "icons": [
+    {
+      "src": "/assets/pwa/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/pwa/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/pwa/maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Portfolio",
+      "short_name": "Portfolio",
+      "url": "/photography/",
+      "icons": [{ "src": "/assets/pwa/icon-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Client Gallery",
+      "short_name": "Gallery",
+      "url": "/client-gallery/",
+      "icons": [{ "src": "/assets/pwa/icon-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Presets",
+      "short_name": "Presets",
+      "url": "/Presets/",
+      "icons": [{ "src": "/assets/pwa/icon-192.png", "sizes": "192x192" }]
+    }
+  ]
+}
